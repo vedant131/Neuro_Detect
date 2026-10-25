@@ -1,0 +1,46 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s1-l1, #s1-l2 { position: absolute; left: 0; width: 1920px; text-align: center; }
+    #s1-l1 { top: 800px; font-weight: 800; font-size: 88px; letter-spacing: 0.04em; }
+    #s1-l2 { top: 800px; font-weight: 800; font-size: 88px; letter-spacing: 0.04em; color: var(--cyan); text-shadow: 0 0 24px rgba(34, 211, 238, 0.4); }
+    #s1-tag { position: absolute; left: 0; top: 130px; width: 1920px; text-align: center; }
+  </style>
+  <div data-hf-id="hf-hv3x" id="root" data-composition-id="s1-hook" data-width="1920" data-height="1080">
+    <canvas data-hf-id="hf-brjq" id="s1-cv" class="cv clip" data-start="0" data-duration="14"></canvas>
+    <div data-hf-id="hf-0biu" id="s1-tag" class="clip kicker" data-start="0" data-duration="14"><span data-hf-id="hf-195n" id="s1-tag-in">Resting EEG · eyes closed</span></div>
+    <div data-hf-id="hf-u392" id="s1-l1" class="clip" data-start="8.6" data-duration="2.8"><span data-hf-id="hf-rzhx" id="s1-l1-in" style="display:inline-block">THE BRAIN LEAVES SIGNALS.</span></div>
+    <div data-hf-id="hf-i9eh" id="s1-l2" class="clip" data-start="11" data-duration="3"><span data-hf-id="hf-cujq" id="s1-l2-in" style="display:inline-block">CAN WE LEARN TO READ THEM?</span></div>
+  </div>
+  <script>
+    (function () {
+      const START = 0;
+      const ctx = ND.fitCanvas(document.getElementById("s1-cv"));
+      const k = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const eo = (x) => 1 - Math.pow(1 - x, 3);
+      function renderAt(T) {
+        const t = T - START;
+        ctx.clearRect(0, 0, 1920, 1080);
+        // brain grows in from the front, then pulses
+        const reveal = eo(k(t, 2.5, 8.5));
+        const size = 360 + 30 * k(t, 0, 15);
+        ND.drawBrain(ctx, 990, 430, size, t, { reveal, alpha: 1 - 0.35 * k(t, 12.6, 14), pulse: k(t, 6, 9), n: 820 });
+        // the trace: draws across first, then sits low under the brain
+        const draw = eo(k(t, 0.2, 3.2));
+        const y = 540 + 170 * eo(k(t, 2.8, 5));
+        const amp = 46 - 18 * k(t, 2.8, 5);
+        ND.drawTrace(ctx, 160, y, 1600, amp, t * 0.6, { draw, glow: 14, width: 3, window: 3.2, seed: 5, alpha: 0.95 });
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-tag-in", { opacity: 0 }, { opacity: 0.85, duration: 1, ease: "power2.out" }, 0.4);
+      tl.fromTo("#s1-l1-in", { opacity: 0, y: 30, scale: 1.06 }, { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out" }, 8.8);
+      tl.to("#s1-l1-in", { opacity: 0, y: -16, duration: 0.45, ease: "power2.in" }, 11.0);
+      tl.fromTo("#s1-l2-in", { opacity: 0, y: 30, scale: 1.06 }, { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out" }, 11.2);
+      tl.to(["#s1-l2-in", "#s1-tag-in"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 13.4);
+      window.__timelines["s1-hook"] = tl;
+    })();
+  </script>
+</template>

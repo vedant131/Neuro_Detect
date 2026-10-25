@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# NeuroDetect runtime data (recreated automatically)
+Full Code/instance/
+Full Code/uploads/
+
+# Large, reproducible data (python prepare_data.py rebuilds it)
+Full Code/data/
+# Local copy of OpenNeuro recordings; the same files are in Test Sample/
+Full Code/Dataset/
+
+# Film project: dependencies, caches and render output
+videos/**/node_modules/
+videos/**/renders/
+videos/**/renders.log
+videos/**/.hyperframes/
+videos/**/.media/
+videos/**/.thumbnails/
+videos/**/.waveform-cache/
+
+# Editor / tooling
+.claude/
+.playwright-mcp/
+.vscode/
+.DS_Store
+Thumbs.db
+~$*

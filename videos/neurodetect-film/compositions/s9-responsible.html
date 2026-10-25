@@ -1,0 +1,28 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s9-list { position: absolute; left: 260px; top: 230px; width: 1400px; }
+    .s9-line { display: flex; align-items: center; gap: 34px; margin-bottom: 44px; }
+    .s9-mark { width: 14px; height: 84px; border-radius: 7px; }
+    .s9-line .h-l { font-size: 86px; }
+    #s9-foot { position: absolute; left: 260px; top: 800px; font-size: 34px; color: #c9d2e6; }
+  </style>
+  <div data-hf-id="hf-tggm" id="root" data-composition-id="s9-responsible" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ve9e" id="s9-list" class="clip" data-start="0" data-duration="11">
+      <div data-hf-id="hf-bdh7" class="s9-line" id="s9-l1"><span data-hf-id="hf-3rtf" class="s9-mark" style="background:#22D3EE"></span><span data-hf-id="hf-vula" class="h-l">ACCESSIBLE SCREENING</span></div>
+      <div data-hf-id="hf-0hzk" class="s9-line" id="s9-l2"><span data-hf-id="hf-d07r" class="s9-mark" style="background:#A78BFA"></span><span data-hf-id="hf-m705" class="h-l">EXPLAINABLE RESULTS</span></div>
+      <div data-hf-id="hf-19nd" class="s9-line" id="s9-l3"><span data-hf-id="hf-wlem" class="s9-mark" style="background:#F5B544"></span><span data-hf-id="hf-lo74" class="h-l">BUILT FOR FURTHER VALIDATION</span></div>
+    </div>
+    <div data-hf-id="hf-lfr1" id="s9-foot" class="clip" data-start="0" data-duration="11">A screening aid — not a diagnosis. Next: testing on data from other hospitals.</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(".s9-line", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out", stagger: 0.7 }, 0.3);
+      tl.fromTo(".s9-mark", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power3.out", stagger: 0.7 }, 0.3);
+      tl.fromTo("#s9-foot", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 4.8);
+      tl.to(["#s9-list", "#s9-foot"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 10.5);
+      window.__timelines["s9-responsible"] = tl;
+    })();
+  </script>
+</template>

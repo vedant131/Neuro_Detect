@@ -1,0 +1,55 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s3-headwrap { position: absolute; left: 190px; top: 150px; width: 780px; height: 780px; }
+    #s3-head { width: 780px; height: 780px; overflow: visible; }
+    #s3-count { position: absolute; left: 190px; top: 900px; width: 780px; text-align: center; font-family: var(--mono); font-size: 26px; color: var(--muted); }
+    #s3-right { position: absolute; left: 1060px; top: 300px; width: 760px; }
+    #s3-title { font-weight: 800; font-size: 136px; letter-spacing: -0.03em; line-height: 1; }
+    #s3-title .c-cyan { text-shadow: 0 0 28px rgba(34, 211, 238, 0.45); }
+    #s3-sub { margin-top: 28px; font-size: 38px; line-height: 1.35; color: #c9d2e6; }
+    #s3-legend { margin-top: 48px; display: flex; flex-direction: column; gap: 16px; font-size: 28px; }
+    .s3-dot { display: inline-block; width: 18px; height: 18px; border-radius: 50%; margin-right: 14px; vertical-align: middle; }
+  </style>
+  <div data-hf-id="hf-8gx2" id="root" data-composition-id="s3-intro" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-zb9z" id="s3-headwrap" class="clip" data-start="0" data-duration="13.5">
+      <svg data-hf-id="hf-mx4f" id="s3-head"></svg>
+    </div>
+    <div data-hf-id="hf-yea2" id="s3-count" class="clip" data-start="0" data-duration="13.5"><span data-hf-id="hf-cerw" id="s3-count-a">19 sensors in a standard 10–20 cap</span><span data-hf-id="hf-hf74" id="s3-count-b" style="position:absolute;left:0;width:780px;color:#F4F7FB">NeuroDetect uses <b data-hf-id="hf-vsvn" class="c-cyan">5</b> of 19</span></div>
+    <div data-hf-id="hf-yg4x" id="s3-right" class="clip" data-start="0" data-duration="13.5">
+      <div data-hf-id="hf-2f1x" id="s3-title"><span data-hf-id="hf-zqwb" class="c-cyan">Neuro</span>Detect</div>
+      <div data-hf-id="hf-ucva" id="s3-sub">Lightweight. Explainable.<br data-hf-id="hf-x5px" />EEG-Based Screening.</div>
+      <div data-hf-id="hf-nmmr" id="s3-legend">
+        <div data-hf-id="hf-l7cd" id="s3-lg1"><span data-hf-id="hf-2njf" class="s3-dot" style="background:#22D3EE"></span><span data-hf-id="hf-89cq" class="mono c-cyan">Fz · O1 · O2</span>&nbsp;&nbsp;Alzheimer's-type changes</div>
+        <div data-hf-id="hf-2hee" id="s3-lg2"><span data-hf-id="hf-gxsv" class="s3-dot" style="background:#A78BFA"></span><span data-hf-id="hf-g8dz" class="mono c-violet">F3 · F4</span>&nbsp;&nbsp;mood marker</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const sites = ND.head(document.getElementById("s3-head"), "s3");
+      const cyan = ["Fz", "O1", "O2"], violet = ["F3", "F4"];
+      const others = Object.keys(sites).filter((n) => !cyan.includes(n) && !violet.includes(n));
+      const dot = (n) => sites[n].querySelector("circle"), lab = (n) => sites[n].querySelector("text");
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s3-head", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }, 0);
+      tl.fromTo(Object.keys(sites).map((n) => sites[n]), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.04 }, 0.4);
+      tl.fromTo("#s3-count-a", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.8);
+      // 14 fade back, 5 light up
+      tl.to(others.map((n) => sites[n]), { opacity: 0.22, duration: 0.8, ease: "power2.out" }, 5.8);
+      tl.to(cyan.map(dot), { attr: { fill: "#22D3EE", r: 0.13 }, stroke: "#A0ECFA", duration: 0.6, ease: "back.out(2)", stagger: 0.2 }, 6.0);
+      tl.to(cyan.map(lab), { attr: { fill: "#06101F" }, fontWeight: 700, duration: 0.3, stagger: 0.2 }, 6.0);
+      tl.to(violet.map(dot), { attr: { fill: "#A78BFA", r: 0.13 }, stroke: "#D7C9FF", duration: 0.6, ease: "back.out(2)", stagger: 0.2 }, 6.9);
+      tl.to(violet.map(lab), { attr: { fill: "#06101F" }, fontWeight: 700, duration: 0.3, stagger: 0.2 }, 6.9);
+      tl.to("#s3-count-a", { opacity: 0, duration: 0.4 }, 5.8);
+      tl.fromTo("#s3-count-b", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 6.0);
+      tl.fromTo("#s3-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1, ease: "power3.out" }, 0.6);
+      tl.fromTo("#s3-sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 2.2);
+      tl.fromTo("#s3-lg1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 8.7);
+      tl.fromTo("#s3-lg2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 11.2);
+      tl.to(["#s3-head", "#s3-count-b", "#s3-title", "#s3-sub", "#s3-legend"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 13.0);
+      window.__timelines["s3-intro"] = tl;
+    })();
+  </script>
+</template>

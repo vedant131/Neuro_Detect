@@ -1,0 +1,121 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s4-top { position: absolute; left: 160px; top: 90px; width: 1600px; }
+    #s4-panel { position: absolute; left: 140px; top: 170px; width: 1640px; height: 520px; }
+    #s4-chips { position: absolute; left: 160px; top: 740px; width: 1600px; display: flex; gap: 20px; }
+    .s4-chip { flex: 1; padding: 20px 22px; border-radius: 14px; border: 1px solid var(--line); background: rgba(13, 22, 48, 0.9); }
+    .s4-chip .n { font-family: var(--mono); font-size: 20px; color: var(--muted); letter-spacing: 0.12em; }
+    .s4-chip .a { font-weight: 700; font-size: 30px; margin-top: 6px; }
+    .s4-chip .b { font-family: var(--mono); font-size: 22px; color: var(--cyan); margin-top: 6px; }
+  </style>
+  <div data-hf-id="hf-m04t" id="root" data-composition-id="s4-pipeline" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-2mcq" id="s4-top" class="clip" data-start="0" data-duration="27"><div data-hf-id="hf-rc12" id="s4-top-in"><span data-hf-id="hf-4v59" class="kicker">Processing pipeline</span>&nbsp;&nbsp;<span data-hf-id="hf-zupn" class="h-m" style="font-size:44px">The journey of one recording</span></div></div>
+    <div data-hf-id="hf-usnn" id="s4-panel" class="clip card" data-start="0" data-duration="27"></div>
+    <canvas data-hf-id="hf-ch5w" id="s4-cv" class="cv clip" data-start="0" data-duration="27"></canvas>
+    <div data-hf-id="hf-1v32" id="s4-chips" class="clip" data-start="0" data-duration="27">
+      <div data-hf-id="hf-npbp" class="s4-chip" id="s4-k0"><div data-hf-id="hf-7h2p" class="n">01</div><div data-hf-id="hf-kzcw" class="a">Band-pass</div><div data-hf-id="hf-m4uf" class="b">0.5–45 Hz</div></div>
+      <div data-hf-id="hf-mxnw" class="s4-chip" id="s4-k1"><div data-hf-id="hf-8nzs" class="n">02</div><div data-hf-id="hf-qo5a" class="a">Resample</div><div data-hf-id="hf-rj5x" class="b">250 Hz</div></div>
+      <div data-hf-id="hf-vljr" class="s4-chip" id="s4-k2"><div data-hf-id="hf-89or" class="n">03</div><div data-hf-id="hf-g4o5" class="a">Slice</div><div data-hf-id="hf-fuc3" class="b">10-s epochs</div></div>
+      <div data-hf-id="hf-rnfq" class="s4-chip" id="s4-k3"><div data-hf-id="hf-6a5m" class="n">04</div><div data-hf-id="hf-b5h6" class="a">Reject</div><div data-hf-id="hf-939t" class="b">artifacts</div></div>
+      <div data-hf-id="hf-0bbl" class="s4-chip" id="s4-k4"><div data-hf-id="hf-5vul" class="n">05</div><div data-hf-id="hf-f9is" class="a">Biomarkers</div><div data-hf-id="hf-ldt1" class="b">features</div></div>
+      <div data-hf-id="hf-zjns" class="s4-chip" id="s4-k5"><div data-hf-id="hf-72ro" class="n">06</div><div data-hf-id="hf-nlgr" class="a">Classify</div><div data-hf-id="hf-qplf" class="b">per slice → vote</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const START = 53.5;
+      const ctx = ND.fitCanvas(document.getElementById("s4-cv"));
+      const k = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const eo = (x) => 1 - Math.pow(1 - x, 3);
+      const X0 = 200, W = 1520, Y = 400, N = 6, SW = W / N;
+      const REJ = { 1: "BLINK", 4: "MOVEMENT" };
+      const VOTE = ["#F5B544", "#F5B544", "#22D3EE", "#F5B544"];
+      function sig(f, s, clean) {
+        const a = ND.eeg(s, 21, "alpha"), r = ND.eeg(s, 21, "raw");
+        let v = a + (r - a) * (1 - clean);
+        v += 3.2 * Math.exp(-Math.pow((f - 0.27) / 0.018, 2));                      // blink
+        v += 1.6 * Math.sin(f * 900) * Math.exp(-Math.pow((f - 0.75) / 0.03, 2));   // movement burst
+        return v;
+      }
+      function renderAt(T) {
+        const t = T - START;
+        ctx.clearRect(0, 0, 1920, 1080);
+        const clean = eo(k(t, 4.2, 7.0));
+        const s0 = Math.min(t, 12.9) * 0.25;
+        const draw = eo(k(t, 0.3, 2.6));
+        const rej = k(t, 15.6, 17), feat = k(t, 19.3, 21), judge = k(t, 23.6, 25.2);
+        // trace, slice by slice so rejected slices can dim
+        const n = 760;
+        for (let sl = 0; sl < N; sl++) {
+          ctx.save();
+          ctx.strokeStyle = "#22D3EE"; ctx.lineWidth = 2.5; ctx.shadowColor = "#22D3EE"; ctx.shadowBlur = 10;
+          ctx.globalAlpha = REJ[sl] != null ? 1 - 0.8 * rej : 1;
+          ctx.beginPath();
+          for (let i = Math.floor((sl * n) / N); i <= Math.floor(((sl + 1) * n) / N); i++) {
+            const f = i / n; if (f > draw) break;
+            const y = Y - sig(f, s0 + f * 6, clean) * 36;
+            i === Math.floor((sl * n) / N) ? ctx.moveTo(X0 + f * W, y) : ctx.lineTo(X0 + f * W, y);
+          }
+          ctx.stroke(); ctx.restore();
+        }
+        // resample: sample dots
+        const rs = k(t, 8.4, 9.6) * (1 - k(t, 12.9, 13.8));
+        if (rs > 0) {
+          ctx.fillStyle = `rgba(244,247,251,${rs})`;
+          for (let i = 0; i <= 190; i++) { const f = i / 190; ctx.beginPath(); ctx.arc(X0 + f * W, Y - sig(f, s0 + f * 6, clean) * 36, 2.6, 0, 6.283); ctx.fill(); }
+          ctx.font = "500 24px 'IBM Plex Mono'"; ctx.fillText("250 samples / second", X0, 250);
+        }
+        if (t < 8.4 && t > 2.5) {
+          ctx.font = "500 24px 'IBM Plex Mono'"; ctx.fillStyle = `rgba(138,151,181,${k(t, 2.8, 3.4) * (1 - k(t, 7.8, 8.4))})`;
+          ctx.fillText(clean < 0.5 ? "raw signal" : "filtered 0.5–45 Hz", X0, 250);
+        }
+        // slices
+        const sv = k(t, 12.9, 14);
+        for (let sl = 0; sl < N; sl++) {
+          const x = X0 + sl * SW;
+          ctx.strokeStyle = `rgba(167,139,250,${0.7 * sv})`; ctx.lineWidth = 2; ctx.setLineDash([8, 8]);
+          if (sl) { ctx.beginPath(); ctx.moveTo(x, 230); ctx.lineTo(x, 560); ctx.stroke(); }
+          ctx.setLineDash([]);
+          ctx.font = "500 22px 'IBM Plex Mono'"; ctx.fillStyle = `rgba(138,151,181,${sv})`;
+          ctx.fillText("slice " + (sl + 1) + " · 10 s", x + 18, 250);
+          if (REJ[sl] != null && rej > 0) {
+            ctx.fillStyle = `rgba(245,181,68,${0.1 * rej})`; ctx.fillRect(x + 4, 266, SW - 8, 290);
+            ctx.strokeStyle = `rgba(245,181,68,${0.8 * rej})`; ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.moveTo(x + SW / 2 - 26, 520 - 26); ctx.lineTo(x + SW / 2 + 26, 520 + 26); ctx.moveTo(x + SW / 2 + 26, 520 - 26); ctx.lineTo(x + SW / 2 - 26, 520 + 26); ctx.stroke();
+            ctx.fillStyle = `rgba(245,181,68,${rej})`; ctx.font = "600 22px 'IBM Plex Mono'"; ctx.fillText(REJ[sl] + " — REMOVED", x + 18, 300);
+          }
+          if (REJ[sl] == null && feat > 0) {
+            const ci = [0, 2, 3, 5].indexOf(sl);
+            const vals = [0.55, 0.8, 0.4, 0.65].map((v, j) => 0.3 + ((v + ci * 0.17 + j * 0.11) % 0.7));
+            for (let j = 0; j < 4; j++) {
+              const h = 70 * vals[j] * eo(k(t, 19.3 + ci * 0.25, 20.5 + ci * 0.25));
+              ctx.fillStyle = j < 2 ? "rgba(34,211,238,0.9)" : "rgba(167,139,250,0.9)";
+              ctx.fillRect(x + 60 + j * 34, 545 - h, 22, h);
+            }
+            if (judge > 0) {
+              const jv = k(t, 23.6 + ci * 0.4, 24.2 + ci * 0.4);
+              ctx.beginPath(); ctx.arc(x + SW - 52, 520, 20 * eo(jv), 0, 6.283); ctx.fillStyle = VOTE[ci]; ctx.globalAlpha = jv; ctx.fill(); ctx.globalAlpha = 1;
+            }
+          }
+        }
+        if (feat > 0) { ctx.font = "500 22px 'IBM Plex Mono'"; ctx.fillStyle = `rgba(138,151,181,${feat})`; ctx.fillText("θ/α power · θ coherence  →  one vector per clean slice", X0, 640); }
+        if (judge > 0) { ctx.fillStyle = `rgba(244,247,251,${judge})`; ctx.font = "600 22px 'IBM Plex Mono'"; ctx.fillText("each slice judged on its own  (illustrative)", X0 + 900, 640); }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s4-top-in", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0);
+      tl.fromTo(".s4-chip", { opacity: 0, y: 30 }, { opacity: 0.45, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12 }, 0.6);
+      [4.2, 8.4, 12.9, 15.1, 19.1, 23.6].forEach((at, i) => {
+        tl.to("#s4-k" + i, { opacity: 1, borderColor: "#22D3EE", boxShadow: "0 0 24px rgba(34,211,238,0.35)", duration: 0.4, ease: "power2.out" }, at);
+        if (i < 5) tl.to("#s4-k" + i, { boxShadow: "0 0 0 rgba(34,211,238,0)", borderColor: "#2A6F86", duration: 0.4 }, [8.4, 12.9, 15.1, 19.1, 23.6][i]);
+      });
+      tl.to(["#s4-top-in", "#s4-chips"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.5);
+      tl.fromTo("#s4-panel", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 0);
+      tl.to(["#s4-panel", "#s4-cv"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.5);
+      window.__timelines["s4-pipeline"] = tl;
+    })();
+  </script>
+</template>

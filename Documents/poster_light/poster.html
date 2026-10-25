@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NeuroDetect Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=block" rel="stylesheet" />
+<script src="neuro.js"></script>
+<style>
+  @page { size: 18in 24in; margin: 0; }
+  :root {
+    --bg: #f6f8fc; --grid: #e4eaf4; --panel: #ffffff; --line: #d9e1ee;
+    --ink: #0b1530; --soft: #34405e; --muted: #64708c;
+    --cyan: #0b8ba3; --cyan-l: #22d3ee; --violet: #6d4ae0; --amber: #b86f08; --amber-l: #f5b544;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1728px; height: 2304px; }
+  body {
+    font-family: "Outfit", sans-serif; color: var(--ink); overflow: hidden; position: relative;
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 32px 32px,
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 32px 32px,
+      var(--bg);
+  }
+  .mono { font-family: "IBM Plex Mono", monospace; }
+  .kicker { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 17px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); }
+  .card { background: var(--panel); border: 1.5px solid var(--line); border-radius: 18px; box-shadow: 0 6px 22px rgba(11, 21, 48, 0.05); }
+  .c-cyan { color: var(--cyan); } .c-violet { color: var(--violet); } .c-amber { color: var(--amber); } .c-muted { color: var(--muted); }
+  h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.01em; margin-top: 6px; }
+  p, li { font-size: 19px; line-height: 1.45; color: var(--soft); }
+  .wrap { position: absolute; left: 64px; right: 64px; }
+
+  /* header */
+  #hdr { top: 52px; height: 470px; }
+  #hdr-cv { position: absolute; right: -64px; top: -52px; width: 900px; height: 560px; }
+  #logos { display: flex; align-items: center; gap: 22px; }
+  #logos img.mit { height: 92px; }
+  #logos .dept { font-size: 18px; line-height: 1.35; color: var(--soft); border-left: 2px solid var(--line); padding-left: 22px; }
+  #title { margin-top: 34px; font-size: 156px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; }
+  #title .c-cyan { color: var(--cyan); }
+  #sub { margin-top: 16px; width: 900px; font-size: 30px; line-height: 1.25; font-weight: 600; color: var(--soft); }
+  #by { margin-top: 26px; display: flex; gap: 30px; font-size: 21px; color: var(--soft); }
+  #by b { color: var(--ink); }
+
+  /* hook */
+  #hook { top: 552px; height: 320px; display: grid; grid-template-columns: 560px 1fr; gap: 28px; }
+  #hook .q { padding: 30px 34px; background: var(--ink); color: #f4f7fb; border-radius: 18px; }
+  #hook .q h2 { font-size: 40px; line-height: 1.1; color: #fff; }
+  #hook .q p { color: #c9d2e6; margin-top: 14px; }
+  #waves { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+  #waves > div { position: relative; padding: 22px 26px; }
+  #waves > div + div { border-left: 1.5px dashed var(--line); }
+  #waves canvas { width: 100%; height: 150px; display: block; margin-top: 8px; }
+  #waves .t { font-size: 22px; font-weight: 700; }
+  #waves .d { font-size: 17px; color: var(--muted); margin-top: 4px; }
+
+  /* problem + sensors */
+  #row2 { top: 896px; height: 356px; display: grid; grid-template-columns: 1fr 520px; gap: 28px; }
+  #prob { padding: 28px 32px; }
+  #stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+  .stat { border-top: 4px solid var(--amber-l); padding-top: 14px; }
+  .stat .v { font-size: 44px; font-weight: 800; letter-spacing: -0.02em; color: var(--amber); line-height: 1.05; }
+  .stat p { font-size: 17px; margin-top: 8px; }
+  #prob .turn { margin-top: 22px; font-size: 22px; font-weight: 600; color: var(--ink); }
+  #prob .turn span { color: var(--cyan); }
+  #sens { padding: 24px 28px; display: grid; grid-template-columns: 250px 1fr; gap: 14px; align-items: center; }
+  #sens svg { width: 250px; height: 250px; }
+  #sens .big { font-size: 64px; font-weight: 800; line-height: 1; }
+  #sens .lg { margin-top: 14px; font-size: 18px; color: var(--soft); line-height: 1.6; }
+  .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+
+  /* pipeline */
+  #pipe { top: 1276px; height: 244px; padding: 18px 32px; }
+  #steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 18px; }
+  .step { position: relative; border: 1.5px solid var(--line); border-radius: 14px; padding: 16px 16px; background: #fbfcfe; }
+  .step .n { font-family: "IBM Plex Mono", monospace; font-size: 15px; color: var(--muted); }
+  .step .a { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .step .b { font-family: "IBM Plex Mono", monospace; font-size: 15px; color: var(--cyan); margin-top: 6px; line-height: 1.35; }
+  .step + .step::before { content: "→"; position: absolute; left: -15px; top: 38px; font-size: 18px; color: var(--muted); }
+
+  /* modules + results */
+  #row4 { top: 1536px; height: 474px; display: grid; grid-template-columns: 520px 1fr; gap: 28px; }
+  #mods { display: grid; grid-template-rows: auto 1fr; gap: 16px; }
+  .mod { padding: 20px 26px; border-top: 5px solid var(--cyan-l); }
+  .mod.b { border-top-color: var(--violet); }
+  .mod h3 { font-size: 24px; font-weight: 800; margin-top: 4px; }
+  .mod p { font-size: 17px; margin-top: 6px; }
+  .mod .f { font-family: "IBM Plex Mono", monospace; font-size: 16px; color: var(--ink); margin-top: 8px; }
+  .tag { display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; padding: 5px 12px; border-radius: 999px; border: 1.5px solid var(--amber); color: var(--amber); margin-top: 10px; }
+  #res { padding: 26px 32px; }
+  #res .top { display: grid; grid-template-columns: 330px 1fr; gap: 24px; align-items: end; margin-top: 8px; }
+  #hero { font-size: 118px; font-weight: 800; letter-spacing: -0.045em; line-height: 0.9; color: var(--cyan); }
+  #hero-l { font-size: 22px; font-weight: 700; margin-top: 8px; }
+  #tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .tile { border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .tile .v { font-size: 36px; font-weight: 800; letter-spacing: -0.02em; }
+  .tile .l { font-size: 15px; color: var(--muted); }
+  .meth { font-size: 15px; color: var(--muted); margin-top: 12px; line-height: 1.4; }
+  .bars { margin-top: 18px; }
+  .bar { display: grid; grid-template-columns: 330px 1fr 70px; gap: 14px; align-items: center; margin-top: 10px; font-size: 17px; }
+  .trk { position: relative; height: 22px; background: #edf1f7; border-radius: 6px; }
+  .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; }
+  .chance { position: absolute; left: 50%; top: -6px; bottom: -6px; border-left: 2px dashed var(--amber); }
+  .bar .p { font-family: "IBM Plex Mono", monospace; font-weight: 600; text-align: right; }
+
+  /* evidence */
+  #ev { top: 2034px; height: 0; }
+</style>
+</head>
+<body>
+  <!-- header -->
+  <div id="hdr" class="wrap">
+    <canvas id="hdr-cv" width="1800" height="1120"></canvas>
+    <div id="logos" style="position:relative">
+      <img class="mit" src="mitwpu.png" alt="MIT-WPU" />
+      <div class="dept">Capstone Project 2026–27<br />Dept. of Electrical &amp; Electronics Engineering<br />MIT World Peace University, Pune</div>
+    </div>
+    <div id="title" style="position:relative"><span class="c-cyan">Neuro</span>Detect</div>
+    <div id="sub" style="position:relative">A lightweight, explainable EEG screening framework for Alzheimer's disease, with a depression marker</div>
+    <div id="by" style="position:relative"><span><b>Vedant Shinde</b> · <b>Rhythm Tyagi</b></span><span>Guide: <b>Dr. Anagha Deshpande</b></span><span>Group 2627S704</span></div>
+  </div>
+
+  <!-- hook -->
+  <div id="hook" class="wrap">
+    <div class="q">
+      <div class="kicker" style="color:#22d3ee">The question</div>
+      <h2>Can a short brain-wave recording hint at Alzheimer's?</h2>
+      <p>An EEG records the brain's electrical rhythm with small sensors on the scalp: painless, low-cost and already in most hospitals.</p>
+    </div>
+    <div id="waves" class="card">
+      <div><div class="t"><span class="dot" style="background:var(--cyan-l)"></span>A healthy resting brain</div><div class="d">Small, fast, regular waves: the alpha rhythm, about 10 per second</div><canvas id="w-h" width="1100" height="300"></canvas></div>
+      <div><div class="t"><span class="dot" style="background:var(--amber-l)"></span>A brain affected by Alzheimer's</div><div class="d">The rhythm slows: bigger, lazier waves — the theta rhythm, 4–8 per second</div><canvas id="w-a" width="1100" height="300"></canvas></div>
+    </div>
+  </div>
+
+  <!-- problem + sensors -->
+  <div id="row2" class="wrap">
+    <div id="prob" class="card">
+      <div class="kicker c-amber">The problem</div>
+      <h2>Alzheimer's is often recognised late</h2>
+      <div id="stats">
+        <div class="stat"><div class="v">60–70%</div><p>of dementia cases are caused by Alzheimer's disease [WHO]</p></div>
+        <div class="stat"><div class="v">Costly</div><p>Confirming tests (PET imaging, specialist assessment) are expensive and scarce</p></div>
+        <div class="stat"><div class="v">≈ 1 per million</div><p>neurological workforce in low-income countries — median 0.1 per 100,000 [WHO Neurology Atlas 2017]</p></div>
+      </div>
+      <div class="turn">Earlier insight, greater access: <span>an EEG is cheap, painless and widely available.</span></div>
+    </div>
+    <div id="sens" class="card">
+      <svg id="head" viewBox="-1.45 -1.45 2.9 2.9"></svg>
+      <div>
+        <div class="kicker">Five sensors</div>
+        <div class="big"><span class="c-cyan">5</span> <span style="font-size:30px;font-weight:600;color:var(--muted)">of 19</span></div>
+        <div class="lg"><span class="dot" style="background:var(--cyan-l)"></span><b class="mono c-cyan">Fz · O1 · O2</b><br />Alzheimer's-type changes<br /><span class="dot" style="background:var(--violet)"></span><b class="mono c-violet">F3 · F4</b><br />mood marker</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pipeline -->
+  <div id="pipe" class="wrap card">
+    <div class="kicker">How it works</div>
+    <h2>The journey of one recording</h2>
+    <div id="steps">
+      <div class="step"><div class="n">01</div><div class="a">Band-pass</div><div class="b">0.5–45 Hz</div></div>
+      <div class="step"><div class="n">02</div><div class="a">Resample</div><div class="b">250 Hz</div></div>
+      <div class="step"><div class="n">03</div><div class="a">Slice</div><div class="b">10-second epochs</div></div>
+      <div class="step"><div class="n">04</div><div class="a">Reject</div><div class="b">blink / movement slices</div></div>
+      <div class="step"><div class="n">05</div><div class="a">Biomarkers</div><div class="b">θ/α power, θ coherence</div></div>
+      <div class="step"><div class="n">06</div><div class="a">Every slice votes</div><div class="b">nearest centroid, cosine</div></div>
+    </div>
+  </div>
+
+  <!-- modules + results -->
+  <div id="row4" class="wrap">
+    <div id="mods">
+      <div class="mod card">
+        <div class="kicker">Module A · Alzheimer's</div>
+        <h3>Slowing &amp; front–back sync</h3>
+        <p>Theta vs alpha power at the back of the head, and how closely Fz stays in step with O1 and O2 (theta coherence).</p>
+        <div class="f">log(θ/α) at O1, O2 · θ coherence Fz–O1, Fz–O2</div>
+      </div>
+      <div class="mod card b">
+        <div class="kicker c-violet">Module B · Mood marker</div>
+        <h3>Frontal alpha asymmetry</h3>
+        <div class="f">FAA = ln α(F4) − ln α(F3)</div>
+        <p>Studied on a separate dataset (ds003478, 121 people, BDI scores).</p>
+        <span class="tag">PRELIMINARY · INDICATIVE ONLY</span>
+      </div>
+    </div>
+    <div id="res" class="card">
+      <div class="kicker">Results · Alzheimer's module</div>
+      <div class="top">
+        <div><div id="hero">82.6%</div><div id="hero-l">balanced accuracy</div></div>
+        <div id="tiles">
+          <div class="tile"><div class="v">71.1%</div><div class="l">sensitivity</div></div>
+          <div class="tile" style="border-color:var(--cyan-l)"><div class="v c-cyan">94.1%</div><div class="l">specificity</div></div>
+          <div class="tile"><div class="v">0.87</div><div class="l">AUC</div></div>
+        </div>
+      </div>
+      <div class="meth">65 people never seen in training (36 Alzheimer's, 29 healthy · OpenNeuro ds004504) · 10× repeated 5-fold cross-validation · ± 2.7</div>
+      <div class="bars">
+        <div class="bar"><span><b class="c-cyan">3 electrodes</b> · Fz, O1, O2</span><div class="trk"><div class="fill" style="width:82.6%;background:var(--cyan-l)"></div></div><span class="p">82.6%</span></div>
+        <div class="bar"><span>Full 19-channel cap</span><div class="trk"><div class="fill" style="width:73.8%;background:#9aa6bf"></div></div><span class="p">73.8%</span></div>
+        <div class="bar"><span><b class="c-violet">Depression marker</b> · FAA</span><div class="trk"><div class="fill" style="width:54.9%;background:var(--violet);opacity:.75"></div><div class="chance"></div></div><span class="p">54.9%</span></div>
+        <div class="meth" style="margin-top:6px">Dashed line = 50% chance. The depression marker is close to chance, so it is reported as indicative only.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- evidence + product + footer -->
+  <div id="row5" class="wrap" style="top:2032px;height:214px;display:grid;grid-template-columns:1fr 1fr 1fr 470px;gap:20px">
+    <div class="card" style="padding:11px 20px">
+      <div class="kicker">Lightest to train</div>
+      <div id="train" style="margin-top:8px"></div>
+    </div>
+    <div class="card" style="padding:11px 20px">
+      <div class="kicker">Best distance: cosine</div>
+      <div id="dist" style="margin-top:8px"></div>
+    </div>
+    <div class="card" style="padding:11px 20px">
+      <div class="kicker">The results are real</div>
+      <div id="shuf" style="margin-top:8px"></div>
+    </div>
+    <div class="card" style="padding:12px;overflow:hidden;position:relative">
+      <div style="position:absolute;left:12px;right:12px;top:12px;height:22px;background:#121a33;border-radius:8px 8px 0 0;display:flex;gap:6px;align-items:center;padding-left:10px"><i style="width:8px;height:8px;border-radius:50%;background:#3a4c7a"></i><i style="width:8px;height:8px;border-radius:50%;background:#3a4c7a"></i><i style="width:8px;height:8px;border-radius:50%;background:#3a4c7a"></i><span class="mono" style="font-size:11px;color:#8a97b5;margin-left:8px">NeuroDetect · screening report</span></div>
+      <img src="report.png" alt="NeuroDetect report screen" style="position:absolute;left:12px;top:34px;width:446px;border-radius:0 0 8px 8px;object-fit:cover;object-position:top;height:160px" />
+    </div>
+  </div>
+  <div class="wrap" style="top:2264px;display:flex;justify-content:space-between;font-size:15px;color:var(--muted)">
+    <span><b style="color:var(--ink)">A screening aid, not a diagnosis.</b> Working web prototype: upload → plain-language verdict, slice votes, measurements, PDF report. Next: validation on data from other hospitals.</span>
+    <span class="mono">Data: OpenNeuro ds004504 · ds003478</span>
+  </div>
+
+<script>
+(function () {
+  // header brain + trace (light theme)
+  const c = document.getElementById("hdr-cv"), x = c.getContext("2d");
+  x.scale(2, 2);
+  const { pts, edges } = ND.brain(900, 7), cx = 520, cy = 245, s = 300;
+  x.lineWidth = 0.8;
+  for (const [i, j, k] of edges) {
+    x.strokeStyle = k < 0.25 ? "rgba(109,74,224,0.18)" : "rgba(11,139,163,0.2)";
+    x.beginPath(); x.moveTo(cx + pts[i].x * s, cy + pts[i].y * s); x.lineTo(cx + pts[j].x * s, cy + pts[j].y * s); x.stroke();
+  }
+  for (const p of pts) {
+    x.fillStyle = p.hue < 0.22 ? "rgba(109,74,224,0.75)" : `rgba(11,${100 + Math.round(p.ph * 6)},${140 + Math.round(p.ph * 4)},0.8)`;
+    x.beginPath(); x.arc(cx + p.x * s, cy + p.y * s, p.s * 1.2, 0, 6.283); x.fill();
+  }
+  const trace = (ctx, x0, y0, w, amp, kind, col, seed, win) => {
+    ctx.strokeStyle = col; ctx.lineWidth = 2.4; ctx.beginPath();
+    for (let i = 0; i <= 600; i++) { const f = i / 600, y = y0 - ND.eeg(f * win, seed, kind) * amp; i ? ctx.lineTo(x0 + f * w, y) : ctx.moveTo(x0, y); }
+    ctx.stroke();
+  };
+  x.globalAlpha = 0.9; trace(x, 150, 470, 740, 16, "alpha", "#0b8ba3", 5, 3); x.globalAlpha = 1;
+
+  // healthy vs Alzheimer's waves
+  const wv = (id, kind, col) => {
+    const k = document.getElementById(id).getContext("2d"); k.scale(1, 1);
+    k.strokeStyle = "#eef2f8"; k.lineWidth = 1;
+    for (let gx = 0; gx <= 1100; gx += 50) { k.beginPath(); k.moveTo(gx, 0); k.lineTo(gx, 300); k.stroke(); }
+    for (let gy = 0; gy <= 300; gy += 50) { k.beginPath(); k.moveTo(0, gy); k.lineTo(1100, gy); k.stroke(); }
+    k.strokeStyle = col; k.lineWidth = 4; k.beginPath();
+    for (let i = 0; i <= 1100; i++) {
+      const t = i / 1100 * 2;
+      const v = kind === "alpha" ? Math.sin(6.283 * 10 * t) * (0.75 + 0.25 * Math.sin(6.283 * 0.7 * t)) + 0.15 * Math.sin(6.283 * 23 * t)
+                                 : 1.9 * Math.sin(6.283 * 5.5 * t + 0.4) * (0.85 + 0.15 * Math.sin(6.283 * 0.9 * t)) + 0.2 * Math.sin(6.283 * 2 * t);
+      const y = 150 - v * 55; i ? k.lineTo(i, y) : k.moveTo(i, y);
+    }
+    k.stroke();
+  };
+  wv("w-h", "alpha", "#0b8ba3"); wv("w-a", "theta", "#b86f08");
+
+  // head with 5 highlighted sensors
+  const NS = "http://www.w3.org/2000/svg", svg = document.getElementById("head");
+  const mk = (t, a) => { const e = document.createElementNS(NS, t); for (const n in a) e.setAttribute(n, a[n]); svg.appendChild(e); return e; };
+  mk("path", { d: "M -0.14 -1.17 L 0 -1.36 L 0.14 -1.17", fill: "#fff", stroke: "#b8c3d6", "stroke-width": 0.03 });
+  mk("ellipse", { cx: -1.2, cy: 0, rx: 0.07, ry: 0.2, fill: "#fff", stroke: "#b8c3d6", "stroke-width": 0.03 });
+  mk("ellipse", { cx: 1.2, cy: 0, rx: 0.07, ry: 0.2, fill: "#fff", stroke: "#b8c3d6", "stroke-width": 0.03 });
+  mk("circle", { cx: 0, cy: 0, r: 1.17, fill: "#f8fafd", stroke: "#b8c3d6", "stroke-width": 0.03 });
+  const hi = { Fz: "#22d3ee", O1: "#22d3ee", O2: "#22d3ee", F3: "#6d4ae0", F4: "#6d4ae0" };
+  for (const n in ND.SITES) {
+    const [px, py] = ND.SITES[n], on = hi[n];
+    mk("circle", { cx: px, cy: py, r: on ? 0.135 : 0.1, fill: on || "#eef2f8", stroke: on ? "none" : "#c9d2e2", "stroke-width": 0.015 });
+    const t = mk("text", { x: px, y: py + 0.035, "text-anchor": "middle", "font-size": on ? 0.095 : 0.08, "font-family": "IBM Plex Mono", "font-weight": on ? 600 : 500, fill: on ? (n[0] === "F" && n !== "Fz" ? "#fff" : "#06101f") : "#9aa6bf" });
+    t.textContent = n;
+  }
+
+  // mini bar charts
+  const hbars = (el, rows, max, fmt, logScale) => {
+    document.getElementById(el).innerHTML = rows.map(([n, v, hl]) => {
+      const w = logScale ? (Math.log10(v) + 0.3) / (Math.log10(max) + 0.3) * 100 : (v - 50) / (max - 50) * 100;
+      return `<div style="display:grid;grid-template-columns:108px 1fr 62px;gap:8px;align-items:center;font-size:14px;margin-top:4px">
+        <span style="color:${hl ? "#0b1530" : "#64708c"};font-weight:${hl ? 700 : 500}">${n}</span>
+        <div style="height:13px;background:#edf1f7;border-radius:4px;position:relative"><div style="position:absolute;inset:0 auto 0 0;width:${Math.max(w, 2)}%;border-radius:4px;background:${hl ? "#22d3ee" : "#c3ccdb"}"></div></div>
+        <span class="mono" style="font-size:13px;text-align:right;font-weight:${hl ? 600 : 500}">${fmt(v)}</span></div>`;
+    }).join("");
+  };
+  const ms = (v) => (v >= 1000 ? (v / 1000).toFixed(1) + " s" : Math.round(v) + " ms");
+  hbars("train", [["NeuroDetect", 1, 1], ["k-NN", 6], ["Logistic reg.", 9], ["SVM", 445], ["Random forest", 2500], ["Neural net", 3900], ["CNN", 80100]], 80100, ms, true);
+  hbars("dist", [["Cosine", 84.6, 1], ["Minkowski", 84.0], ["Euclidean", 82.6], ["Manhattan", 81.7], ["Hamming", 76.8], ["Jaccard", 76.8]], 90, (v) => v.toFixed(1) + "%");
+  document.getElementById("shuf").innerHTML = `
+    <div style="display:flex;align-items:flex-end;gap:26px;height:118px;position:relative;padding-left:6px">
+      <div style="position:absolute;left:0;right:0;bottom:${118 * 0.5}px;border-top:2px dashed #b86f08"></div>
+      <span class="mono" style="position:absolute;right:0;bottom:${118 * 0.5 + 4}px;font-size:12px;color:#b86f08">coin toss 50%</span>
+      <div style="width:70px;height:${118 * 0.846}px;background:#22d3ee;border-radius:6px 6px 0 0;position:relative"><b style="position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:16px">84.6%</b></div>
+      <div style="width:70px;height:${118 * 0.473}px;background:#c3ccdb;border-radius:6px 6px 0 0;position:relative"><b style="position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:16px">47.3%</b></div>
+    </div>
+    <div style="display:flex;gap:26px;padding-left:6px;font-size:13px;color:#64708c;margin-top:4px"><span style="width:70px;text-align:center">Real labels</span><span style="width:70px;text-align:center">Shuffled</span></div>
+    <div style="font-size:13px;color:#64708c;margin-top:2px">Shuffled labels fall to chance: no hidden leak.</div>`;
+})();
+</script>
+</body>
+</html>

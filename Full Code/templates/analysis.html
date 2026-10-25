@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}How accurate is NeuroDetect?{% endblock %}
+{% macro pct(x) %}{{ (x[0] * 100) | round(1) }}%{% endmacro %}
+{% macro sd(x) %}<span class="small">± {{ (x[1] * 100) | round(1) }}</span>{% endmacro %}
+{% block content %}
+<section class="hero">
+    <div class="wrap">
+        <h1 style="font-size:clamp(2rem,4vw,3rem)">How accurate is NeuroDetect?</h1>
+        {% if not m %}
+        <p class="lead">No test results yet. Run <code>py prepare_data.py</code> and then <code>py train.py</code>.</p>
+        {% else %}
+        {% set a = m.alzheimers %}{% set d = m.depression %}
+        <p class="lead">We tested it the strict way: every person was judged by a version of the program that had never seen their recording.
+            This was repeated {{ a.repeats }} times with different splits, and the numbers below are the averages.</p>
+        {% endif %}
+    </div>
+</section>
+
+{% if m %}
+{% set a = m.alzheimers %}{% set d = m.depression %}{% set s = a.optimised.summary %}
+<section class="block" style="padding-top:20px">
+    <div class="wrap">
+        <h2>Memory check (Alzheimer's)</h2>
+        <p>Tested on {{ a.n_subjects.AD }} people with Alzheimer's and {{ a.n_subjects.healthy }} healthy people ({{ a.n_epochs }} ten-second slices), using 3 sensors.</p>
+        <div class="facts">
+            <div><strong>{{ pct(s.sensitivity) }}</strong>of people with Alzheimer's were correctly flagged (sensitivity) {{ sd(s.sensitivity) }}</div>
+            <div><strong>{{ pct(s.specificity) }}</strong>of healthy people were correctly cleared (specificity) {{ sd(s.specificity) }}</div>
+            <div><strong>{{ pct(s.balanced_accuracy) }}</strong>balanced accuracy, the average of the two {{ sd(s.balanced_accuracy) }}. Ranking score (AUC): {{ '%.2f' | format(s.auc[0]) }}</div>
+        </div>
+        <div class="grid2">
+            <div class="fig">
+                <img src="{{ url_for('static', filename='img/results/ad_confusion.png') }}" alt="Confusion matrix of Alzheimer's decisions">
+                <p class="plain">In plain words: across all test rounds, {{ a.optimised.cm_summed[1][1] }} Alzheimer's cases were caught and
+                    {{ a.optimised.cm_summed[1][0] }} were missed; {{ a.optimised.cm_summed[0][0] }} healthy people were cleared and {{ a.optimised.cm_summed[0][1] }} were wrongly flagged.</p>
+            </div>
+            <div class="fig">
+                <img src="{{ url_for('static', filename='img/results/roc.png') }}" alt="ROC curves">
+                <p class="plain">In plain words: the higher a curve bends towards the top-left, the better the check separates the two groups.
+                    The dashed diagonal is pure guessing: the plum memory curve is well above it, while the amber mood curve stays close to it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>Did choosing the measurements carefully help?</h2>
+        <p>Instead of guessing which brain-wave bands matter, the program tried {{ a.search_grid | length }} combinations and kept the best:
+            <b>{{ a.feature_names | map('plain') | join(', ') }}</b>.</p>
+        <div class="grid2">
+            <div class="fig">
+                <img src="{{ url_for('static', filename='img/results/ad_comparison.png') }}" alt="Refined features compared with baselines">
+                <p class="plain">In plain words: the 3 well-chosen sensors beat the original version of the project, and even beat using all 19 sensors.</p>
+            </div>
+            <div class="fig">
+                <img src="{{ url_for('static', filename='img/results/ad_band_search.png') }}" alt="Band search heatmap">
+                <p class="plain">In plain words: each square is one combination that was tried; darker means more accurate.</p>
+            </div>
+        </div>
+        <div class="table-scroll">
+        <table class="data">
+            <tr><th>Approach</th><th>Sensors</th><th>Balanced accuracy</th><th>Sensitivity</th><th>Specificity</th><th>AUC</th></tr>
+            {% for key, name, el in [('legacy', 'Original project (raw alpha + coherence ratio)', 3), ('fixed_alpha_beta', 'Fixed alpha power + beta coherence', 3), ('optimised', 'NeuroDetect (chosen by search)', 3), ('full_cap', 'All 19 sensors, 5 bands', 19)] %}
+            {% set t = a[key].summary %}
+            <tr class="{{ 'hl' if key == 'optimised' }}"><td>{{ name }}</td><td>{{ el }}</td><td>{{ pct(t.balanced_accuracy) }}</td>
+                <td>{{ pct(t.sensitivity) }}</td><td>{{ pct(t.specificity) }}</td><td>{{ '%.3f' | format(t.auc[0]) }}</td></tr>
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>Does voting slice-by-slice make it sturdier?</h2>
+        {% set r = a.robustness_bal_acc %}
+        <p>We deliberately spoiled 30% of each test recording with fake movement and muscle noise, then compared two ways of deciding.</p>
+        <div class="grid2">
+            <div class="fig">
+                <img src="{{ url_for('static', filename='img/results/robustness.png') }}" alt="Artifact robustness chart">
+                <p class="plain">In plain words: judging the whole recording at once dropped to {{ (r['whole-signal'] * 100) | round | int }}% accuracy,
+                    but letting each 10-second slice vote kept it at {{ (r['vote'] * 100) | round | int }}%.</p>
+            </div>
+            <div class="fig">
+                <h3>The whole model fits in this table</h3>
+                <p class="small">The program stores just two "typical brains". A new slice is labelled by whichever row it is closer to.</p>
+                <div class="table-scroll">
+                <table class="data">
+                    <tr><th>Measurement</th><th>Typical healthy</th><th>Typical Alzheimer's</th></tr>
+                    {% for n in a.feature_names %}
+                    <tr><td>{{ n | plain }}</td><td>{{ '%.3f' | format(a.centroids.healthy[loop.index0]) }}</td><td>{{ '%.3f' | format(a.centroids.alzheimers[loop.index0]) }}</td></tr>
+                    {% endfor %}
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if m.complexity %}
+{% set cx = m.complexity %}
+<section class="block" id="objective-2">
+    <div class="wrap">
+        <h2>How light is the algorithm? (Objective 2)</h2>
+        <p>We trained the algorithms used in the research papers on exactly the same data and measured how long they take, how much memory
+            they need and how much tuning they require. Accuracy is shown alongside, so cost is compared at similar accuracy.</p>
+        <p class="plain">In plain words: every algorithm reached roughly the same accuracy, but ours trains in a few thousandths of a second
+            and stores only {{ cx['Nearest Centroid, cosine (ours)'].parameters }} numbers. Random Forest stores
+            {{ '{:,}'.format(cx['Random Forest (200 trees)'].parameters) }} numbers{% if cx['Compact CNN (EEGNet-style)'] %}, and a compact deep-learning
+            CNN needs {{ cx['Compact CNN (EEGNet-style)'].train_s | round(0) | int }} seconds to train{% endif %}.</p>
+        <div class="fig" style="margin-top:16px"><img src="{{ url_for('static', filename='img/results/complexity.png') }}" alt="Training time, model size and accuracy of each algorithm"></div>
+        <div class="table-scroll">
+        <table class="data">
+            <tr><th>Algorithm</th><th>Balanced accuracy</th><th>Training time</th><th>Time per recording</th><th>Model size</th><th>Numbers stored</th><th>Settings to tune</th><th>Time (train / predict)</th><th>Memory</th></tr>
+            {% for name, c in cx.items() %}
+            <tr class="{{ 'hl' if 'ours' in name }}"><td>{{ name }}</td><td>{{ pct(c.accuracy.balanced_accuracy) }}</td>
+                <td>{{ '%.3f' | format(c.train_s) }} s</td><td>{{ '%.1f' | format(c.predict_ms_per_recording) }} ms</td>
+                <td>{{ '%.1f' | format(c.model_bytes / 1024) }} KB</td><td>{{ '{:,}'.format(c.parameters) }}</td><td>{{ c.hyperparameters }}</td>
+                <td>{{ c.big_o_train }} / {{ c.big_o_predict }}</td><td>{{ c.big_o_space }}</td></tr>
+            {% endfor %}
+        </table>
+        </div>
+        <p class="small" style="margin-top:10px">{{ m.complexity_note }}
+            {% if m.feature_cost %}Measuring the brain signals takes {{ m.feature_cost.three_electrode_ms | round | int }} ms per recording with our 3 sensors
+            ({{ m.feature_cost.three_electrode_features }} numbers per slice) versus {{ m.feature_cost.full_cap_ms | round | int }} ms for all 19 sensors
+            ({{ m.feature_cost.full_cap_features }} numbers per slice).{% endif %}</p>
+    </div>
+</section>
+{% endif %}
+
+{% if m.distance_metrics %}
+{% set dm = m.distance_metrics %}
+<section class="block" id="objective-3">
+    <div class="wrap">
+        <h2>Which distance measure works best? (Objective 3)</h2>
+        <p>Our classifier decides by measuring the "distance" between a brain-wave slice and the typical healthy and typical Alzheimer's brain.
+            There are several ways to measure distance, so we tested six, for our nearest-centroid classifier and for k-nearest neighbours (k-NN).</p>
+        <p class="plain">In plain words: <b>{{ dm.best_nearest_centroid }}</b> distance worked best for our classifier, so it is the one the app uses.
+            Hamming and Jaccard did worst, because they are designed for yes/no data and throw away the size of each measurement.</p>
+        <div class="fig" style="margin-top:16px"><img src="{{ url_for('static', filename='img/results/distance_metrics.png') }}" alt="Balanced accuracy for each distance measure"></div>
+        <div class="table-scroll">
+        <table class="data">
+            <tr><th>Distance measure</th><th>What it measures</th><th>Nearest centroid</th><th>Sensitivity</th><th>Specificity</th><th>AUC</th><th>k-NN (k=15)</th></tr>
+            {% set what = {'Euclidean': 'straight-line distance', 'Manhattan': 'sum of differences ("city blocks")', 'Cosine': 'angle between the two patterns',
+                           'Minkowski (p=3)': 'general form of Euclidean/Manhattan', 'Hamming': 'number of features that differ (yes/no)', 'Jaccard': 'overlap of "high" features (yes/no)'} %}
+            {% for name, r in dm.nearest_centroid.items() %}
+            <tr class="{{ 'hl' if name == dm.best_nearest_centroid }}"><td>{{ name }}</td><td>{{ what[name] }}</td><td>{{ pct(r.balanced_accuracy) }}</td>
+                <td>{{ pct(r.sensitivity) }}</td><td>{{ pct(r.specificity) }}</td><td>{{ '%.3f' | format(r.auc[0]) }}</td>
+                <td>{{ pct(dm.knn[name].balanced_accuracy) }}</td></tr>
+            {% endfor %}
+        </table>
+        </div>
+        <p class="small" style="margin-top:10px">{{ dm.note }}</p>
+    </div>
+</section>
+{% endif %}
+
+<section class="block">
+    <div class="wrap">
+        <h2>Mood check (depression)</h2>
+        {% set ds = d.optimised.summary %}
+        <p>Tested on {{ d.n_subjects.high_BDI }} people with high and {{ d.n_subjects.low_BDI }} with low depression-questionnaire scores, from a separate public study.</p>
+        <p class="plain mood">In plain words: the brain-wave sign of depression was right about {{ (ds.balanced_accuracy[0] * 100) | round | int }}% of the time,
+            close to a coin toss (50%). Searching {{ d.search_grid | length }} other combinations did not help. That's why the report marks this check
+            "indicative only" and asks for a mood questionnaire.</p>
+        <div class="grid2">
+            <div class="fig"><img src="{{ url_for('static', filename='img/results/dep_confusion.png') }}" alt="Depression confusion matrix"></div>
+            <div class="fig"><img src="{{ url_for('static', filename='img/results/dep_band_search.png') }}" alt="Depression search heatmap"></div>
+        </div>
+        <div class="table-scroll">
+        <table class="data">
+            <tr><th>Approach</th><th>Balanced accuracy</th><th>Sensitivity</th><th>Specificity</th><th>AUC</th></tr>
+            <tr><td>Original project formula (back of head, first slice only)</td><td>{{ (d.old_formula.balanced_accuracy * 100) | round(1) }}%</td>
+                <td>{{ (d.old_formula.sensitivity * 100) | round(1) }}%</td><td>{{ (d.old_formula.specificity * 100) | round(1) }}%</td><td>{{ '%.3f' | format(d.old_formula.auc) }}</td></tr>
+            {% set sr = d.searched.summary if d.searched else ds %}
+            <tr><td>Search over {{ d.search_grid | length }} combinations</td><td>{{ pct(sr.balanced_accuracy) }}</td><td>{{ pct(sr.sensitivity) }}</td><td>{{ pct(sr.specificity) }}</td><td>{{ '%.3f' | format(sr.auc[0]) }}</td></tr>
+            <tr class="hl"><td>Front left-right balance (used)</td><td>{{ pct(ds.balanced_accuracy) }}</td><td>{{ pct(ds.sensitivity) }}</td><td>{{ pct(ds.specificity) }}</td><td>{{ '%.3f' | format(ds.auc[0]) }}</td></tr>
+        </table>
+        </div>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>Limits to keep in mind</h2>
+        <ul style="margin-left:20px; max-width:70ch">
+            <li>Each dataset comes from a single hospital or lab; other machines may give different results.</li>
+            <li>The depression data came from young adults, not older patients.</li>
+            <li>The slice count is a vote, not a probability.</li>
+            <li>This is a research prototype that supports, never replaces, a doctor.</li>
+        </ul>
+        <div class="btn-row"><a class="btn" href="{{ url_for('eeg_interface') }}">Analyse a recording</a></div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

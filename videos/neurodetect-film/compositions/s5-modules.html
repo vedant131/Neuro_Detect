@@ -1,0 +1,108 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .s5-pan { position: absolute; top: 110px; height: 790px; padding: 36px 40px; }
+    #s5-a { left: 110px; width: 860px; border-top: 4px solid var(--cyan); }
+    #s5-b { left: 1000px; width: 810px; border-top: 4px solid var(--violet); }
+    .s5-pan .h-m { font-size: 44px; margin-top: 8px; }
+    #s5-spec-lab { position: absolute; left: 40px; top: 150px; font-family: var(--mono); font-size: 24px; color: var(--muted); }
+    #s5-cohhead { position: absolute; left: 40px; top: 470px; width: 280px; height: 280px; }
+    #s5-cohtxt { position: absolute; left: 350px; top: 540px; width: 470px; }
+    #s5-fhead { position: absolute; left: 40px; top: 170px; width: 300px; height: 300px; }
+    #s5-ftxt { position: absolute; left: 370px; top: 200px; width: 400px; }
+    #s5-formula { font-family: var(--mono); font-size: 30px; color: var(--ink); margin-top: 14px; line-height: 1.4; }
+    #s5-tag { position: absolute; left: 40px; top: 540px; color: var(--amber); font-size: 26px; padding: 12px 22px; }
+    #s5-note { position: absolute; left: 40px; top: 630px; width: 730px; font-size: 26px; line-height: 1.4; color: var(--muted); }
+  </style>
+  <div data-hf-id="hf-yh6z" id="root" data-composition-id="s5-modules" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-r09o" id="s5-aw" class="clip" data-start="0" data-duration="24.4">
+      <div data-hf-id="hf-ijc0" id="s5-a" class="s5-pan card">
+        <div data-hf-id="hf-5mgs" class="kicker">Module A · Alzheimer's</div>
+        <div data-hf-id="hf-69t9" class="h-m">Slowing &amp; front–back sync</div>
+        <div data-hf-id="hf-1ed9" id="s5-spec-lab">log(θ / α) power at O1, O2</div>
+        <svg data-hf-id="hf-qmld" id="s5-cohhead"></svg>
+        <div data-hf-id="hf-8hjo" id="s5-cohtxt"><div data-hf-id="hf-ptrd" class="mono c-cyan" style="font-size:26px">θ COHERENCE</div><div data-hf-id="hf-10j5" class="body" style="font-size:30px;margin-top:8px">How closely Fz stays in step with O1 and O2</div></div>
+      </div>
+    </div>
+    <canvas data-hf-id="hf-0c6t" id="s5-cv" class="cv clip" data-start="0" data-duration="24.4"></canvas>
+    <div data-hf-id="hf-iub1" id="s5-bw" class="clip" data-start="13.9" data-duration="10.5">
+      <div data-hf-id="hf-tetn" id="s5-b" class="s5-pan card">
+        <div data-hf-id="hf-o4gk" class="kicker c-violet">Module B · Mood marker</div>
+        <div data-hf-id="hf-wf39" class="h-m">Frontal alpha asymmetry</div>
+        <svg data-hf-id="hf-lcnx" id="s5-fhead"></svg>
+        <div data-hf-id="hf-pwoc" id="s5-ftxt"><div data-hf-id="hf-izf3" class="mono c-violet" style="font-size:26px">FAA</div><div data-hf-id="hf-rug1" id="s5-formula">ln α(F4) − ln α(F3)</div></div>
+        <div data-hf-id="hf-0zru" id="s5-tag" class="tag">PRELIMINARY · INDICATIVE ONLY</div>
+        <div data-hf-id="hf-6zjn" id="s5-note">Depression-related marker, studied on a separate dataset (OpenNeuro ds003478, 121 people, BDI scores).</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const START = 80.5;
+      const ctx = ND.fitCanvas(document.getElementById("s5-cv"));
+      const k = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const eo = (x) => 1 - Math.pow(1 - x, 3);
+      // spectrum box in canvas coords
+      const BX = 170, BY = 300, BW = 740, BH = 230, FMAX = 30;
+      const fx = (f) => BX + (f / FMAX) * BW;
+      const psd = (f) => 0.55 * Math.exp(-Math.pow((f - 6) / 1.8, 2)) + 0.75 * Math.exp(-Math.pow((f - 10) / 1.5, 2)) + 0.5 / (1 + f * 0.35);
+      function renderAt(T) {
+        const t = T - START;
+        ctx.clearRect(0, 0, 1920, 1080);
+        const a = k(t, 4, 4.8) * (1 - k(t, 23.9, 24.4));
+        if (a <= 0) return;
+        ctx.globalAlpha = a;
+        const band = (f1, f2, col, lab, at) => {
+          const v = eo(k(t, at, at + 0.8));
+          ctx.fillStyle = col.replace("A", 0.18 * v); ctx.fillRect(fx(f1), BY, fx(f2) - fx(f1), BH);
+          ctx.fillStyle = col.replace("A", v); ctx.font = "600 24px 'IBM Plex Mono'"; ctx.fillText(lab, fx(f1) + 8, BY + 30);
+        };
+        band(4, 8, "rgba(245,181,68,A)", "θ 4–8", 6.1);
+        band(8, 13, "rgba(34,211,238,A)", "α 8–13", 7.2);
+        ctx.strokeStyle = "#2A3A63"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(BX, BY); ctx.lineTo(BX, BY + BH); ctx.lineTo(BX + BW, BY + BH); ctx.stroke();
+        ctx.fillStyle = "#8A97B5"; ctx.font = "500 20px 'IBM Plex Mono'";
+        [0, 10, 20, 30].forEach((f) => ctx.fillText(f + " Hz", fx(f) - 18, BY + BH + 30));
+        const d = eo(k(t, 4.2, 5.8));
+        ctx.strokeStyle = "#F4F7FB"; ctx.lineWidth = 3; ctx.beginPath();
+        for (let i = 0; i <= 300 * d; i++) { const f = 0.5 + (i / 300) * 29.5, y = BY + BH - psd(f) * BH * 0.95; i ? ctx.lineTo(fx(f), y) : ctx.moveTo(fx(f), y); }
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+
+      // coherence head
+      const NS = "http://www.w3.org/2000/svg";
+      const hc = document.getElementById("s5-cohhead"), sc = ND.head(hc, "s5c");
+      ["Fz", "O1", "O2"].forEach((n) => { const c = sc[n].querySelector("circle"); c.setAttribute("fill", "#22D3EE"); c.setAttribute("r", "0.13"); sc[n].querySelector("text").setAttribute("fill", "#06101F"); });
+      Object.keys(sc).filter((n) => !["Fz", "O1", "O2"].includes(n)).forEach((n) => sc[n].setAttribute("opacity", "0.25"));
+      const links = ["O1", "O2"].map((n) => {
+        const [x, y] = ND.SITES[n], [fx0, fy0] = ND.SITES.Fz;
+        const p = document.createElementNS(NS, "path");
+        p.setAttribute("d", `M ${fx0} ${fy0 + 0.13} Q ${x * 0.4} 0.2 ${x} ${y - 0.13}`);
+        p.setAttribute("fill", "none"); p.setAttribute("stroke", "#22D3EE"); p.setAttribute("stroke-width", "0.04");
+        p.setAttribute("pathLength", "1"); p.setAttribute("stroke-dasharray", "1"); p.setAttribute("stroke-dashoffset", "1");
+        hc.insertBefore(p, sc.Fz); return p;
+      });
+      // FAA head
+      const sf = ND.head(document.getElementById("s5-fhead"), "s5f");
+      ["F3", "F4"].forEach((n) => { const c = sf[n].querySelector("circle"); c.setAttribute("fill", "#A78BFA"); c.setAttribute("r", "0.13"); sf[n].querySelector("text").setAttribute("fill", "#06101F"); });
+      Object.keys(sf).filter((n) => !["F3", "F4"].includes(n)).forEach((n) => sf[n].setAttribute("opacity", "0.25"));
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s5-a", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.2);
+      tl.fromTo("#s5-spec-lab", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 4.2);
+      tl.fromTo("#s5-cohhead", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 9.4);
+      tl.fromTo(links, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.2, ease: "power2.inOut", stagger: 0.3 }, 10.2);
+      tl.fromTo(links, { opacity: 1 }, { opacity: 0.35, duration: 0.6, yoyo: true, repeat: 3, ease: "sine.inOut" }, 11.8);
+      tl.fromTo("#s5-cohtxt", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 10.2);
+      tl.fromTo("#s5-b", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 14.1);
+      tl.fromTo("#s5-fhead", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 14.8);
+      tl.fromTo("#s5-ftxt", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 15.8);
+      tl.fromTo("#s5-tag", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, 20.3);
+      tl.fromTo("#s5-note", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 19.2);
+      tl.to(["#s5-a", "#s5-b"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 23.9);
+      window.__timelines["s5-modules"] = tl;
+    })();
+  </script>
+</template>

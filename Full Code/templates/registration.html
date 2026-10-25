@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Create an account - NeuroDetect{% endblock %}
+{% block content %}
+<section class="block">
+    <div class="wrap">
+        <div class="sheet form" style="max-width:480px">
+            <h1 style="font-size:2rem">Create an account</h1>
+            <p class="small">Your password is stored scrambled (hashed), never as plain text.</p>
+            <form action="{{ url_for('register') }}" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required minlength="3" maxlength="40"
+                       pattern="[A-Za-z0-9_.\-]+" autocomplete="username" aria-describedby="uhelp">
+                <p class="small" id="uhelp">3 to 40 letters, digits, dots, dashes or underscores.</p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password" aria-describedby="phelp">
+                <p class="small" id="phelp">At least 8 characters.</p>
+                <div class="btn-row"><button type="submit" class="btn">Create account</button></div>
+            </form>
+            <p class="small" style="margin-top:20px">Already have an account? <a href="{{ url_for('login') }}"><b>Log in</b></a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

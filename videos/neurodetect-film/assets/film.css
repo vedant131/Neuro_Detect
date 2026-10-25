@@ -1,0 +1,39 @@
+:root {
+  --ground: #060b18;
+  --panel: #0d1630;
+  --line: #1e2a4a;
+  --grid: #12203d;
+  --ink: #f4f7fb;
+  --muted: #8a97b5;
+  --cyan: #22d3ee;
+  --violet: #a78bfa;
+  --amber: #f5b544;
+  --display: "Outfit", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--ground); }
+body { font-family: var(--display); color: var(--ink); }
+#ground {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(34, 211, 238, 0.06), transparent 60%),
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 40px 40px,
+    var(--ground);
+}
+/* shared scene vocabulary */
+.cv { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.kicker { font-family: var(--mono); font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); }
+.h-xl { font-weight: 800; font-size: 120px; line-height: 1; letter-spacing: -0.02em; }
+.h-l { font-weight: 800; font-size: 84px; line-height: 1.04; letter-spacing: -0.02em; }
+.h-m { font-weight: 700; font-size: 52px; line-height: 1.1; letter-spacing: -0.01em; }
+.body { font-size: 34px; line-height: 1.35; color: #c9d2e6; }
+.mono { font-family: var(--mono); }
+.card { background: rgba(13, 22, 48, 0.88); border: 1px solid var(--line); border-radius: 18px; }
+.c-cyan { color: var(--cyan); }
+.c-violet { color: var(--violet); }
+.c-amber { color: var(--amber); }
+.c-muted { color: var(--muted); }
+.glow-c { text-shadow: 0 0 24px rgba(34, 211, 238, 0.45); }
+.tag { display: inline-block; font-family: var(--mono); font-size: 22px; letter-spacing: 0.12em; padding: 8px 16px; border-radius: 999px; border: 1px solid currentColor; }

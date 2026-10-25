@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NeuroDetect{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'%3E%3Cpolyline points='0,10 6,10 9,3 12,17 15,6 18,13 21,10 34,10' fill='none' stroke='%237A2E6B' stroke-width='3'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/neuro.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% set here = request.endpoint %}
+    <nav class="nav" aria-label="Main">
+        <div class="wrap">
+            <a href="{{ url_for('home') }}" class="brand" aria-label="NeuroDetect home">
+                <svg viewBox="0 0 34 20" aria-hidden="true"><polyline points="0,10 6,10 9,3 12,17 15,6 18,13 21,10 34,10" fill="none" stroke="#7A2E6B" stroke-width="2.4" stroke-linejoin="round"/></svg>
+                NeuroDetect
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks"
+                    onclick="const l=document.getElementById('navlinks');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">Menu</button>
+            <ul id="navlinks">
+                <li><a href="{{ url_for('home') }}" {% if here == 'home' %}aria-current="page"{% endif %}>Home</a></li>
+                <li><a href="{{ url_for('about') }}" {% if here == 'about' %}aria-current="page"{% endif %}>How it works</a></li>
+                <li><a href="{{ url_for('analysis') }}" {% if here == 'analysis' %}aria-current="page"{% endif %}>How accurate is it?</a></li>
+                {% if session.user %}
+                <li><a href="{{ url_for('eeg_interface') }}" {% if here in ('eeg_interface', 'report') %}aria-current="page"{% endif %}>Analyse a recording</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}" {% if here == 'login' %}aria-current="page"{% endif %}>Log in</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% for cat, m in msgs %}<div class="flash {{ 'ok' if cat == 'ok' }} no-print" role="status">{{ m }}</div>{% endfor %}
+    {% endwith %}
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="site">
+        <div class="wrap">NeuroDetect is a student research prototype. It supports, but never replaces, a doctor's diagnosis.</div>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

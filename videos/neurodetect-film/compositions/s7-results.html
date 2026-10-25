@@ -1,0 +1,71 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s7-a { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #s7-hero { position: absolute; left: 130px; top: 200px; width: 900px; }
+    #s7-big { font-weight: 800; font-size: 240px; line-height: 1; letter-spacing: -0.04em; color: var(--cyan); text-shadow: 0 0 40px rgba(34, 211, 238, 0.35); }
+    #s7-biglab { font-size: 46px; font-weight: 700; margin-top: 10px; }
+    #s7-meth { margin-top: 30px; font-size: 27px; line-height: 1.45; color: var(--muted); width: 820px; }
+    #s7-tiles { position: absolute; left: 1150px; top: 200px; width: 640px; display: flex; flex-direction: column; gap: 22px; }
+    .s7-t { padding: 26px 34px; display: flex; align-items: baseline; justify-content: space-between; }
+    .s7-t .l { font-size: 32px; color: #c9d2e6; }
+    .s7-t .v { font-weight: 800; font-size: 64px; letter-spacing: -0.02em; }
+    #s7-b { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #s7-cmp { position: absolute; left: 130px; top: 130px; width: 1660px; padding: 40px 50px 50px; }
+    .s7-row { margin-top: 34px; }
+    .s7-row .lab { font-size: 30px; display: flex; justify-content: space-between; width: 1300px; }
+    .s7-track { position: relative; margin-top: 12px; width: 1300px; height: 44px; background: #111B38; border-radius: 8px; }
+    .s7-fill { position: absolute; left: 0; top: 0; height: 44px; width: 1300px; border-radius: 8px; transform-origin: left center; }
+    #s7-chance { position: absolute; left: 649px; top: -12px; width: 4px; height: 68px; }
+    #s7-chance-l { position: absolute; left: 0; top: 0; width: 0; height: 68px; border-left: 3px dashed var(--amber); }
+    #s7-chance-t { position: absolute; left: 14px; top: 76px; font-family: var(--mono); font-size: 22px; color: var(--amber); white-space: nowrap; }
+    #s7-sep { margin-top: 60px; width: 1300px; height: 1px; background: var(--line); }
+  </style>
+  <div data-hf-id="hf-ch52" id="root" data-composition-id="s7-results" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-5mnv" id="s7-a" class="clip" data-start="0" data-duration="13.6">
+      <div data-hf-id="hf-ngdo" id="s7-hero">
+        <div data-hf-id="hf-n5ub" class="kicker">Alzheimer's module · results</div>
+        <div data-hf-id="hf-jamp" id="s7-big"><span data-hf-id="hf-zcg7" id="s7-num">0.0</span>%</div>
+        <div data-hf-id="hf-v6h8" id="s7-biglab">balanced accuracy</div>
+        <div data-hf-id="hf-ufkm" id="s7-meth">65 people never seen in training (36 Alzheimer's, 29 healthy · OpenNeuro ds004504) · 10× repeated 5-fold cross-validation · ± 2.7</div>
+      </div>
+      <div data-hf-id="hf-3phf" id="s7-tiles">
+        <div data-hf-id="hf-xkvd" class="s7-t card"><span data-hf-id="hf-bxie" class="l">Sensitivity</span><span data-hf-id="hf-jfiz" class="v">71.1%</span></div>
+        <div data-hf-id="hf-0rrb" class="s7-t card" id="s7-spec"><span data-hf-id="hf-xia9" class="l">Specificity</span><span data-hf-id="hf-rxnl" class="v c-cyan">94.1%</span></div>
+        <div data-hf-id="hf-cp99" class="s7-t card"><span data-hf-id="hf-n5gm" class="l">AUC</span><span data-hf-id="hf-2lcu" class="v">0.87</span></div>
+      </div>
+    </div>
+    <div data-hf-id="hf-ewi5" id="s7-b" class="clip" data-start="13.3" data-duration="8.3">
+      <div data-hf-id="hf-2931" id="s7-cmp" class="card">
+        <div data-hf-id="hf-nnke" class="kicker">Fewer sensors, better result</div>
+        <div data-hf-id="hf-izqp" class="s7-row"><div data-hf-id="hf-mnnx" class="lab"><span data-hf-id="hf-84eb"><b data-hf-id="hf-0vhj" class="c-cyan">3 electrodes</b> · Fz, O1, O2</span><span data-hf-id="hf-fdf9" class="mono">82.6%</span></div><div data-hf-id="hf-lvvo" class="s7-track"><div data-hf-id="hf-gylu" class="s7-fill" id="s7-f1" style="background:#22D3EE"></div></div></div>
+        <div data-hf-id="hf-xk6d" class="s7-row"><div data-hf-id="hf-8io1" class="lab"><span data-hf-id="hf-x9g0">Full 19-channel cap</span><span data-hf-id="hf-c4df" class="mono">73.8%</span></div><div data-hf-id="hf-7dr0" class="s7-track"><div data-hf-id="hf-b65o" class="s7-fill" id="s7-f2" style="background:#55617f"></div></div></div>
+        <div data-hf-id="hf-ek7c" id="s7-sep"></div>
+        <div data-hf-id="hf-kqib" class="s7-row" id="s7-dep" style="margin-top:40px"><div data-hf-id="hf-9pl4" class="lab"><span data-hf-id="hf-kl2a"><b data-hf-id="hf-8bka" class="c-violet">Depression marker</b> · FAA, separate dataset (ds003478, 121 people)</span><span data-hf-id="hf-1qaj" class="mono">54.9%</span></div><div data-hf-id="hf-66tx" class="s7-track"><div data-hf-id="hf-oc18" class="s7-fill" id="s7-f3" style="background:#A78BFA"></div><div data-hf-id="hf-1ao8" id="s7-chance"><div data-hf-id="hf-j7gb" id="s7-chance-l"></div><div data-hf-id="hf-pbsu" id="s7-chance-t">50% = chance</div></div></div></div>
+        <div data-hf-id="hf-r1b1" class="body c-muted" id="s7-depnote" style="margin-top:56px;font-size:28px">Balanced accuracy, close to chance — reported as indicative only.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const n = { v: 0 }, el = document.getElementById("s7-num");
+      tl.fromTo("#s7-big", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 6.8);
+      tl.fromTo("#s7-hero", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.2);
+      tl.fromTo(n, { v: 0 }, { v: 82.6, duration: 1.8, ease: "power2.out", onUpdate: () => (el.textContent = n.v.toFixed(1)) }, 7.0);
+      tl.fromTo("#s7-meth", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 1.0);
+      tl.fromTo(".s7-t", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out", stagger: 0.4 }, 9.6);
+      tl.fromTo("#s7-spec", { boxShadow: "0 0 0 rgba(34,211,238,0)", borderColor: "#1E2A4A" }, { boxShadow: "0 0 28px rgba(34,211,238,0.35)", borderColor: "#22D3EE", duration: 0.6 }, 11.0);
+      tl.to(["#s7-hero", "#s7-tiles"], { opacity: 0, duration: 0.45, ease: "power2.in" }, 13.1);
+      tl.fromTo("#s7-cmp", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 13.4);
+      tl.fromTo("#s7-f1", { scaleX: 0 }, { scaleX: 0.826, duration: 1.2, ease: "expo.out" }, 13.9);
+      tl.fromTo("#s7-f2", { scaleX: 0 }, { scaleX: 0.738, duration: 1.2, ease: "expo.out" }, 14.3);
+      tl.fromTo(["#s7-dep", "#s7-sep"], { opacity: 0 }, { opacity: 1, duration: 0.6 }, 16.0);
+      tl.fromTo("#s7-f3", { scaleX: 0 }, { scaleX: 0.549, duration: 1.2, ease: "expo.out" }, 16.4);
+      tl.fromTo("#s7-chance", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 18.0);
+      tl.fromTo("#s7-depnote", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 18.2);
+      tl.to("#s7-cmp", { opacity: 0, duration: 0.5, ease: "power2.in" }, 21.1);
+      window.__timelines["s7-results"] = tl;
+    })();
+  </script>
+</template>

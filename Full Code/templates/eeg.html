@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Analyse a recording - NeuroDetect{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="wrap">
+        <h1 style="font-size:clamp(2rem,4vw,3rem)">Analyse a brain-wave recording</h1>
+        <p class="lead">Upload a resting EEG taken with the eyes closed. The file must be in EEGLAB format (.set, plus its .fdt file if it came with one)
+            and include the sensors Fz, O1, O2, F3 and F4.</p>
+
+        <form method="POST" enctype="multipart/form-data" style="margin-top:28px"
+              onsubmit="document.getElementById('busy').style.display='block'; this.querySelector('button').disabled=true">
+            <label class="dropzone" for="file-upload">
+                <b style="font-size:1.1rem">Choose the recording file</b>
+                <span class="small" style="display:block">Try one of the samples in the "Test Sample" folder if you don't have your own.</span>
+                <input type="file" id="file-upload" name="file" accept=".set,.fdt" multiple required>
+            </label>
+            <div class="btn-row"><button type="submit" class="btn">Upload and analyse</button></div>
+            <p class="busy" id="busy" role="status">Cleaning the signal and checking every 10-second slice. This takes 10 to 30 seconds.</p>
+        </form>
+    </div>
+</section>
+
+{% if r %}
+<section class="block" style="padding-top:20px">
+    <div class="wrap">
+        <div class="verdict" style="border-left-color:var(--ok)">
+            <h2>Recording received</h2>
+            <p><b>{{ r.file }}</b>: {{ (r.duration_s / 60) | round(1) }} minutes, recorded at {{ r.sfreq | int }} readings per second from {{ r.n_channels }} sensors.
+                {% if r.ad.n_epochs %}It was cut into {{ r.ad.n_epochs }} ten-second slices, and {{ r.ad.n_clean }} were clean enough to use.{% endif %}</p>
+            <div class="btn-row"><a class="btn" href="{{ url_for('report') }}">See the results</a></div>
+        </div>
+
+        <h2 style="margin-top:44px">A 10-second look at your recording</h2>
+        <p class="small">Each line is one sensor after cleaning. Plum lines feed the memory check; amber lines feed the mood check.</p>
+        <div class="fig" style="margin-top:14px"><img src="data:image/png;base64,{{ r.plot }}" alt="Ten seconds of the cleaned EEG from the five analysis sensors" style="background:#fff"></div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

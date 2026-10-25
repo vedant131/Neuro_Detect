@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}NeuroDetect: brain-wave screening for Alzheimer's{% endblock %}
+{% block content %}
+{% set a = m.alzheimers if m else None %}
+<section class="hero">
+    <div class="wrap">
+        <h1>Can a short brain-wave recording hint at Alzheimer's?</h1>
+        <p class="lead">NeuroDetect reads an EEG, the painless test where small sensors on the scalp record the brain's electrical
+            rhythm. It looks for the slowing that Alzheimer's disease causes and shows, in plain words, what it found and why.</p>
+        <div class="btn-row">
+            <a class="btn" href="{{ url_for('eeg_interface') }}">Analyse a recording</a>
+            <a class="btn ghost" href="{{ url_for('about') }}">See how it works</a>
+        </div>
+
+        <div class="trace-strip">
+            {% include "_trace.svg" %}
+            <div class="trace-legend">
+                <div><b><span class="dot" style="background:var(--ok)"></span>A healthy resting brain</b>
+                    Small, fast, regular waves (the "alpha rhythm", about 10 per second).</div>
+                <div><b><span class="dot" style="background:var(--memory)"></span>A brain affected by Alzheimer's</b>
+                    The rhythm slows down: bigger, lazier waves (the "theta rhythm", 4 to 8 per second).</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>What happens when you upload a recording</h2>
+        <ol class="steps">
+            <li><h3>Pick the useful sensors</h3><p>Out of the usual 19 scalp sensors, we only need 5: three for memory-related changes and two for mood.</p></li>
+            <li><h3>Clean the signal</h3><p>Background electrical noise is filtered out and the recording is cut into 10-second slices. Slices spoiled by blinking or movement are thrown away.</p></li>
+            <li><h3>Check every slice</h3><p>Each slice is compared with a typical healthy brain and a typical Alzheimer's brain, and votes for whichever it resembles more.</p></li>
+            <li><h3>Explain the result</h3><p>You get the vote count, a plain-language summary, and the exact measurements behind it, ready to save as a PDF.</p></li>
+        </ol>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>Two checks from one recording</h2>
+        <div class="checks">
+            <div class="check memory">
+                <h3>Memory check (Alzheimer's)</h3>
+                <p>Uses the sensors at the back of the head (O1, O2) and the top-front (Fz). It measures two things doctors know change in Alzheimer's:</p>
+                <ul>
+                    <li><b>Slowing:</b> how much slow theta rhythm there is compared with healthy alpha rhythm.</li>
+                    <li><b>Teamwork:</b> how well the front and back of the brain stay in step with each other.</li>
+                </ul>
+                {% if a %}
+                <div class="note memory">Tested on {{ a.n_subjects.AD + a.n_subjects.healthy }} people it had never seen: it correctly flagged
+                    about {{ (a.optimised.summary.sensitivity[0] * 10) | round | int }} in 10 people with Alzheimer's and correctly cleared about
+                    {{ (a.optimised.summary.specificity[0] * 10) | round | int }} in 10 healthy people.</div>
+                {% endif %}
+            </div>
+            <div class="check mood">
+                <h3>Mood check (depression)</h3>
+                <p>Depression in older adults can cause forgetfulness that looks like dementia. Because of that, the same recording is also checked
+                    for a left-right imbalance at the front of the brain (F3, F4), a pattern studied in depression.</p>
+                <div class="note">Honest result: in our tests this brain-wave sign was not reliable enough on its own, so the report always
+                    asks for a short mood questionnaire (GDS-15 or PHQ-9) as well.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="block">
+    <div class="wrap">
+        <h2>Why this matters</h2>
+        <div class="facts">
+            <div><strong>Painless</strong>An EEG is just sensors resting on the scalp: no needles, no radiation.</div>
+            <div><strong>Affordable</strong>EEG machines are common in hospitals; brain scans like PET can cost many times more.</div>
+            <div><strong>Explainable</strong>Every result shows which measurements pushed it one way or the other.</div>
+        </div>
+        <p class="small" style="margin-top:18px">NeuroDetect is a screening aid for research. A result here is a reason to talk to a doctor, not a diagnosis.</p>
+    </div>
+</section>
+{% endblock %}

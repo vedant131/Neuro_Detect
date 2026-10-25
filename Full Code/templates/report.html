@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Screening report - NeuroDetect{% endblock %}
+
+{% macro check(mod, kind, title, cond_words, ctrl_words, cond_short, val) %}
+{% set c = 'var(--memory)' if kind == 'memory' else 'var(--mood)' %}
+<div class="panel {{ kind }}">
+    <h3>{{ title }}</h3>
+    {% if mod.error %}
+        <p>This check could not run: {{ mod.error }}</p>
+    {% else %}
+    {% set n_cond = (mod.timeline | select('equalto', 1) | list | length) %}
+    {% set low = val and val.auc[0] < 0.65 %}
+    <p class="big-fraction">{{ n_cond }} <small>of {{ mod.n_clean }} slices</small></p>
+    <p>looked like <b>{{ cond_words }}</b>{% if low %}, but this check is <b>not reliable enough</b> to act on by itself.{% else %}.{% endif %}</p>
+    <p class="small" style="margin-top:6px">
+        {% if low %}<span class="badge low">Indicative only</span> In testing it was right about {{ (val.balanced_accuracy[0] * 100) | round | int }}% of the time.
+        {% elif val %}<span class="badge ok">Tested</span> In testing it correctly flagged about {{ (val.sensitivity[0] * 10) | round | int }} in 10 patients and cleared about {{ (val.specificity[0] * 10) | round | int }} in 10 healthy people.{% endif %}
+    </p>
+
+    <div class="slices" role="img" aria-label="{{ n_cond }} slices like {{ cond_words }}, {{ mod.n_clean - n_cond }} like {{ ctrl_words }}, {{ mod.n_epochs - mod.n_clean }} thrown away">
+        {% for v in mod.timeline %}<i class="{{ 'bad' if v is none else ('cond-' ~ kind if v == 1 else 'ctrl') }}" title="slice {{ loop.index }}"></i>{% endfor %}
+    </div>
+    <div class="key" style="--c:{{ c }}">
+        <span style="--c:{{ c }}">like {{ cond_words }}</span>
+        <span style="--c:#9FB8AA">like {{ ctrl_words }}</span>
+        <span style="--c:#ddd">thrown away (blink or movement)</span>
+    </div>
+
+    <h3 style="margin-top:22px; font-size:1.05rem">Why? The measurements behind it</h3>
+    <p class="small">Each line shows where this recording sits between a typical {{ ctrl_words }} brain and a typical {{ cond_short }} brain.</p>
+    {% for f in mod.features %}
+    {% set lo = [f.value, f.control, f.condition] | min %}{% set hi = [f.value, f.control, f.condition] | max %}
+    {% set span = (hi - lo) if hi > lo else 1 %}
+    <div class="measure">
+        <div class="name">{{ f.name | plain }} <span class="tech">({{ f.name }})</span></div>
+        <div class="line" style="--c:{{ c }}">
+            <span class="pt h" style="left:{{ 6 + 88 * (f.control - lo) / span }}%" title="typical {{ ctrl_words }}: {{ '%.3f' | format(f.control) }}"></span>
+            <span class="pt c" style="left:{{ 6 + 88 * (f.condition - lo) / span }}%" title="typical {{ cond_short }}: {{ '%.3f' | format(f.condition) }}"></span>
+            <span class="pt you" style="left:{{ 6 + 88 * (f.value - lo) / span }}%" title="this recording: {{ '%.3f' | format(f.value) }}"></span>
+        </div>
+        <p class="small">This recording: <b>{{ '%.3f' | format(f.value) }}</b>, closer to the typical
+            <b style="color:{{ c if f.pull > 0 else 'var(--ok)' }}">{{ cond_short if f.pull > 0 else ctrl_words }}</b> value
+            ({{ '%.3f' | format(f.condition) }} vs {{ '%.3f' | format(f.control) }}).</p>
+    </div>
+    {% endfor %}
+    <div class="key" style="margin-top:6px">
+        <span style="--c:var(--ink)">this recording</span><span style="--c:#9FB8AA">typical {{ ctrl_words }}</span><span style="--c:{{ c }}">typical {{ cond_short }}</span>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% block content %}
+<section class="block" style="padding-top:36px">
+    <div class="wrap">
+        <div class="no-print" style="display:flex; flex-wrap:wrap; gap:16px; align-items:end; justify-content:space-between; margin-bottom:24px">
+            <div class="form" style="flex:1; min-width:240px">
+                <label for="patientInput" style="margin-top:0">Patient name for the saved report (optional)</label>
+                <input type="text" id="patientInput" autocomplete="off"
+                       oninput="document.getElementById('pname').textContent = this.value || 'Not given'">
+            </div>
+            <div class="btn-row" style="margin-top:0">
+                <a href="{{ url_for('eeg_interface') }}" class="btn ghost">Check another recording</a>
+                <button onclick="savePDF()" class="btn">Save as PDF</button>
+            </div>
+        </div>
+
+        <div id="report">
+            <h1 style="font-size:clamp(1.9rem,3.5vw,2.6rem)">Brain-wave screening report</h1>
+            <p class="small" style="margin-top:6px">Patient: <b id="pname">Not given</b>. Recording: {{ r.file }}, {{ (r.duration_s / 60) | round(1) }} minutes. Created <span id="gen"></span>.</p>
+
+            {% if r.summary %}
+            <div class="verdict" style="margin-top:22px; border-left-color:{{ r.summary[2] }}">
+                <p class="small">What we found</p>
+                <h2>{{ r.summary[0] }}</h2>
+                <p>{{ r.summary[1] }}</p>
+            </div>
+            {% endif %}
+
+            <div class="panels">
+                {{ check(r.ad, 'memory', "Memory check (Alzheimer's)", "Alzheimer's-type slowing", "healthy", "Alzheimer's", m.alzheimers.optimised.summary if m) }}
+                {{ check(r.dep, 'mood', 'Mood check (depression)', 'the depression pattern', 'non-depressed', 'depressed', m.depression.optimised.summary if m) }}
+            </div>
+
+            <h2 style="margin-top:40px; font-size:1.4rem">A 10-second look at the recording</h2>
+            <div class="fig" style="margin-top:12px"><img src="data:image/png;base64,{{ r.plot }}" alt="Ten seconds of the cleaned EEG" style="background:#fff"></div>
+
+            <p class="small" style="margin-top:22px">How to read this report: the recording is cut into 10-second slices, and each usable slice is compared with
+                typical brains learned from public research data (OpenNeuro ds004504 for Alzheimer's, ds003478 for depression). The slice count is a vote,
+                not a probability. NeuroDetect is a research prototype; only a doctor can make a diagnosis.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    document.getElementById('gen').textContent = new Date().toLocaleString();
+    function savePDF() {
+        const name = document.getElementById('patientInput').value || 'patient';
+        html2pdf().set({
+            margin: [0.4, 0.4], filename: 'NeuroDetect_report_' + name.replace(/[^\w-]+/g, '_') + '.pdf',
+            image: { type: 'jpeg', quality: 0.95 },
+            html2canvas: { scale: 2, backgroundColor: '#ffffff' },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+            pagebreak: { mode: ['avoid-all'] }
+        }).from(document.getElementById('report')).save();
+    }
+</script>
+{% endblock %}

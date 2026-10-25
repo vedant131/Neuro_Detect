@@ -1,0 +1,2331 @@
+{
+  "tts_provider": "heygen",
+  "voice_id": "05f19352e8f74b0392a8f411eba40de1",
+  "bgm": {
+    "path": "assets/bgm/track.mp3",
+    "volume": 0.12,
+    "query": "calm cinematic ambient technology documentary, gentle piano and soft synth pads, hopeful, no vocals",
+    "mode": "retrieve",
+    "duration_s": 17
+  },
+  "bgm_pending": false,
+  "bgm_provider": "heygen",
+  "bgm_pid": null,
+  "bgm_log": null,
+  "bgm_mode": "retrieve",
+  "bgm_target_duration_s": null,
+  "bgm_seed_duration_s": null,
+  "bgm_loop_count": null,
+  "voices": [
+    {
+      "id": "s1-hook",
+      "path": "assets/voice/s1-hook.wav",
+      "duration_s": 11.024,
+      "words": [
+        {
+          "id": "w0",
+          "text": "The",
+          "start": 0.299,
+          "end": 0.384
+        },
+        {
+          "id": "w1",
+          "text": "brain",
+          "start": 0.427,
+          "end": 0.6827
+        },
+        {
+          "id": "w2",
+          "text": "never",
+          "start": 0.896,
+          "end": 1.28
+        },
+        {
+          "id": "w3",
+          "text": "stops",
+          "start": 1.536,
+          "end": 1.8347
+        },
+        {
+          "id": "w4",
+          "text": "talking.",
+          "start": 2.091,
+          "end": 2.688
+        },
+        {
+          "id": "w5",
+          "text": "Billions",
+          "start": 2.987,
+          "end": 3.4987
+        },
+        {
+          "id": "w6",
+          "text": "of",
+          "start": 3.669,
+          "end": 3.797
+        },
+        {
+          "id": "w7",
+          "text": "cells,",
+          "start": 3.84,
+          "end": 4.416
+        },
+        {
+          "id": "w8",
+          "text": "signalling",
+          "start": 4.651,
+          "end": 5.12
+        },
+        {
+          "id": "w9",
+          "text": "in",
+          "start": 5.248,
+          "end": 5.4187
+        },
+        {
+          "id": "w10",
+          "text": "tiny",
+          "start": 5.461,
+          "end": 5.76
+        },
+        {
+          "id": "w11",
+          "text": "pulses",
+          "start": 5.888,
+          "end": 6.229
+        },
+        {
+          "id": "w12",
+          "text": "of",
+          "start": 6.315,
+          "end": 6.4
+        },
+        {
+          "id": "w13",
+          "text": "electricity.",
+          "start": 6.485,
+          "end": 7.253
+        },
+        {
+          "id": "w14",
+          "text": "Those",
+          "start": 7.68,
+          "end": 7.9787
+        },
+        {
+          "id": "w15",
+          "text": "signals",
+          "start": 8.107,
+          "end": 8.448
+        },
+        {
+          "id": "w16",
+          "text": "leave",
+          "start": 8.576,
+          "end": 8.7467
+        },
+        {
+          "id": "w17",
+          "text": "a",
+          "start": 8.789,
+          "end": 8.8747
+        },
+        {
+          "id": "w18",
+          "text": "trace.",
+          "start": 8.917,
+          "end": 9.429
+        },
+        {
+          "id": "w19",
+          "text": "Can",
+          "start": 9.771,
+          "end": 9.941
+        },
+        {
+          "id": "w20",
+          "text": "we",
+          "start": 9.984,
+          "end": 10.069
+        },
+        {
+          "id": "w21",
+          "text": "learn",
+          "start": 10.112,
+          "end": 10.24
+        },
+        {
+          "id": "w22",
+          "text": "to",
+          "start": 10.283,
+          "end": 10.368
+        },
+        {
+          "id": "w23",
+          "text": "read",
+          "start": 10.411,
+          "end": 10.581
+        },
+        {
+          "id": "w24",
+          "text": "them?",
+          "start": 10.624,
+          "end": 10.976734693877551
+        }
+      ]
+    },
+    {
+      "id": "s2-problem",
+      "path": "assets/voice/s2-problem.wav",
+      "duration_s": 23.85,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Alzheimer's",
+          "start": 0.299,
+          "end": 0.981
+        },
+        {
+          "id": "w1",
+          "text": "disease",
+          "start": 1.024,
+          "end": 1.365
+        },
+        {
+          "id": "w2",
+          "text": "is",
+          "start": 1.621,
+          "end": 1.749
+        },
+        {
+          "id": "w3",
+          "text": "the",
+          "start": 1.835,
+          "end": 2.005
+        },
+        {
+          "id": "w4",
+          "text": "most",
+          "start": 2.261,
+          "end": 2.4747
+        },
+        {
+          "id": "w5",
+          "text": "common",
+          "start": 2.645,
+          "end": 2.901
+        },
+        {
+          "id": "w6",
+          "text": "cause",
+          "start": 3.072,
+          "end": 3.285
+        },
+        {
+          "id": "w7",
+          "text": "of",
+          "start": 3.371,
+          "end": 3.413
+        },
+        {
+          "id": "w8",
+          "text": "dementia,",
+          "start": 3.456,
+          "end": 3.968
+        },
+        {
+          "id": "w9",
+          "text": "and",
+          "start": 4.096,
+          "end": 4.48
+        },
+        {
+          "id": "w10",
+          "text": "it",
+          "start": 4.523,
+          "end": 4.565
+        },
+        {
+          "id": "w11",
+          "text": "is",
+          "start": 4.608,
+          "end": 4.693
+        },
+        {
+          "id": "w12",
+          "text": "often",
+          "start": 4.736,
+          "end": 5.077
+        },
+        {
+          "id": "w13",
+          "text": "recognised",
+          "start": 5.291,
+          "end": 5.845
+        },
+        {
+          "id": "w14",
+          "text": "late.",
+          "start": 6.101,
+          "end": 6.571
+        },
+        {
+          "id": "w15",
+          "text": "The",
+          "start": 6.869,
+          "end": 7.04
+        },
+        {
+          "id": "w16",
+          "text": "tests",
+          "start": 7.083,
+          "end": 7.424
+        },
+        {
+          "id": "w17",
+          "text": "that",
+          "start": 7.552,
+          "end": 7.68
+        },
+        {
+          "id": "w18",
+          "text": "confirm",
+          "start": 7.723,
+          "end": 8.149
+        },
+        {
+          "id": "w19",
+          "text": "it",
+          "start": 8.235,
+          "end": 8.3627
+        },
+        {
+          "id": "w20",
+          "text": "are",
+          "start": 8.491,
+          "end": 8.704
+        },
+        {
+          "id": "w21",
+          "text": "costly,",
+          "start": 8.747,
+          "end": 9.429
+        },
+        {
+          "id": "w22",
+          "text": "and",
+          "start": 9.643,
+          "end": 9.856
+        },
+        {
+          "id": "w23",
+          "text": "specialists",
+          "start": 9.899,
+          "end": 10.496
+        },
+        {
+          "id": "w24",
+          "text": "are",
+          "start": 10.709,
+          "end": 10.837
+        },
+        {
+          "id": "w25",
+          "text": "scarce.",
+          "start": 10.88,
+          "end": 11.541
+        },
+        {
+          "id": "w26",
+          "text": "In",
+          "start": 11.819,
+          "end": 12.117
+        },
+        {
+          "id": "w27",
+          "text": "low-income",
+          "start": 12.203,
+          "end": 12.8
+        },
+        {
+          "id": "w28",
+          "text": "countries,",
+          "start": 12.843,
+          "end": 13.333
+        },
+        {
+          "id": "w29",
+          "text": "there",
+          "start": 13.611,
+          "end": 13.696
+        },
+        {
+          "id": "w30",
+          "text": "is",
+          "start": 13.739,
+          "end": 13.824
+        },
+        {
+          "id": "w31",
+          "text": "about",
+          "start": 13.952,
+          "end": 14.08
+        },
+        {
+          "id": "w32",
+          "text": "one",
+          "start": 14.165,
+          "end": 14.421
+        },
+        {
+          "id": "w33",
+          "text": "neurology",
+          "start": 14.635,
+          "end": 15.061
+        },
+        {
+          "id": "w34",
+          "text": "specialist",
+          "start": 15.232,
+          "end": 15.744
+        },
+        {
+          "id": "w35",
+          "text": "for",
+          "start": 15.915,
+          "end": 16.0427
+        },
+        {
+          "id": "w36",
+          "text": "every",
+          "start": 16.085,
+          "end": 16.341
+        },
+        {
+          "id": "w37",
+          "text": "million",
+          "start": 16.469,
+          "end": 16.64
+        },
+        {
+          "id": "w38",
+          "text": "people.",
+          "start": 16.811,
+          "end": 17.126
+        },
+        {
+          "id": "w39",
+          "text": "An",
+          "start": 17.271,
+          "end": 17.3989
+        },
+        {
+          "id": "w40",
+          "text": "EEG",
+          "start": 17.484,
+          "end": 18.124
+        },
+        {
+          "id": "w41",
+          "text": "is",
+          "start": 18.252,
+          "end": 18.4229
+        },
+        {
+          "id": "w42",
+          "text": "different.",
+          "start": 18.594,
+          "end": 19.106
+        },
+        {
+          "id": "w43",
+          "text": "It",
+          "start": 19.447,
+          "end": 19.6176
+        },
+        {
+          "id": "w44",
+          "text": "is",
+          "start": 19.66,
+          "end": 19.788
+        },
+        {
+          "id": "w45",
+          "text": "cheap,",
+          "start": 19.959,
+          "end": 20.535
+        },
+        {
+          "id": "w46",
+          "text": "painless,",
+          "start": 20.812,
+          "end": 21.41
+        },
+        {
+          "id": "w47",
+          "text": "and",
+          "start": 21.538,
+          "end": 21.708
+        },
+        {
+          "id": "w48",
+          "text": "already",
+          "start": 21.794,
+          "end": 22.1776
+        },
+        {
+          "id": "w49",
+          "text": "in",
+          "start": 22.348,
+          "end": 22.5189
+        },
+        {
+          "id": "w50",
+          "text": "most",
+          "start": 22.604,
+          "end": 22.8176
+        },
+        {
+          "id": "w51",
+          "text": "hospitals.",
+          "start": 22.903,
+          "end": 23.618
+        }
+      ]
+    },
+    {
+      "id": "s3-intro",
+      "path": "assets/voice/s3-intro.wav",
+      "duration_s": 12.356,
+      "words": [
+        {
+          "id": "w0",
+          "text": "NeuroDetect",
+          "start": 0.299,
+          "end": 1.024
+        },
+        {
+          "id": "w1",
+          "text": "reads",
+          "start": 1.152,
+          "end": 1.536
+        },
+        {
+          "id": "w2",
+          "text": "one",
+          "start": 1.621,
+          "end": 2.176
+        },
+        {
+          "id": "w3",
+          "text": "short,",
+          "start": 2.304,
+          "end": 2.709
+        },
+        {
+          "id": "w4",
+          "text": "resting",
+          "start": 2.816,
+          "end": 3.285
+        },
+        {
+          "id": "w5",
+          "text": "EEG",
+          "start": 3.413,
+          "end": 3.968
+        },
+        {
+          "id": "w6",
+          "text": "recording.",
+          "start": 4.011,
+          "end": 4.544
+        },
+        {
+          "id": "w7",
+          "text": "It",
+          "start": 4.736,
+          "end": 5.12
+        },
+        {
+          "id": "w8",
+          "text": "needs",
+          "start": 5.163,
+          "end": 5.376
+        },
+        {
+          "id": "w9",
+          "text": "just",
+          "start": 5.504,
+          "end": 5.632
+        },
+        {
+          "id": "w10",
+          "text": "five",
+          "start": 5.76,
+          "end": 6.101
+        },
+        {
+          "id": "w11",
+          "text": "of",
+          "start": 6.357,
+          "end": 6.4427
+        },
+        {
+          "id": "w12",
+          "text": "the",
+          "start": 6.485,
+          "end": 6.613
+        },
+        {
+          "id": "w13",
+          "text": "usual",
+          "start": 6.656,
+          "end": 6.784
+        },
+        {
+          "id": "w14",
+          "text": "nineteen",
+          "start": 7.04,
+          "end": 7.4667
+        },
+        {
+          "id": "w15",
+          "text": "sensors.",
+          "start": 7.509,
+          "end": 8.192
+        },
+        {
+          "id": "w16",
+          "text": "Three",
+          "start": 8.448,
+          "end": 8.704
+        },
+        {
+          "id": "w17",
+          "text": "for",
+          "start": 8.875,
+          "end": 9.0027
+        },
+        {
+          "id": "w18",
+          "text": "Alzheimer's-type",
+          "start": 9.045,
+          "end": 9.856
+        },
+        {
+          "id": "w19",
+          "text": "changes,",
+          "start": 9.941,
+          "end": 10.389
+        },
+        {
+          "id": "w20",
+          "text": "and",
+          "start": 10.581,
+          "end": 10.7947
+        },
+        {
+          "id": "w21",
+          "text": "two",
+          "start": 10.88,
+          "end": 11.093
+        },
+        {
+          "id": "w22",
+          "text": "for",
+          "start": 11.221,
+          "end": 11.392
+        },
+        {
+          "id": "w23",
+          "text": "a",
+          "start": 11.435,
+          "end": 11.477
+        },
+        {
+          "id": "w24",
+          "text": "mood",
+          "start": 11.52,
+          "end": 11.733
+        },
+        {
+          "id": "w25",
+          "text": "marker.",
+          "start": 11.819,
+          "end": 12.3
+        }
+      ]
+    },
+    {
+      "id": "s4-pipeline",
+      "path": "assets/voice/s4-pipeline.wav",
+      "duration_s": 25.652,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Here",
+          "start": 0.299,
+          "end": 0.469
+        },
+        {
+          "id": "w1",
+          "text": "is",
+          "start": 0.555,
+          "end": 0.6827
+        },
+        {
+          "id": "w2",
+          "text": "the",
+          "start": 0.725,
+          "end": 0.853
+        },
+        {
+          "id": "w3",
+          "text": "journey",
+          "start": 0.896,
+          "end": 1.109
+        },
+        {
+          "id": "w4",
+          "text": "of",
+          "start": 1.237,
+          "end": 1.408
+        },
+        {
+          "id": "w5",
+          "text": "one",
+          "start": 1.451,
+          "end": 1.7067
+        },
+        {
+          "id": "w6",
+          "text": "recording.",
+          "start": 1.835,
+          "end": 2.645
+        },
+        {
+          "id": "w7",
+          "text": "The",
+          "start": 3.029,
+          "end": 3.2
+        },
+        {
+          "id": "w8",
+          "text": "signal",
+          "start": 3.243,
+          "end": 3.669
+        },
+        {
+          "id": "w9",
+          "text": "is",
+          "start": 3.712,
+          "end": 3.84
+        },
+        {
+          "id": "w10",
+          "text": "filtered",
+          "start": 3.925,
+          "end": 4.352
+        },
+        {
+          "id": "w11",
+          "text": "to",
+          "start": 4.523,
+          "end": 4.6507
+        },
+        {
+          "id": "w12",
+          "text": "between",
+          "start": 4.693,
+          "end": 4.7787
+        },
+        {
+          "id": "w13",
+          "text": "half",
+          "start": 5.12,
+          "end": 5.6747
+        },
+        {
+          "id": "w14",
+          "text": "a",
+          "start": 5.717,
+          "end": 5.8027
+        },
+        {
+          "id": "w15",
+          "text": "hertz",
+          "start": 5.845,
+          "end": 6.0587
+        },
+        {
+          "id": "w16",
+          "text": "and",
+          "start": 6.229,
+          "end": 6.528
+        },
+        {
+          "id": "w17",
+          "text": "forty-five",
+          "start": 6.613,
+          "end": 7.125
+        },
+        {
+          "id": "w18",
+          "text": "hertz,",
+          "start": 7.253,
+          "end": 7.573
+        },
+        {
+          "id": "w19",
+          "text": "and",
+          "start": 7.68,
+          "end": 8.021
+        },
+        {
+          "id": "w20",
+          "text": "resampled",
+          "start": 8.064,
+          "end": 8.789
+        },
+        {
+          "id": "w21",
+          "text": "to",
+          "start": 9.003,
+          "end": 9.1307
+        },
+        {
+          "id": "w22",
+          "text": "two",
+          "start": 9.173,
+          "end": 9.3867
+        },
+        {
+          "id": "w23",
+          "text": "hundred",
+          "start": 9.472,
+          "end": 9.6
+        },
+        {
+          "id": "w24",
+          "text": "and",
+          "start": 9.728,
+          "end": 9.856
+        },
+        {
+          "id": "w25",
+          "text": "fifty",
+          "start": 9.899,
+          "end": 10.112
+        },
+        {
+          "id": "w26",
+          "text": "samples",
+          "start": 10.197,
+          "end": 10.581
+        },
+        {
+          "id": "w27",
+          "text": "a",
+          "start": 10.667,
+          "end": 10.709
+        },
+        {
+          "id": "w28",
+          "text": "second.",
+          "start": 10.752,
+          "end": 11.285
+        },
+        {
+          "id": "w29",
+          "text": "Then",
+          "start": 11.648,
+          "end": 11.861
+        },
+        {
+          "id": "w30",
+          "text": "it",
+          "start": 12.032,
+          "end": 12.16
+        },
+        {
+          "id": "w31",
+          "text": "is",
+          "start": 12.203,
+          "end": 12.288
+        },
+        {
+          "id": "w32",
+          "text": "cut",
+          "start": 12.373,
+          "end": 12.5867
+        },
+        {
+          "id": "w33",
+          "text": "into",
+          "start": 12.672,
+          "end": 12.8
+        },
+        {
+          "id": "w34",
+          "text": "ten-second",
+          "start": 12.971,
+          "end": 13.4827
+        },
+        {
+          "id": "w35",
+          "text": "slices.",
+          "start": 13.653,
+          "end": 14.232
+        },
+        {
+          "id": "w36",
+          "text": "Slices",
+          "start": 14.597,
+          "end": 14.981
+        },
+        {
+          "id": "w37",
+          "text": "spoiled",
+          "start": 15.323,
+          "end": 15.5786
+        },
+        {
+          "id": "w38",
+          "text": "by",
+          "start": 15.749,
+          "end": 15.877
+        },
+        {
+          "id": "w39",
+          "text": "blinks",
+          "start": 15.92,
+          "end": 16.261
+        },
+        {
+          "id": "w40",
+          "text": "or",
+          "start": 16.347,
+          "end": 16.4746
+        },
+        {
+          "id": "w41",
+          "text": "movement",
+          "start": 16.517,
+          "end": 16.688
+        },
+        {
+          "id": "w42",
+          "text": "are",
+          "start": 16.944,
+          "end": 17.285
+        },
+        {
+          "id": "w43",
+          "text": "thrown",
+          "start": 17.371,
+          "end": 17.669
+        },
+        {
+          "id": "w44",
+          "text": "away.",
+          "start": 17.797,
+          "end": 18.267
+        },
+        {
+          "id": "w45",
+          "text": "Every",
+          "start": 18.565,
+          "end": 18.949
+        },
+        {
+          "id": "w46",
+          "text": "clean",
+          "start": 19.12,
+          "end": 19.4186
+        },
+        {
+          "id": "w47",
+          "text": "slice",
+          "start": 19.547,
+          "end": 19.8026
+        },
+        {
+          "id": "w48",
+          "text": "becomes",
+          "start": 19.973,
+          "end": 20.101
+        },
+        {
+          "id": "w49",
+          "text": "a",
+          "start": 20.443,
+          "end": 20.8266
+        },
+        {
+          "id": "w50",
+          "text": "few",
+          "start": 20.869,
+          "end": 21.04
+        },
+        {
+          "id": "w51",
+          "text": "numbers,",
+          "start": 21.083,
+          "end": 21.445
+        },
+        {
+          "id": "w52",
+          "text": "called",
+          "start": 21.68,
+          "end": 21.8506
+        },
+        {
+          "id": "w53",
+          "text": "biomarkers,",
+          "start": 21.979,
+          "end": 22.853
+        },
+        {
+          "id": "w54",
+          "text": "and",
+          "start": 23.003,
+          "end": 23.216
+        },
+        {
+          "id": "w55",
+          "text": "each",
+          "start": 23.301,
+          "end": 23.557
+        },
+        {
+          "id": "w56",
+          "text": "slice",
+          "start": 23.685,
+          "end": 23.8986
+        },
+        {
+          "id": "w57",
+          "text": "is",
+          "start": 24.069,
+          "end": 24.197
+        },
+        {
+          "id": "w58",
+          "text": "judged",
+          "start": 24.283,
+          "end": 24.624
+        },
+        {
+          "id": "w59",
+          "text": "on",
+          "start": 24.752,
+          "end": 24.88
+        },
+        {
+          "id": "w60",
+          "text": "its",
+          "start": 24.965,
+          "end": 25.008
+        },
+        {
+          "id": "w61",
+          "text": "own.",
+          "start": 25.093,
+          "end": 25.602
+        }
+      ]
+    },
+    {
+      "id": "s5-modules",
+      "path": "assets/voice/s5-modules.wav",
+      "duration_s": 23.066,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Two",
+          "start": 0.256,
+          "end": 0.512
+        },
+        {
+          "id": "w1",
+          "text": "paths",
+          "start": 0.64,
+          "end": 1.109
+        },
+        {
+          "id": "w2",
+          "text": "run",
+          "start": 1.28,
+          "end": 1.4507
+        },
+        {
+          "id": "w3",
+          "text": "side",
+          "start": 1.579,
+          "end": 1.9627
+        },
+        {
+          "id": "w4",
+          "text": "by",
+          "start": 2.219,
+          "end": 2.432
+        },
+        {
+          "id": "w5",
+          "text": "side.",
+          "start": 2.688,
+          "end": 3.328
+        },
+        {
+          "id": "w6",
+          "text": "The",
+          "start": 3.669,
+          "end": 3.84
+        },
+        {
+          "id": "w7",
+          "text": "Alzheimer's",
+          "start": 3.883,
+          "end": 4.48
+        },
+        {
+          "id": "w8",
+          "text": "path",
+          "start": 4.523,
+          "end": 4.7787
+        },
+        {
+          "id": "w9",
+          "text": "compares",
+          "start": 4.864,
+          "end": 5.248
+        },
+        {
+          "id": "w10",
+          "text": "slow",
+          "start": 5.333,
+          "end": 5.632
+        },
+        {
+          "id": "w11",
+          "text": "theta",
+          "start": 5.76,
+          "end": 5.973
+        },
+        {
+          "id": "w12",
+          "text": "waves",
+          "start": 6.101,
+          "end": 6.3147
+        },
+        {
+          "id": "w13",
+          "text": "with",
+          "start": 6.443,
+          "end": 6.784
+        },
+        {
+          "id": "w14",
+          "text": "alpha",
+          "start": 6.869,
+          "end": 7.253
+        },
+        {
+          "id": "w15",
+          "text": "waves",
+          "start": 7.339,
+          "end": 7.552
+        },
+        {
+          "id": "w16",
+          "text": "at",
+          "start": 7.723,
+          "end": 7.808
+        },
+        {
+          "id": "w17",
+          "text": "the",
+          "start": 7.851,
+          "end": 7.936
+        },
+        {
+          "id": "w18",
+          "text": "back",
+          "start": 7.979,
+          "end": 8.192
+        },
+        {
+          "id": "w19",
+          "text": "of",
+          "start": 8.277,
+          "end": 8.32
+        },
+        {
+          "id": "w20",
+          "text": "the",
+          "start": 8.363,
+          "end": 8.448
+        },
+        {
+          "id": "w21",
+          "text": "head,",
+          "start": 8.491,
+          "end": 8.832
+        },
+        {
+          "id": "w22",
+          "text": "and",
+          "start": 9.003,
+          "end": 9.2587
+        },
+        {
+          "id": "w23",
+          "text": "checks",
+          "start": 9.301,
+          "end": 9.728
+        },
+        {
+          "id": "w24",
+          "text": "how",
+          "start": 9.856,
+          "end": 10.0267
+        },
+        {
+          "id": "w25",
+          "text": "closely",
+          "start": 10.112,
+          "end": 10.5387
+        },
+        {
+          "id": "w26",
+          "text": "the",
+          "start": 10.667,
+          "end": 10.752
+        },
+        {
+          "id": "w27",
+          "text": "front",
+          "start": 10.795,
+          "end": 11.0507
+        },
+        {
+          "id": "w28",
+          "text": "and",
+          "start": 11.221,
+          "end": 11.4347
+        },
+        {
+          "id": "w29",
+          "text": "back",
+          "start": 11.52,
+          "end": 11.733
+        },
+        {
+          "id": "w30",
+          "text": "of",
+          "start": 11.776,
+          "end": 11.861
+        },
+        {
+          "id": "w31",
+          "text": "the",
+          "start": 11.904,
+          "end": 11.989
+        },
+        {
+          "id": "w32",
+          "text": "brain",
+          "start": 12.032,
+          "end": 12.245
+        },
+        {
+          "id": "w33",
+          "text": "stay",
+          "start": 12.501,
+          "end": 12.757
+        },
+        {
+          "id": "w34",
+          "text": "in",
+          "start": 12.928,
+          "end": 13.056
+        },
+        {
+          "id": "w35",
+          "text": "step.",
+          "start": 13.099,
+          "end": 13.477
+        },
+        {
+          "id": "w36",
+          "text": "The",
+          "start": 13.6,
+          "end": 13.728
+        },
+        {
+          "id": "w37",
+          "text": "second",
+          "start": 13.771,
+          "end": 13.941
+        },
+        {
+          "id": "w38",
+          "text": "path",
+          "start": 14.155,
+          "end": 14.4108
+        },
+        {
+          "id": "w39",
+          "text": "measures",
+          "start": 14.624,
+          "end": 15.1788
+        },
+        {
+          "id": "w40",
+          "text": "frontal",
+          "start": 15.349,
+          "end": 15.733
+        },
+        {
+          "id": "w41",
+          "text": "alpha",
+          "start": 15.861,
+          "end": 16.2028
+        },
+        {
+          "id": "w42",
+          "text": "asymmetry,",
+          "start": 16.331,
+          "end": 16.971
+        },
+        {
+          "id": "w43",
+          "text": "a",
+          "start": 17.184,
+          "end": 17.525
+        },
+        {
+          "id": "w44",
+          "text": "depression-related",
+          "start": 17.568,
+          "end": 18.5068
+        },
+        {
+          "id": "w45",
+          "text": "marker.",
+          "start": 18.677,
+          "end": 19.253
+        },
+        {
+          "id": "w46",
+          "text": "It",
+          "start": 19.488,
+          "end": 19.7868
+        },
+        {
+          "id": "w47",
+          "text": "is",
+          "start": 19.829,
+          "end": 19.9148
+        },
+        {
+          "id": "w48",
+          "text": "preliminary,",
+          "start": 20,
+          "end": 20.853
+        },
+        {
+          "id": "w49",
+          "text": "and",
+          "start": 21.067,
+          "end": 21.237
+        },
+        {
+          "id": "w50",
+          "text": "shown",
+          "start": 21.28,
+          "end": 21.5788
+        },
+        {
+          "id": "w51",
+          "text": "as",
+          "start": 21.621,
+          "end": 21.7068
+        },
+        {
+          "id": "w52",
+          "text": "indicative",
+          "start": 21.792,
+          "end": 22.133
+        },
+        {
+          "id": "w53",
+          "text": "only.",
+          "start": 22.304,
+          "end": 22.853
+        }
+      ]
+    },
+    {
+      "id": "s6-classifier",
+      "path": "assets/voice/s6-classifier.wav",
+      "duration_s": 23.615,
+      "words": [
+        {
+          "id": "w0",
+          "text": "The",
+          "start": 0.299,
+          "end": 0.4267
+        },
+        {
+          "id": "w1",
+          "text": "classifier",
+          "start": 0.469,
+          "end": 1.0667
+        },
+        {
+          "id": "w2",
+          "text": "is",
+          "start": 1.237,
+          "end": 1.408
+        },
+        {
+          "id": "w3",
+          "text": "deliberately",
+          "start": 1.493,
+          "end": 2.048
+        },
+        {
+          "id": "w4",
+          "text": "simple.",
+          "start": 2.261,
+          "end": 2.944
+        },
+        {
+          "id": "w5",
+          "text": "It",
+          "start": 3.2,
+          "end": 3.6267
+        },
+        {
+          "id": "w6",
+          "text": "learns",
+          "start": 3.669,
+          "end": 3.968
+        },
+        {
+          "id": "w7",
+          "text": "one",
+          "start": 4.053,
+          "end": 4.352
+        },
+        {
+          "id": "w8",
+          "text": "typical",
+          "start": 4.48,
+          "end": 4.7787
+        },
+        {
+          "id": "w9",
+          "text": "healthy",
+          "start": 4.949,
+          "end": 5.1627
+        },
+        {
+          "id": "w10",
+          "text": "pattern",
+          "start": 5.333,
+          "end": 5.5467
+        },
+        {
+          "id": "w11",
+          "text": "and",
+          "start": 5.717,
+          "end": 6.229
+        },
+        {
+          "id": "w12",
+          "text": "one",
+          "start": 6.315,
+          "end": 6.485
+        },
+        {
+          "id": "w13",
+          "text": "typical",
+          "start": 6.571,
+          "end": 6.869
+        },
+        {
+          "id": "w14",
+          "text": "Alzheimer's",
+          "start": 7.04,
+          "end": 7.765
+        },
+        {
+          "id": "w15",
+          "text": "pattern,",
+          "start": 7.808,
+          "end": 8.213
+        },
+        {
+          "id": "w16",
+          "text": "and",
+          "start": 8.405,
+          "end": 8.917
+        },
+        {
+          "id": "w17",
+          "text": "asks",
+          "start": 8.96,
+          "end": 9.301
+        },
+        {
+          "id": "w18",
+          "text": "which",
+          "start": 9.6,
+          "end": 9.856
+        },
+        {
+          "id": "w19",
+          "text": "a",
+          "start": 10.027,
+          "end": 10.112
+        },
+        {
+          "id": "w20",
+          "text": "slice",
+          "start": 10.155,
+          "end": 10.4107
+        },
+        {
+          "id": "w21",
+          "text": "is",
+          "start": 10.496,
+          "end": 10.581
+        },
+        {
+          "id": "w22",
+          "text": "closer",
+          "start": 10.667,
+          "end": 10.88
+        },
+        {
+          "id": "w23",
+          "text": "to,",
+          "start": 11.051,
+          "end": 11.392
+        },
+        {
+          "id": "w24",
+          "text": "using",
+          "start": 11.605,
+          "end": 11.8187
+        },
+        {
+          "id": "w25",
+          "text": "cosine",
+          "start": 12.032,
+          "end": 12.501
+        },
+        {
+          "id": "w26",
+          "text": "distance.",
+          "start": 12.629,
+          "end": 13.205
+        },
+        {
+          "id": "w27",
+          "text": "Every",
+          "start": 13.696,
+          "end": 13.909
+        },
+        {
+          "id": "w28",
+          "text": "slice",
+          "start": 14.037,
+          "end": 14.336
+        },
+        {
+          "id": "w29",
+          "text": "casts",
+          "start": 14.592,
+          "end": 14.976
+        },
+        {
+          "id": "w30",
+          "text": "a",
+          "start": 15.019,
+          "end": 15.104
+        },
+        {
+          "id": "w31",
+          "text": "vote.",
+          "start": 15.104,
+          "end": 15.579
+        },
+        {
+          "id": "w32",
+          "text": "The",
+          "start": 15.883,
+          "end": 16.011
+        },
+        {
+          "id": "w33",
+          "text": "whole",
+          "start": 16.054,
+          "end": 16.267
+        },
+        {
+          "id": "w34",
+          "text": "model",
+          "start": 16.395,
+          "end": 16.608
+        },
+        {
+          "id": "w35",
+          "text": "holds",
+          "start": 16.779,
+          "end": 17.12
+        },
+        {
+          "id": "w36",
+          "text": "just",
+          "start": 17.163,
+          "end": 17.3338
+        },
+        {
+          "id": "w37",
+          "text": "sixteen",
+          "start": 17.419,
+          "end": 17.9738
+        },
+        {
+          "id": "w38",
+          "text": "learned",
+          "start": 18.102,
+          "end": 18.2725
+        },
+        {
+          "id": "w39",
+          "text": "parameters,",
+          "start": 18.486,
+          "end": 19.361
+        },
+        {
+          "id": "w40",
+          "text": "about",
+          "start": 19.808,
+          "end": 19.979
+        },
+        {
+          "id": "w41",
+          "text": "one",
+          "start": 20.064,
+          "end": 20.32
+        },
+        {
+          "id": "w42",
+          "text": "kilobyte,",
+          "start": 20.448,
+          "end": 21.088
+        },
+        {
+          "id": "w43",
+          "text": "and",
+          "start": 21.259,
+          "end": 21.4725
+        },
+        {
+          "id": "w44",
+          "text": "runs",
+          "start": 21.515,
+          "end": 21.8565
+        },
+        {
+          "id": "w45",
+          "text": "on",
+          "start": 21.985,
+          "end": 22.155
+        },
+        {
+          "id": "w46",
+          "text": "an",
+          "start": 22.198,
+          "end": 22.2405
+        },
+        {
+          "id": "w47",
+          "text": "ordinary",
+          "start": 22.326,
+          "end": 22.795
+        },
+        {
+          "id": "w48",
+          "text": "laptop.",
+          "start": 22.923,
+          "end": 23.557573696145123
+        }
+      ]
+    },
+    {
+      "id": "s7-results",
+      "path": "assets/voice/s7-results.wav",
+      "duration_s": 19.931,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Tested",
+          "start": 0.299,
+          "end": 0.6827
+        },
+        {
+          "id": "w1",
+          "text": "on",
+          "start": 0.768,
+          "end": 0.896
+        },
+        {
+          "id": "w2",
+          "text": "sixty-five",
+          "start": 0.939,
+          "end": 1.5787
+        },
+        {
+          "id": "w3",
+          "text": "people",
+          "start": 1.664,
+          "end": 1.8347
+        },
+        {
+          "id": "w4",
+          "text": "it",
+          "start": 2.005,
+          "end": 2.133
+        },
+        {
+          "id": "w5",
+          "text": "had",
+          "start": 2.176,
+          "end": 2.2187
+        },
+        {
+          "id": "w6",
+          "text": "never",
+          "start": 2.261,
+          "end": 2.4747
+        },
+        {
+          "id": "w7",
+          "text": "seen,",
+          "start": 2.603,
+          "end": 3.029
+        },
+        {
+          "id": "w8",
+          "text": "and",
+          "start": 3.2,
+          "end": 3.456
+        },
+        {
+          "id": "w9",
+          "text": "repeated",
+          "start": 3.499,
+          "end": 3.797
+        },
+        {
+          "id": "w10",
+          "text": "ten",
+          "start": 3.968,
+          "end": 4.224
+        },
+        {
+          "id": "w11",
+          "text": "times,",
+          "start": 4.309,
+          "end": 4.821
+        },
+        {
+          "id": "w12",
+          "text": "the",
+          "start": 5.077,
+          "end": 5.2907
+        },
+        {
+          "id": "w13",
+          "text": "Alzheimer's",
+          "start": 5.333,
+          "end": 5.888
+        },
+        {
+          "id": "w14",
+          "text": "module",
+          "start": 5.931,
+          "end": 6.357
+        },
+        {
+          "id": "w15",
+          "text": "reached",
+          "start": 6.443,
+          "end": 6.613
+        },
+        {
+          "id": "w16",
+          "text": "eighty-two",
+          "start": 6.784,
+          "end": 7.3387
+        },
+        {
+          "id": "w17",
+          "text": "point",
+          "start": 7.381,
+          "end": 7.552
+        },
+        {
+          "id": "w18",
+          "text": "six",
+          "start": 7.637,
+          "end": 7.808
+        },
+        {
+          "id": "w19",
+          "text": "percent",
+          "start": 7.936,
+          "end": 8.064
+        },
+        {
+          "id": "w20",
+          "text": "balanced",
+          "start": 8.32,
+          "end": 8.6187
+        },
+        {
+          "id": "w21",
+          "text": "accuracy,",
+          "start": 8.747,
+          "end": 9.429
+        },
+        {
+          "id": "w22",
+          "text": "and",
+          "start": 9.685,
+          "end": 9.8987
+        },
+        {
+          "id": "w23",
+          "text": "correctly",
+          "start": 9.984,
+          "end": 10.368
+        },
+        {
+          "id": "w24",
+          "text": "cleared",
+          "start": 10.539,
+          "end": 10.7947
+        },
+        {
+          "id": "w25",
+          "text": "ninety-four",
+          "start": 10.923,
+          "end": 11.477
+        },
+        {
+          "id": "w26",
+          "text": "percent",
+          "start": 11.563,
+          "end": 11.733
+        },
+        {
+          "id": "w27",
+          "text": "of",
+          "start": 11.947,
+          "end": 12.0747
+        },
+        {
+          "id": "w28",
+          "text": "healthy",
+          "start": 12.117,
+          "end": 12.288
+        },
+        {
+          "id": "w29",
+          "text": "people.",
+          "start": 12.459,
+          "end": 12.89
+        },
+        {
+          "id": "w30",
+          "text": "Three",
+          "start": 13.15,
+          "end": 13.363
+        },
+        {
+          "id": "w31",
+          "text": "electrodes",
+          "start": 13.491,
+          "end": 13.9178
+        },
+        {
+          "id": "w32",
+          "text": "beat",
+          "start": 14.046,
+          "end": 14.259
+        },
+        {
+          "id": "w33",
+          "text": "the",
+          "start": 14.345,
+          "end": 14.4298
+        },
+        {
+          "id": "w34",
+          "text": "full",
+          "start": 14.473,
+          "end": 14.643
+        },
+        {
+          "id": "w35",
+          "text": "nineteen.",
+          "start": 14.686,
+          "end": 15.347
+        },
+        {
+          "id": "w36",
+          "text": "The",
+          "start": 15.582,
+          "end": 15.7098
+        },
+        {
+          "id": "w37",
+          "text": "depression",
+          "start": 15.752,
+          "end": 16.0085
+        },
+        {
+          "id": "w38",
+          "text": "marker",
+          "start": 16.179,
+          "end": 16.435
+        },
+        {
+          "id": "w39",
+          "text": "scored",
+          "start": 16.52,
+          "end": 16.819
+        },
+        {
+          "id": "w40",
+          "text": "fifty-five",
+          "start": 17.032,
+          "end": 17.672
+        },
+        {
+          "id": "w41",
+          "text": "percent:",
+          "start": 17.8,
+          "end": 18.291
+        },
+        {
+          "id": "w42",
+          "text": "close",
+          "start": 18.654,
+          "end": 18.9098
+        },
+        {
+          "id": "w43",
+          "text": "to",
+          "start": 19.123,
+          "end": 19.251
+        },
+        {
+          "id": "w44",
+          "text": "chance.",
+          "start": 19.294,
+          "end": 19.88
+        }
+      ]
+    },
+    {
+      "id": "s8-product",
+      "path": "assets/voice/s8-product.wav",
+      "duration_s": 12.774,
+      "words": [
+        {
+          "id": "w0",
+          "text": "And",
+          "start": 0.299,
+          "end": 0.384
+        },
+        {
+          "id": "w1",
+          "text": "it",
+          "start": 0.427,
+          "end": 0.512
+        },
+        {
+          "id": "w2",
+          "text": "is",
+          "start": 0.555,
+          "end": 0.725
+        },
+        {
+          "id": "w3",
+          "text": "a",
+          "start": 1.024,
+          "end": 1.3227
+        },
+        {
+          "id": "w4",
+          "text": "working",
+          "start": 1.365,
+          "end": 1.621
+        },
+        {
+          "id": "w5",
+          "text": "prototype.",
+          "start": 1.877,
+          "end": 2.795
+        },
+        {
+          "id": "w6",
+          "text": "Upload",
+          "start": 2.987,
+          "end": 3.627
+        },
+        {
+          "id": "w7",
+          "text": "a",
+          "start": 3.669,
+          "end": 3.712
+        },
+        {
+          "id": "w8",
+          "text": "recording,",
+          "start": 3.755,
+          "end": 4.267
+        },
+        {
+          "id": "w9",
+          "text": "and",
+          "start": 4.395,
+          "end": 4.523
+        },
+        {
+          "id": "w10",
+          "text": "within",
+          "start": 4.565,
+          "end": 4.693
+        },
+        {
+          "id": "w11",
+          "text": "seconds",
+          "start": 4.907,
+          "end": 5.205
+        },
+        {
+          "id": "w12",
+          "text": "you",
+          "start": 5.461,
+          "end": 5.845
+        },
+        {
+          "id": "w13",
+          "text": "get",
+          "start": 5.931,
+          "end": 6.101
+        },
+        {
+          "id": "w14",
+          "text": "a",
+          "start": 6.187,
+          "end": 6.3147
+        },
+        {
+          "id": "w15",
+          "text": "plain-language",
+          "start": 6.357,
+          "end": 6.869
+        },
+        {
+          "id": "w16",
+          "text": "verdict,",
+          "start": 7.083,
+          "end": 7.573
+        },
+        {
+          "id": "w17",
+          "text": "the",
+          "start": 7.765,
+          "end": 7.893
+        },
+        {
+          "id": "w18",
+          "text": "vote",
+          "start": 7.936,
+          "end": 8.149
+        },
+        {
+          "id": "w19",
+          "text": "of",
+          "start": 8.235,
+          "end": 8.3627
+        },
+        {
+          "id": "w20",
+          "text": "every",
+          "start": 8.405,
+          "end": 8.704
+        },
+        {
+          "id": "w21",
+          "text": "slice,",
+          "start": 8.832,
+          "end": 9.365
+        },
+        {
+          "id": "w22",
+          "text": "the",
+          "start": 9.643,
+          "end": 9.813
+        },
+        {
+          "id": "w23",
+          "text": "measurements",
+          "start": 9.856,
+          "end": 10.24
+        },
+        {
+          "id": "w24",
+          "text": "behind",
+          "start": 10.453,
+          "end": 10.581
+        },
+        {
+          "id": "w25",
+          "text": "it,",
+          "start": 10.88,
+          "end": 11.093
+        },
+        {
+          "id": "w26",
+          "text": "and",
+          "start": 11.179,
+          "end": 11.4347
+        },
+        {
+          "id": "w27",
+          "text": "a",
+          "start": 11.477,
+          "end": 11.5627
+        },
+        {
+          "id": "w28",
+          "text": "P",
+          "start": 11.605,
+          "end": 11.776
+        },
+        {
+          "id": "w29",
+          "text": "D",
+          "start": 11.861,
+          "end": 11.947
+        },
+        {
+          "id": "w30",
+          "text": "F",
+          "start": 12.032,
+          "end": 12.117
+        },
+        {
+          "id": "w31",
+          "text": "report.",
+          "start": 12.245,
+          "end": 12.55360544217687
+        }
+      ]
+    },
+    {
+      "id": "s9-responsible",
+      "path": "assets/voice/s9-responsible.wav",
+      "duration_s": 9.874,
+      "words": [
+        {
+          "id": "w0",
+          "text": "NeuroDetect",
+          "start": 0.299,
+          "end": 1.0667
+        },
+        {
+          "id": "w1",
+          "text": "is",
+          "start": 1.237,
+          "end": 1.3227
+        },
+        {
+          "id": "w2",
+          "text": "a",
+          "start": 1.365,
+          "end": 1.493
+        },
+        {
+          "id": "w3",
+          "text": "screening",
+          "start": 1.536,
+          "end": 1.9627
+        },
+        {
+          "id": "w4",
+          "text": "aid,",
+          "start": 2.091,
+          "end": 2.539
+        },
+        {
+          "id": "w5",
+          "text": "not",
+          "start": 2.731,
+          "end": 3.072
+        },
+        {
+          "id": "w6",
+          "text": "a",
+          "start": 3.2,
+          "end": 3.285
+        },
+        {
+          "id": "w7",
+          "text": "diagnosis.",
+          "start": 3.328,
+          "end": 4.267
+        },
+        {
+          "id": "w8",
+          "text": "Before",
+          "start": 4.565,
+          "end": 4.736
+        },
+        {
+          "id": "w9",
+          "text": "it",
+          "start": 5.035,
+          "end": 5.205
+        },
+        {
+          "id": "w10",
+          "text": "is",
+          "start": 5.248,
+          "end": 5.376
+        },
+        {
+          "id": "w11",
+          "text": "used",
+          "start": 5.461,
+          "end": 5.632
+        },
+        {
+          "id": "w12",
+          "text": "in",
+          "start": 5.76,
+          "end": 5.845
+        },
+        {
+          "id": "w13",
+          "text": "clinics,",
+          "start": 5.888,
+          "end": 6.357
+        },
+        {
+          "id": "w14",
+          "text": "it",
+          "start": 6.485,
+          "end": 6.784
+        },
+        {
+          "id": "w15",
+          "text": "needs",
+          "start": 6.869,
+          "end": 7.04
+        },
+        {
+          "id": "w16",
+          "text": "testing",
+          "start": 7.211,
+          "end": 7.68
+        },
+        {
+          "id": "w17",
+          "text": "on",
+          "start": 7.808,
+          "end": 7.9787
+        },
+        {
+          "id": "w18",
+          "text": "data",
+          "start": 8.064,
+          "end": 8.277
+        },
+        {
+          "id": "w19",
+          "text": "from",
+          "start": 8.405,
+          "end": 8.576
+        },
+        {
+          "id": "w20",
+          "text": "other",
+          "start": 8.619,
+          "end": 8.832
+        },
+        {
+          "id": "w21",
+          "text": "hospitals.",
+          "start": 9.003,
+          "end": 9.817
+        }
+      ]
+    },
+    {
+      "id": "s10-end",
+      "path": "assets/voice/s10-end.wav",
+      "duration_s": 5.695,
+      "words": [
+        {
+          "id": "w0",
+          "text": "NeuroDetect.",
+          "start": 0.299,
+          "end": 1.664
+        },
+        {
+          "id": "w1",
+          "text": "Making",
+          "start": 2.091,
+          "end": 2.432
+        },
+        {
+          "id": "w2",
+          "text": "brain-wave",
+          "start": 2.731,
+          "end": 3.285
+        },
+        {
+          "id": "w3",
+          "text": "screening",
+          "start": 3.413,
+          "end": 3.7547
+        },
+        {
+          "id": "w4",
+          "text": "more",
+          "start": 3.925,
+          "end": 4.48
+        },
+        {
+          "id": "w5",
+          "text": "accessible.",
+          "start": 4.651,
+          "end": 5.627981859410431
+        }
+      ]
+    }
+  ],
+  "sfx": [],
+  "total_duration_s": 167.837
+}

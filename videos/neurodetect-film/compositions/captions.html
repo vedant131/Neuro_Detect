@@ -1,0 +1,303 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; top: 948px; width: 1920px; text-align: center; overflow: visible; }
+    .cap span { display: inline-block; font-family: "Outfit", sans-serif; font-weight: 600; font-size: 44px; line-height: 1.2; color: #F4F7FB; padding: 8px 22px; border-radius: 10px; background: rgba(6, 11, 24, 0.55); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080">
+    <div id="cap-0" class="cap clip" data-start="1.85" data-duration="1.22"><span>The brain never</span></div>
+    <div id="cap-1" class="cap clip" data-start="3.09" data-duration="1.43"><span>stops talking.</span></div>
+    <div id="cap-2" class="cap clip" data-start="4.54" data-duration="1.64"><span>Billions of cells,</span></div>
+    <div id="cap-3" class="cap clip" data-start="6.2" data-duration="2.9"><span>signalling in tiny pulses of electricity.</span></div>
+    <div id="cap-4" class="cap clip" data-start="9.23" data-duration="2.05"><span>Those signals leave a trace.</span></div>
+    <div id="cap-5" class="cap clip" data-start="11.32" data-duration="1.51"><span>Can we learn to read them?</span></div>
+    <div id="cap-6" class="cap clip" data-start="14.75" data-duration="1.94"><span>Alzheimer&#x27;s disease is the</span></div>
+    <div id="cap-7" class="cap clip" data-start="16.71" data-duration="1.82"><span>most common cause of dementia,</span></div>
+    <div id="cap-8" class="cap clip" data-start="18.55" data-duration="1.17"><span>and it is often</span></div>
+    <div id="cap-9" class="cap clip" data-start="19.74" data-duration="1.56"><span>recognised late.</span></div>
+    <div id="cap-10" class="cap clip" data-start="21.32" data-duration="1.86"><span>The tests that confirm it are</span></div>
+    <div id="cap-11" class="cap clip" data-start="23.2" data-duration="1.94"><span>costly, and specialists</span></div>
+    <div id="cap-12" class="cap clip" data-start="25.16" data-duration="1.09"><span>are scarce.</span></div>
+    <div id="cap-13" class="cap clip" data-start="26.27" data-duration="1.77"><span>In low-income countries,</span></div>
+    <div id="cap-14" class="cap clip" data-start="28.06" data-duration="1.0"><span>there is about one</span></div>
+    <div id="cap-15" class="cap clip" data-start="29.08" data-duration="2.62"><span>neurology specialist for every million people.</span></div>
+    <div id="cap-17" class="cap clip" data-start="31.72" data-duration="1.3"><span>An EEG is</span></div>
+    <div id="cap-18" class="cap clip" data-start="33.04" data-duration="0.84"><span>different.</span></div>
+    <div id="cap-19" class="cap clip" data-start="33.9" data-duration="1.34"><span>It is cheap,</span></div>
+    <div id="cap-20" class="cap clip" data-start="35.26" data-duration="1.52"><span>painless, and already</span></div>
+    <div id="cap-21" class="cap clip" data-start="36.8" data-duration="1.57"><span>in most hospitals.</span></div>
+    <div id="cap-22" class="cap clip" data-start="40.65" data-duration="2.5"><span>NeuroDetect reads one short,</span></div>
+    <div id="cap-23" class="cap clip" data-start="43.17" data-duration="1.9"><span>resting EEG recording.</span></div>
+    <div id="cap-24" class="cap clip" data-start="45.09" data-duration="2.28"><span>It needs just five of the usual</span></div>
+    <div id="cap-26" class="cap clip" data-start="47.39" data-duration="1.39"><span>nineteen sensors.</span></div>
+    <div id="cap-27" class="cap clip" data-start="48.8" data-duration="2.11"><span>Three for Alzheimer&#x27;s-type changes,</span></div>
+    <div id="cap-28" class="cap clip" data-start="50.93" data-duration="2.02"><span>and two for a mood marker.</span></div>
+    <div id="cap-29" class="cap clip" data-start="54.25" data-duration="1.52"><span>Here is the journey of one</span></div>
+    <div id="cap-30" class="cap clip" data-start="55.79" data-duration="1.11"><span>recording.</span></div>
+    <div id="cap-31" class="cap clip" data-start="56.98" data-duration="1.47"><span>The signal is filtered</span></div>
+    <div id="cap-32" class="cap clip" data-start="58.47" data-duration="1.69"><span>to between half a hertz</span></div>
+    <div id="cap-33" class="cap clip" data-start="60.18" data-duration="1.43"><span>and forty-five hertz,</span></div>
+    <div id="cap-34" class="cap clip" data-start="61.63" data-duration="2.2"><span>and resampled to two hundred and</span></div>
+    <div id="cap-35" class="cap clip" data-start="63.85" data-duration="1.68"><span>fifty samples a second.</span></div>
+    <div id="cap-36" class="cap clip" data-start="65.6" data-duration="1.3"><span>Then it is cut into</span></div>
+    <div id="cap-37" class="cap clip" data-start="66.92" data-duration="1.56"><span>ten-second slices.</span></div>
+    <div id="cap-38" class="cap clip" data-start="68.55" data-duration="2.32"><span>Slices spoiled by blinks or movement</span></div>
+    <div id="cap-39" class="cap clip" data-start="70.89" data-duration="1.61"><span>are thrown away.</span></div>
+    <div id="cap-40" class="cap clip" data-start="72.52" data-duration="1.38"><span>Every clean slice</span></div>
+    <div id="cap-41" class="cap clip" data-start="73.92" data-duration="1.69"><span>becomes a few numbers,</span></div>
+    <div id="cap-42" class="cap clip" data-start="75.63" data-duration="2.37"><span>called biomarkers, and each slice</span></div>
+    <div id="cap-43" class="cap clip" data-start="78.02" data-duration="1.83"><span>is judged on its own.</span></div>
+    <div id="cap-44" class="cap clip" data-start="81.21" data-duration="1.94"><span>Two paths run side</span></div>
+    <div id="cap-45" class="cap clip" data-start="83.17" data-duration="1.41"><span>by side.</span></div>
+    <div id="cap-46" class="cap clip" data-start="84.62" data-duration="2.41"><span>The Alzheimer&#x27;s path compares slow theta</span></div>
+    <div id="cap-47" class="cap clip" data-start="87.05" data-duration="1.6"><span>waves with alpha waves</span></div>
+    <div id="cap-48" class="cap clip" data-start="88.67" data-duration="1.26"><span>at the back of the head,</span></div>
+    <div id="cap-49" class="cap clip" data-start="89.95" data-duration="2.2"><span>and checks how closely the front</span></div>
+    <div id="cap-50" class="cap clip" data-start="92.17" data-duration="1.26"><span>and back of the brain</span></div>
+    <div id="cap-51" class="cap clip" data-start="93.45" data-duration="1.08"><span>stay in step.</span></div>
+    <div id="cap-52" class="cap clip" data-start="94.55" data-duration="1.0"><span>The second path</span></div>
+    <div id="cap-53" class="cap clip" data-start="95.57" data-duration="2.54"><span>measures frontal alpha asymmetry,</span></div>
+    <div id="cap-54" class="cap clip" data-start="98.13" data-duration="2.29"><span>a depression-related marker.</span></div>
+    <div id="cap-55" class="cap clip" data-start="100.44" data-duration="1.56"><span>It is preliminary,</span></div>
+    <div id="cap-56" class="cap clip" data-start="102.02" data-duration="1.21"><span>and shown as indicative</span></div>
+    <div id="cap-57" class="cap clip" data-start="103.25" data-duration="0.85"><span>only.</span></div>
+    <div id="cap-58" class="cap clip" data-start="105.65" data-duration="1.94"><span>The classifier is deliberately</span></div>
+    <div id="cap-59" class="cap clip" data-start="107.61" data-duration="0.92"><span>simple.</span></div>
+    <div id="cap-60" class="cap clip" data-start="108.55" data-duration="1.73"><span>It learns one typical</span></div>
+    <div id="cap-61" class="cap clip" data-start="110.3" data-duration="2.07"><span>healthy pattern and one typical</span></div>
+    <div id="cap-62" class="cap clip" data-start="112.39" data-duration="2.54"><span>Alzheimer&#x27;s pattern, and asks</span></div>
+    <div id="cap-63" class="cap clip" data-start="114.95" data-duration="1.43"><span>which a slice is closer</span></div>
+    <div id="cap-64" class="cap clip" data-start="116.4" data-duration="2.46"><span>to, using cosine distance.</span></div>
+    <div id="cap-65" class="cap clip" data-start="119.05" data-duration="2.16"><span>Every slice casts a vote.</span></div>
+    <div id="cap-66" class="cap clip" data-start="121.23" data-duration="0.88"><span>The whole model</span></div>
+    <div id="cap-67" class="cap clip" data-start="122.13" data-duration="1.69"><span>holds just sixteen learned</span></div>
+    <div id="cap-68" class="cap clip" data-start="123.84" data-duration="2.75"><span>parameters, about one kilobyte,</span></div>
+    <div id="cap-69" class="cap clip" data-start="126.61" data-duration="2.6"><span>and runs on an ordinary laptop.</span></div>
+    <div id="cap-70" class="cap clip" data-start="130.25" data-duration="1.68"><span>Tested on sixty-five people</span></div>
+    <div id="cap-71" class="cap clip" data-start="131.95" data-duration="1.18"><span>it had never seen,</span></div>
+    <div id="cap-72" class="cap clip" data-start="133.15" data-duration="1.86"><span>and repeated ten times,</span></div>
+    <div id="cap-73" class="cap clip" data-start="135.03" data-duration="1.68"><span>the Alzheimer&#x27;s module reached</span></div>
+    <div id="cap-74" class="cap clip" data-start="136.73" data-duration="1.52"><span>eighty-two point six percent</span></div>
+    <div id="cap-75" class="cap clip" data-start="138.27" data-duration="2.2"><span>balanced accuracy, and correctly</span></div>
+    <div id="cap-76" class="cap clip" data-start="140.49" data-duration="1.39"><span>cleared ninety-four percent</span></div>
+    <div id="cap-77" class="cap clip" data-start="141.9" data-duration="1.18"><span>of healthy people.</span></div>
+    <div id="cap-78" class="cap clip" data-start="143.1" data-duration="2.41"><span>Three electrodes beat the full nineteen.</span></div>
+    <div id="cap-79" class="cap clip" data-start="145.53" data-duration="1.43"><span>The depression marker scored</span></div>
+    <div id="cap-80" class="cap clip" data-start="146.98" data-duration="1.56"><span>fifty-five percent:</span></div>
+    <div id="cap-81" class="cap clip" data-start="148.6" data-duration="1.53"><span>close to chance.</span></div>
+    <div id="cap-82" class="cap clip" data-start="151.75" data-duration="2.65"><span>And it is a working prototype.</span></div>
+    <div id="cap-84" class="cap clip" data-start="154.44" data-duration="1.38"><span>Upload a recording,</span></div>
+    <div id="cap-85" class="cap clip" data-start="155.84" data-duration="1.05"><span>and within seconds</span></div>
+    <div id="cap-86" class="cap clip" data-start="156.91" data-duration="1.6"><span>you get a plain-language</span></div>
+    <div id="cap-87" class="cap clip" data-start="158.53" data-duration="2.54"><span>verdict, the vote of every slice,</span></div>
+    <div id="cap-88" class="cap clip" data-start="161.09" data-duration="1.22"><span>the measurements behind</span></div>
+    <div id="cap-89" class="cap clip" data-start="162.33" data-duration="1.34"><span>it, and a P D F</span></div>
+    <div id="cap-90" class="cap clip" data-start="163.69" data-duration="0.86"><span>report.</span></div>
+    <div id="cap-91" class="cap clip" data-start="165.75" data-duration="2.41"><span>NeuroDetect is a screening aid,</span></div>
+    <div id="cap-92" class="cap clip" data-start="168.18" data-duration="1.81"><span>not a diagnosis.</span></div>
+    <div id="cap-93" class="cap clip" data-start="170.01" data-duration="1.91"><span>Before it is used in clinics,</span></div>
+    <div id="cap-94" class="cap clip" data-start="171.94" data-duration="2.11"><span>it needs testing on data from</span></div>
+    <div id="cap-95" class="cap clip" data-start="174.07" data-duration="1.5"><span>other hospitals.</span></div>
+    <div id="cap-96" class="cap clip" data-start="176.65" data-duration="1.66"><span>NeuroDetect.</span></div>
+    <div id="cap-97" class="cap clip" data-start="178.44" data-duration="1.82"><span>Making brain-wave screening</span></div>
+    <div id="cap-98" class="cap clip" data-start="180.28" data-duration="2.0"><span>more accessible.</span></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cap-0 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 1.85);
+      tl.to("#cap-0 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 2.95);
+      tl.fromTo("#cap-1 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 3.09);
+      tl.to("#cap-1 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 4.4);
+      tl.fromTo("#cap-2 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 4.54);
+      tl.to("#cap-2 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 6.06);
+      tl.fromTo("#cap-3 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 6.2);
+      tl.to("#cap-3 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 8.98);
+      tl.fromTo("#cap-4 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 9.23);
+      tl.to("#cap-4 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 11.16);
+      tl.fromTo("#cap-5 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 11.32);
+      tl.to("#cap-5 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 12.71);
+      tl.fromTo("#cap-6 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 14.75);
+      tl.to("#cap-6 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 16.57);
+      tl.fromTo("#cap-7 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 16.71);
+      tl.to("#cap-7 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 18.41);
+      tl.fromTo("#cap-8 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 18.55);
+      tl.to("#cap-8 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 19.6);
+      tl.fromTo("#cap-9 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 19.74);
+      tl.to("#cap-9 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 21.18);
+      tl.fromTo("#cap-10 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 21.32);
+      tl.to("#cap-10 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 23.06);
+      tl.fromTo("#cap-11 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 23.2);
+      tl.to("#cap-11 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 25.02);
+      tl.fromTo("#cap-12 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 25.16);
+      tl.to("#cap-12 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 26.13);
+      tl.fromTo("#cap-13 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 26.27);
+      tl.to("#cap-13 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 27.92);
+      tl.fromTo("#cap-14 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 28.06);
+      tl.to("#cap-14 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 28.94);
+      tl.fromTo("#cap-15 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 29.08);
+      tl.to("#cap-15 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 31.58);
+      tl.fromTo("#cap-17 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 31.72);
+      tl.to("#cap-17 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 32.9);
+      tl.fromTo("#cap-18 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 33.04);
+      tl.to("#cap-18 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 33.76);
+      tl.fromTo("#cap-19 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 33.9);
+      tl.to("#cap-19 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 35.12);
+      tl.fromTo("#cap-20 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 35.26);
+      tl.to("#cap-20 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 36.66);
+      tl.fromTo("#cap-21 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 36.8);
+      tl.to("#cap-21 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 38.25);
+      tl.fromTo("#cap-22 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 40.65);
+      tl.to("#cap-22 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 43.03);
+      tl.fromTo("#cap-23 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 43.17);
+      tl.to("#cap-23 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 44.95);
+      tl.fromTo("#cap-24 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 45.09);
+      tl.to("#cap-24 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 47.25);
+      tl.fromTo("#cap-26 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 47.39);
+      tl.to("#cap-26 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 48.66);
+      tl.fromTo("#cap-27 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 48.8);
+      tl.to("#cap-27 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 50.79);
+      tl.fromTo("#cap-28 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 50.93);
+      tl.to("#cap-28 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 52.83);
+      tl.fromTo("#cap-29 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 54.25);
+      tl.to("#cap-29 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 55.65);
+      tl.fromTo("#cap-30 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 55.79);
+      tl.to("#cap-30 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 56.78);
+      tl.fromTo("#cap-31 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 56.98);
+      tl.to("#cap-31 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 58.33);
+      tl.fromTo("#cap-32 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 58.47);
+      tl.to("#cap-32 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 60.04);
+      tl.fromTo("#cap-33 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 60.18);
+      tl.to("#cap-33 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 61.49);
+      tl.fromTo("#cap-34 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 61.63);
+      tl.to("#cap-34 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 63.71);
+      tl.fromTo("#cap-35 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 63.85);
+      tl.to("#cap-35 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 65.41);
+      tl.fromTo("#cap-36 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 65.6);
+      tl.to("#cap-36 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 66.78);
+      tl.fromTo("#cap-37 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 66.92);
+      tl.to("#cap-37 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 68.36);
+      tl.fromTo("#cap-38 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 68.55);
+      tl.to("#cap-38 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 70.75);
+      tl.fromTo("#cap-39 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 70.89);
+      tl.to("#cap-39 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 72.38);
+      tl.fromTo("#cap-40 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 72.52);
+      tl.to("#cap-40 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 73.78);
+      tl.fromTo("#cap-41 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 73.92);
+      tl.to("#cap-41 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 75.49);
+      tl.fromTo("#cap-42 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 75.63);
+      tl.to("#cap-42 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 77.88);
+      tl.fromTo("#cap-43 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 78.02);
+      tl.to("#cap-43 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 79.73);
+      tl.fromTo("#cap-44 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 81.21);
+      tl.to("#cap-44 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 83.03);
+      tl.fromTo("#cap-45 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 83.17);
+      tl.to("#cap-45 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 84.46);
+      tl.fromTo("#cap-46 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 84.62);
+      tl.to("#cap-46 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 86.91);
+      tl.fromTo("#cap-47 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 87.05);
+      tl.to("#cap-47 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 88.53);
+      tl.fromTo("#cap-48 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 88.67);
+      tl.to("#cap-48 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 89.81);
+      tl.fromTo("#cap-49 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 89.95);
+      tl.to("#cap-49 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 92.03);
+      tl.fromTo("#cap-50 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 92.17);
+      tl.to("#cap-50 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 93.31);
+      tl.fromTo("#cap-51 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 93.45);
+      tl.to("#cap-51 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 94.41);
+      tl.fromTo("#cap-52 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 94.55);
+      tl.to("#cap-52 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 95.43);
+      tl.fromTo("#cap-53 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 95.57);
+      tl.to("#cap-53 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 97.99);
+      tl.fromTo("#cap-54 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 98.13);
+      tl.to("#cap-54 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 100.3);
+      tl.fromTo("#cap-55 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 100.44);
+      tl.to("#cap-55 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 101.88);
+      tl.fromTo("#cap-56 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 102.02);
+      tl.to("#cap-56 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 103.11);
+      tl.fromTo("#cap-57 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 103.25);
+      tl.to("#cap-57 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 103.98);
+      tl.fromTo("#cap-58 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 105.65);
+      tl.to("#cap-58 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 107.47);
+      tl.fromTo("#cap-59 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 107.61);
+      tl.to("#cap-59 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 108.41);
+      tl.fromTo("#cap-60 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 108.55);
+      tl.to("#cap-60 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 110.16);
+      tl.fromTo("#cap-61 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 110.3);
+      tl.to("#cap-61 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 112.25);
+      tl.fromTo("#cap-62 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 112.39);
+      tl.to("#cap-62 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 114.81);
+      tl.fromTo("#cap-63 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 114.95);
+      tl.to("#cap-63 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 116.26);
+      tl.fromTo("#cap-64 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 116.4);
+      tl.to("#cap-64 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 118.74);
+      tl.fromTo("#cap-65 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 119.05);
+      tl.to("#cap-65 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 121.09);
+      tl.fromTo("#cap-66 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 121.23);
+      tl.to("#cap-66 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 121.99);
+      tl.fromTo("#cap-67 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 122.13);
+      tl.to("#cap-67 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 123.7);
+      tl.fromTo("#cap-68 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 123.84);
+      tl.to("#cap-68 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 126.47);
+      tl.fromTo("#cap-69 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 126.61);
+      tl.to("#cap-69 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 129.09);
+      tl.fromTo("#cap-70 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 130.25);
+      tl.to("#cap-70 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 131.81);
+      tl.fromTo("#cap-71 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 131.95);
+      tl.to("#cap-71 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 133.01);
+      tl.fromTo("#cap-72 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 133.15);
+      tl.to("#cap-72 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 134.89);
+      tl.fromTo("#cap-73 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 135.03);
+      tl.to("#cap-73 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 136.59);
+      tl.fromTo("#cap-74 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 136.73);
+      tl.to("#cap-74 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 138.13);
+      tl.fromTo("#cap-75 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 138.27);
+      tl.to("#cap-75 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 140.35);
+      tl.fromTo("#cap-76 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 140.49);
+      tl.to("#cap-76 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 141.76);
+      tl.fromTo("#cap-77 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 141.9);
+      tl.to("#cap-77 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 142.96);
+      tl.fromTo("#cap-78 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 143.1);
+      tl.to("#cap-78 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 145.39);
+      tl.fromTo("#cap-79 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 145.53);
+      tl.to("#cap-79 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 146.84);
+      tl.fromTo("#cap-80 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 146.98);
+      tl.to("#cap-80 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 148.42);
+      tl.fromTo("#cap-81 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 148.6);
+      tl.to("#cap-81 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 150.01);
+      tl.fromTo("#cap-82 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 151.75);
+      tl.to("#cap-82 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 154.28);
+      tl.fromTo("#cap-84 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 154.44);
+      tl.to("#cap-84 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 155.7);
+      tl.fromTo("#cap-85 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 155.84);
+      tl.to("#cap-85 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 156.77);
+      tl.fromTo("#cap-86 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 156.91);
+      tl.to("#cap-86 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 158.39);
+      tl.fromTo("#cap-87 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 158.53);
+      tl.to("#cap-87 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 160.95);
+      tl.fromTo("#cap-88 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 161.09);
+      tl.to("#cap-88 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 162.19);
+      tl.fromTo("#cap-89 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 162.33);
+      tl.to("#cap-89 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 163.55);
+      tl.fromTo("#cap-90 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 163.69);
+      tl.to("#cap-90 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 164.43);
+      tl.fromTo("#cap-91 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 165.75);
+      tl.to("#cap-91 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 168.04);
+      tl.fromTo("#cap-92 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 168.18);
+      tl.to("#cap-92 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 169.87);
+      tl.fromTo("#cap-93 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 170.01);
+      tl.to("#cap-93 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 171.8);
+      tl.fromTo("#cap-94 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 171.94);
+      tl.to("#cap-94 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 173.93);
+      tl.fromTo("#cap-95 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 174.07);
+      tl.to("#cap-95 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 175.45);
+      tl.fromTo("#cap-96 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 176.65);
+      tl.to("#cap-96 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 178.19);
+      tl.fromTo("#cap-97 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 178.44);
+      tl.to("#cap-97 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 180.14);
+      tl.fromTo("#cap-98 span", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 180.28);
+      tl.to("#cap-98 span", { opacity: 0, duration: 0.12, ease: "power2.in" }, 182.16);
+      window.__timelines["captions"] = tl;
+    })();
+  </script>
+</template>

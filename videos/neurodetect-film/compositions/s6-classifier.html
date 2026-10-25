@@ -1,0 +1,106 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #s6-top { position: absolute; left: 120px; top: 90px; }
+    #s6-right { position: absolute; left: 1120px; top: 220px; width: 690px; }
+    #s6-tally { padding: 34px 40px; }
+    .s6-row { display: flex; align-items: center; gap: 18px; margin-top: 20px; font-size: 28px; }
+    .s6-bar { height: 26px; border-radius: 6px; }
+    .s6-num { font-family: var(--mono); font-size: 30px; width: 60px; }
+    #s6-tiles { position: absolute; left: 1120px; top: 220px; width: 690px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .s6-tile { padding: 30px 30px; }
+    .s6-tile .v { font-weight: 800; font-size: 70px; color: var(--cyan); letter-spacing: -0.02em; line-height: 1; }
+    .s6-tile .l { font-size: 26px; color: #c9d2e6; margin-top: 12px; line-height: 1.3; }
+  </style>
+  <div data-hf-id="hf-ijcg" id="root" data-composition-id="s6-classifier" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ctl7" id="s6-top" class="clip" data-start="0" data-duration="24.6"><div data-hf-id="hf-0tos" id="s6-top-in"><div data-hf-id="hf-ycpj" class="kicker">Nearest-centroid classifier</div><div data-hf-id="hf-d2br" class="h-m" style="margin-top:8px">Which pattern is this slice closer to?</div></div></div>
+    <canvas data-hf-id="hf-tqzj" id="s6-cv" class="cv clip" data-start="0" data-duration="24.6"></canvas>
+    <div data-hf-id="hf-mzb2" id="s6-right" class="clip" data-start="0" data-duration="16.6">
+      <div data-hf-id="hf-vee6" id="s6-tally" class="card">
+        <div data-hf-id="hf-dm1y" class="kicker">Slice votes <span data-hf-id="hf-ekgw" class="c-muted" style="letter-spacing:0.05em">(illustrative)</span></div>
+        <div data-hf-id="hf-shg4" class="s6-row"><span data-hf-id="hf-w3oj" class="s6-num c-amber" id="s6-na">0</span><div data-hf-id="hf-v5rn" class="s6-bar" id="s6-ba" style="background:#F5B544;width:300px;transform-origin:left center"></div><span data-hf-id="hf-gf36">Alzheimer's-like</span></div>
+        <div data-hf-id="hf-q5ik" class="s6-row"><span data-hf-id="hf-hbze" class="s6-num c-cyan" id="s6-nh">0</span><div data-hf-id="hf-p4i9" class="s6-bar" id="s6-bh" style="background:#22D3EE;width:300px;transform-origin:left center"></div><span data-hf-id="hf-x6bu">healthy-like</span></div>
+        <div data-hf-id="hf-9cfp" class="body" id="s6-verdict" style="margin-top:28px;font-size:28px">Majority of slices → recording-level result</div>
+      </div>
+    </div>
+    <div data-hf-id="hf-z88n" id="s6-tiles" class="clip" data-start="16.2" data-duration="8.4">
+      <div data-hf-id="hf-88mu" class="s6-tile card"><div data-hf-id="hf-eceh" class="v">16</div><div data-hf-id="hf-g3et" class="l">learned parameters</div></div>
+      <div data-hf-id="hf-cufu" class="s6-tile card"><div data-hf-id="hf-gbce" class="v">≈1 KB</div><div data-hf-id="hf-at5e" class="l">model size</div></div>
+      <div data-hf-id="hf-d8qv" class="s6-tile card"><div data-hf-id="hf-yd3k" class="v">≈1 s</div><div data-hf-id="hf-trl4" class="l">per recording</div></div>
+      <div data-hf-id="hf-dn1w" class="s6-tile card"><div data-hf-id="hf-3z70" class="v" style="font-size:52px;line-height:70px">Laptop CPU</div><div data-hf-id="hf-6z1i" class="l">no GPU needed</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const START = 104.9;
+      const ctx = ND.fitCanvas(document.getElementById("s6-cv"));
+      const k = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const eo = (x) => 1 - Math.pow(1 - x, 3);
+      const OX = 230, OY = 900, R = 640;
+      const AH = (18 * Math.PI) / 180, AA = (66 * Math.PI) / 180;
+      const r = ND.rng(42), SL = [];
+      for (let i = 0; i < 22; i++) {
+        const ad = i % 3 !== 1;
+        const ang = (ad ? AA : AH) + (r() - 0.5) * 0.62, rad = R * (0.35 + r() * 0.55);
+        SL.push({ ang, rad, ad: Math.abs(ang - AA) < Math.abs(ang - AH), at: 9.6 + i * 0.16 });
+      }
+      const nA = SL.filter((s) => s.ad).length, nH = SL.length - nA;
+      const P = (a, rr) => [OX + Math.cos(a) * rr, OY - Math.sin(a) * rr];
+      function ray(a, col, lab, v) {
+        const [x, y] = P(a, R * eo(v));
+        ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.globalAlpha = v; ctx.beginPath(); ctx.moveTo(OX, OY); ctx.lineTo(x, y); ctx.stroke();
+        ctx.shadowColor = col; ctx.shadowBlur = 20; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, 16, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0;
+        ctx.font = "700 28px Outfit"; ctx.fillText(lab, x + 26, y + 10); ctx.globalAlpha = 1;
+      }
+      function renderAt(T) {
+        const t = T - START;
+        ctx.clearRect(0, 0, 1920, 1080);
+        const g = k(t, 0.6, 1.6) * (1 - k(t, 24.1, 24.6));
+        if (g <= 0) return;
+        ctx.globalAlpha = g; ctx.strokeStyle = "#2A3A63"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(OX, OY - R - 20); ctx.lineTo(OX, OY); ctx.lineTo(OX + R + 120, OY); ctx.stroke();
+        ctx.fillStyle = "#8A97B5"; ctx.font = "500 22px 'IBM Plex Mono'"; ctx.fillText("feature space (2-D sketch of 4 features)", OX + 20, OY + 44);
+        ctx.globalAlpha = 1;
+        ray(AH, "#22D3EE", "typical healthy", k(t, 5.2, 6.4) * g);
+        ray(AA, "#F5B544", "typical Alzheimer's", k(t, 7.3, 8.5) * g);
+        // cosine: compare directions
+        const ca = k(t, 12.2, 12.8) * g;
+        for (const s of SL) {
+          const v = k(t, s.at, s.at + 0.4) * g; if (v <= 0) continue;
+          const [x, y] = P(s.ang, s.rad), col = s.ad ? "245,181,68" : "34,211,238";
+          ctx.strokeStyle = `rgba(${col},${0.25 * v})`; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(OX, OY); ctx.lineTo(x, y); ctx.stroke();
+          ctx.fillStyle = `rgba(${col},${v})`; ctx.beginPath(); ctx.arc(x, y, 9, 0, 6.283); ctx.fill();
+        }
+        if (ca > 0) {
+          const s = SL[0], tgt = s.ad ? AA : AH, a0 = Math.min(s.ang, tgt), a1 = Math.max(s.ang, tgt);
+          ctx.strokeStyle = `rgba(244,247,251,${ca * (1 - k(t, 14.6, 15.2))})`; ctx.lineWidth = 3;
+          ctx.beginPath(); ctx.arc(OX, OY, 170, -a1, -a0); ctx.stroke();
+          ctx.fillStyle = `rgba(244,247,251,${ca * (1 - k(t, 14.6, 15.2))})`; ctx.font = "600 26px 'IBM Plex Mono'";
+          ctx.fillText("cosine distance = angle between patterns", OX + 200, OY - 60);
+        }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(0);
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s6-top-in", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0);
+      tl.fromTo("#s6-tally", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 9.2);
+      const cnt = { a: 0, h: 0 };
+      const end = SL[SL.length - 1].at + 0.4;
+      tl.fromTo(cnt, { a: 0, h: 0 }, {
+        a: nA, h: nH, duration: end - 9.6, ease: "none",
+        onUpdate: () => {
+          document.getElementById("s6-na").textContent = Math.round(cnt.a);
+          document.getElementById("s6-nh").textContent = Math.round(cnt.h);
+        },
+      }, 9.6);
+      tl.fromTo("#s6-ba", { scaleX: 0 }, { scaleX: nA / SL.length, duration: end - 9.6, ease: "none" }, 9.6);
+      tl.fromTo("#s6-bh", { scaleX: 0 }, { scaleX: nH / SL.length, duration: end - 9.6, ease: "none" }, 9.6);
+      tl.fromTo("#s6-verdict", { opacity: 0 }, { opacity: 1, duration: 0.6 }, end);
+      tl.to("#s6-tally", { opacity: 0, x: -20, duration: 0.4, ease: "power2.in" }, 16.0);
+      document.querySelectorAll(".s6-tile").forEach((el, i) => tl.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, [16.4, 19.9, 21.0, 22.3][i]));
+      tl.to(["#s6-top-in", ".s6-tile"], { opacity: 0, duration: 0.5, ease: "power2.in" }, 24.1);
+      window.__timelines["s6-classifier"] = tl;
+    })();
+  </script>
+</template>
