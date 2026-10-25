@@ -1,0 +1,9 @@
+[
+  "test_neuro.py::test_alpha_dominant_signal_has_high_relative_alpha",
+  "test_neuro.py::test_artifact_rejection",
+  "test_neuro.py::test_coherence_identical_high_independent_low",
+  "test_neuro.py::test_faa_sign_more_right_alpha_is_positive",
+  "test_neuro.py::test_features_are_gain_invariant",
+  "test_neuro.py::test_prepare_epochs_and_missing_channel",
+  "test_neuro.py::test_slow_signal_increases_slowing_ratio"
+]

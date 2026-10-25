@@ -1,0 +1,2296 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 11
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 31,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 30,
+        "selector": "#s2-figcap",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 150,
+          "top": 900,
+          "right": 416,
+          "bottom": 927,
+          "width": 266,
+          "height": 27
+        },
+        "containerSelector": "#s2-cv",
+        "text": "ILLUSTRATIVE FIGURE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2-problem.html",
+        "bbox": {
+          "x": 150,
+          "y": 900,
+          "width": 266,
+          "height": 27
+        },
+        "firstSeen": 30,
+        "lastSeen": 30,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          30
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 30,
+        "selector": "#s2-fig > circle:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 179.89,
+          "top": 139.82,
+          "right": 780.16,
+          "bottom": 740.09,
+          "width": 600.27,
+          "height": 600.27
+        },
+        "containerSelector": "#s2-fig",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 101.91,
+          "top": 139.82,
+          "right": 738.09,
+          "bottom": 940.18,
+          "width": 636.18,
+          "height": 800.36
+        },
+        "overflow": {
+          "right": 42.07
+        },
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"fill\",\"localName\":\"fill\",\"namespaceURI\":null,\"before\":\"url(#s2-halo)\",\"after\":\"url(#s2-halo)\"}]"
+        },
+        "sourceFile": "compositions/s2-problem.html",
+        "bbox": {
+          "x": 179.89,
+          "y": 139.82,
+          "width": 600.27,
+          "height": 600.27
+        },
+        "firstSeen": 30,
+        "lastSeen": 30,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          30
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 70,
+        "selector": "span.kicker",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 160,
+          "top": 105,
+          "right": 515.69,
+          "bottom": 137,
+          "width": 355.69,
+          "height": 32
+        },
+        "containerSelector": "#s4-cv",
+        "text": "Processing pipeline",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4-pipeline.html",
+        "bbox": {
+          "x": 160,
+          "y": 105,
+          "width": 355.69,
+          "height": 32
+        },
+        "firstSeen": 70,
+        "lastSeen": 70,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          70
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 70,
+        "selector": "span.h-m",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 522.34,
+          "top": 86,
+          "right": 1087.31,
+          "bottom": 141,
+          "width": 564.97,
+          "height": 55
+        },
+        "containerSelector": "#s4-cv",
+        "text": "The journey of one recording",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4-pipeline.html",
+        "bbox": {
+          "x": 522.34,
+          "y": 86,
+          "width": 564.97,
+          "height": 55
+        },
+        "firstSeen": 70,
+        "lastSeen": 70,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          70
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5-a > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 151,
+          "top": 150,
+          "right": 562.84,
+          "bottom": 182,
+          "width": 411.84,
+          "height": 32
+        },
+        "containerSelector": "#s5-cv",
+        "text": "Module A · Alzheimer's",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 151,
+          "y": 150,
+          "width": 411.84,
+          "height": 32
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5-a > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 151,
+          "top": 186,
+          "right": 670.08,
+          "bottom": 241,
+          "width": 519.08,
+          "height": 55
+        },
+        "containerSelector": "#s5-cv",
+        "text": "Slowing & front–back sync",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 151,
+          "y": 186,
+          "width": 519.08,
+          "height": 55
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5-spec-lab",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 151,
+          "top": 264,
+          "right": 525.41,
+          "bottom": 296,
+          "width": 374.41,
+          "height": 32
+        },
+        "containerSelector": "#s5-cv",
+        "text": "log(θ / α) power at O1, O2",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 151,
+          "y": 264,
+          "width": 374.41,
+          "height": 32
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 90,
+        "selector": "div.mono.c-cyan",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 460.33,
+          "top": 654,
+          "right": 631.93,
+          "bottom": 688,
+          "width": 171.61,
+          "height": 34
+        },
+        "containerSelector": "#s5-cv",
+        "text": "θ COHERENCE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 460.33,
+          "y": 654,
+          "width": 171.61,
+          "height": 34
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5-cohtxt > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 460.33,
+          "top": 698,
+          "right": 922.72,
+          "bottom": 776.5,
+          "width": 462.39,
+          "height": 78.5
+        },
+        "containerSelector": "#s5-cv",
+        "text": "How closely Fz stays in step with O1 and O2",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 460.33,
+          "y": 698,
+          "width": 462.39,
+          "height": 78.5
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-Fp1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 156.97,
+          "top": 539.1,
+          "right": 455.9,
+          "bottom": 732.21,
+          "width": 298.92,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 24.9,
+          "top": 44.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 156.97,
+          "y": 539.1,
+          "width": 298.92,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-Fp2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 216.84,
+          "top": 539.1,
+          "right": 515.76,
+          "bottom": 732.21,
+          "width": 298.92,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 84.76,
+          "top": 44.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 216.84,
+          "y": 539.1,
+          "width": 298.92,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-F7",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 110.96,
+          "top": 573.86,
+          "right": 405.25,
+          "bottom": 676.69,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "left": 40.04,
+          "top": 10.14
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 110.96,
+          "y": 573.86,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-F3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 150.55,
+          "top": 580.62,
+          "right": 444.84,
+          "bottom": 773.72,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 13.84,
+          "top": 3.38
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 150.55,
+          "y": 580.62,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-Fz",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 189.17,
+          "top": 582.55,
+          "right": 483.46,
+          "bottom": 688.28,
+          "width": 294.29,
+          "height": 105.72
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 52.46
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 189.17,
+          "y": 582.55,
+          "width": 294.29,
+          "height": 105.72
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-F4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 227.79,
+          "top": 580.62,
+          "right": 522.08,
+          "bottom": 683.45,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 91.08,
+          "top": 3.38
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 227.79,
+          "y": 580.62,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-F8",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 267.38,
+          "top": 573.86,
+          "right": 561.66,
+          "bottom": 766.97,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 130.66,
+          "top": 10.14
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 267.38,
+          "y": 573.86,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-T3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 92.62,
+          "top": 630.83,
+          "right": 386.9,
+          "bottom": 823.93,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "left": 58.38
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 92.62,
+          "y": 630.83,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-C3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 140.89,
+          "top": 630.83,
+          "right": 435.18,
+          "bottom": 823.93,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "left": 10.11,
+          "right": 4.18
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 140.89,
+          "y": 630.83,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-Cz",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 189.17,
+          "top": 630.83,
+          "right": 483.46,
+          "bottom": 823.93,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 52.46
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 189.17,
+          "y": 630.83,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-C4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 237.44,
+          "top": 630.83,
+          "right": 531.73,
+          "bottom": 823.93,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 100.73
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 237.44,
+          "y": 630.83,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-T4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 285.72,
+          "top": 630.83,
+          "right": 580.01,
+          "bottom": 733.66,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 149.01
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 285.72,
+          "y": 630.83,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-T5",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 110.96,
+          "top": 687.79,
+          "right": 405.25,
+          "bottom": 880.9,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "left": 40.04,
+          "bottom": 16.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 110.96,
+          "y": 687.79,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-P3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 150.55,
+          "top": 681.03,
+          "right": 444.84,
+          "bottom": 874.14,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 13.84,
+          "bottom": 10.14
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 150.55,
+          "y": 681.03,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-Pz",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 189.17,
+          "top": 679.1,
+          "right": 483.46,
+          "bottom": 781.93,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 52.46
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 189.17,
+          "y": 679.1,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-P4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 227.79,
+          "top": 681.03,
+          "right": 522.08,
+          "bottom": 783.86,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 91.08
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 227.79,
+          "y": 681.03,
+          "width": 294.29,
+          "height": 102.83
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-T6",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 267.38,
+          "top": 687.79,
+          "right": 561.66,
+          "bottom": 880.9,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 130.66,
+          "bottom": 16.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 267.38,
+          "y": 687.79,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-O1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 159.24,
+          "top": 722.55,
+          "right": 453.53,
+          "bottom": 915.66,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 22.53,
+          "bottom": 51.66
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 159.24,
+          "y": 722.55,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 90,
+        "selector": "#s5c-O2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 219.1,
+          "top": 722.55,
+          "right": 513.39,
+          "bottom": 915.66,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "containerSelector": "#s5-cohhead",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 151,
+          "top": 584,
+          "right": 431,
+          "bottom": 864,
+          "width": 280,
+          "height": 280
+        },
+        "overflow": {
+          "right": 82.39,
+          "bottom": 51.66
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 219.1,
+          "y": 722.55,
+          "width": 294.29,
+          "height": 193.1
+        },
+        "firstSeen": 90,
+        "lastSeen": 90,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 110,
+        "selector": "#s6-top-in > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 120,
+          "top": 90,
+          "right": 625.45,
+          "bottom": 122,
+          "width": 505.45,
+          "height": 32
+        },
+        "containerSelector": "#s6-cv",
+        "text": "Nearest-centroid classifier",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s6-classifier.html",
+        "bbox": {
+          "x": 120,
+          "y": 90,
+          "width": 505.45,
+          "height": 32
+        },
+        "firstSeen": 110,
+        "lastSeen": 110,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          110
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 110,
+        "selector": "#s6-top-in > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 120,
+          "top": 125,
+          "right": 943.69,
+          "bottom": 191,
+          "width": 823.69,
+          "height": 66
+        },
+        "containerSelector": "#s6-cv",
+        "text": "Which pattern is this slice closer to?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s6-classifier.html",
+        "bbox": {
+          "x": 120,
+          "y": 125,
+          "width": 823.69,
+          "height": 66
+        },
+        "firstSeen": 110,
+        "lastSeen": 110,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          110
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 150,
+        "selector": "#s8-up",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 321,
+          "top": 13.33,
+          "right": 1601,
+          "bottom": 1311.1,
+          "width": 1280,
+          "height": 1297.77
+        },
+        "containerSelector": "#s8-view",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 321,
+          "top": 191,
+          "right": 1601,
+          "bottom": 911,
+          "width": 1280,
+          "height": 720
+        },
+        "overflow": {
+          "top": 177.67,
+          "bottom": 400.1
+        },
+        "dataAttributes": {
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/s8-product.html",
+        "bbox": {
+          "x": 321,
+          "y": 13.33,
+          "width": 1280,
+          "height": 1297.77
+        },
+        "firstSeen": 150,
+        "lastSeen": 150,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          150
+        ]
+      }
+    ],
+    "duration": 180,
+    "samples": [
+      10,
+      30,
+      50,
+      70,
+      90,
+      110,
+      130,
+      150,
+      170
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 31,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 8,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.03:1; WCAG AA requires 4.5:1.",
+        "text": "F3",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(11,19,40)",
+        "ratio": 1.03,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(120,126,134)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(1) > svg > g:nth-of-type(4) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 188.73924255371094,
+          "y": 140.58621215820312,
+          "width": 819.8038940429688,
+          "height": 537.9310302734375
+        },
+        "time": 50,
+        "times": [
+          50
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.02:1; WCAG AA requires 4.5:1.",
+        "text": "Fz",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(8,19,32)",
+        "ratio": 1.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(120,126,134)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(1) > svg > g:nth-of-type(5) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 296.325439453125,
+          "y": 145.96554565429688,
+          "width": 819.803955078125,
+          "height": 268.96551513671875
+        },
+        "time": 50,
+        "times": [
+          50
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.01:1; WCAG AA requires 4.5:1.",
+        "text": "F4",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(7,18,31)",
+        "ratio": 1.01,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(119,125,133)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(1) > svg > g:nth-of-type(6) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 403.9116516113281,
+          "y": 140.58621215820312,
+          "width": 819.803955078125,
+          "height": 268.96551513671875
+        },
+        "time": 50,
+        "times": [
+          50
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.02:1; WCAG AA requires 4.5:1.",
+        "text": "O1",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(6,13,27)",
+        "ratio": 1.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(117,123,131)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(1) > svg > g:nth-of-type(18) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 212.94615173339844,
+          "y": 535.9655151367188,
+          "width": 819.8038330078125,
+          "height": 537.9309692382812
+        },
+        "time": 50,
+        "times": [
+          50
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.01:1; WCAG AA requires 4.5:1.",
+        "text": "O2",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(7,15,29)",
+        "ratio": 1.01,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(118,124,132)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(1) > svg > g:nth-of-type(19) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 379.7047424316406,
+          "y": 535.9655151367188,
+          "width": 819.8038330078125,
+          "height": 537.9309692382812
+        },
+        "time": 50,
+        "times": [
+          50
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.05:1; WCAG AA requires 4.5:1.",
+        "text": "Fz",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(12,21,45)",
+        "ratio": 1.05,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(122,128,136)",
+        "large": false,
+        "selector": "div > div:nth-of-type(6) > div > div:nth-of-type(1) > div > svg > g:nth-of-type(5) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 189.16810607910156,
+          "y": 582.5517578125,
+          "width": 294.28857421875,
+          "height": 96.55169677734375
+        },
+        "time": 90,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.05:1; WCAG AA requires 4.5:1.",
+        "text": "O1",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(12,20,45)",
+        "ratio": 1.05,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(121,127,135)",
+        "large": false,
+        "selector": "div > div:nth-of-type(6) > div > div:nth-of-type(1) > div > svg > g:nth-of-type(18) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 159.23707580566406,
+          "y": 722.5517578125,
+          "width": 294.28857421875,
+          "height": 193.1033935546875
+        },
+        "time": 90,
+        "times": [
+          90
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.05:1; WCAG AA requires 4.5:1.",
+        "text": "O2",
+        "fg": "rgb(6,16,31)",
+        "bg": "rgb(12,20,45)",
+        "ratio": 1.05,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(121,127,135)",
+        "large": false,
+        "selector": "div > div:nth-of-type(6) > div > div:nth-of-type(1) > div > svg > g:nth-of-type(19) > text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 219.09915161132812,
+          "y": 722.5517578125,
+          "width": 294.2885437011719,
+          "height": 193.1033935546875
+        },
+        "time": 90,
+        "times": [
+          90
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      10,
+      50,
+      90,
+      130,
+      170
+    ],
+    "checked": 61,
+    "passed": 53
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 18,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "film_silent",
+        "severity": "warning",
+        "message": "This 180 s film has no sound source (no <audio>, no <video> with sound): add a music bed and sounds on the visible actions unless the person asked for silence; see references/sound.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"Resting EEG · eyes closed\" renders at 24 px for 14.12 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Resting EEG · eyes closed",
+        "selector": "#s1-tag-in",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1-hook.html",
+        "bbox": {
+          "x": 726,
+          "y": 130,
+          "width": 468,
+          "height": 32
+        },
+        "time": 0.902,
+        "times": [
+          0.902
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 14.124,
+        "elements": [
+          {
+            "selector": "#s1-tag-in",
+            "text": "Resting EEG · eyes closed",
+            "fontPx": 24,
+            "time": 0.902,
+            "seconds": 14.124
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 7 text elements stay under it for 0.5 s or more, the smallest \"ILLUSTRATIVE FIGURE\" at 20 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "ILLUSTRATIVE FIGURE",
+        "selector": "#s2-figcap",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2-problem.html",
+        "bbox": {
+          "x": 150,
+          "y": 900,
+          "width": 266,
+          "height": 27
+        },
+        "time": 16.528,
+        "times": [
+          16.227,
+          16.528,
+          20.434,
+          23.74,
+          31.853,
+          32.154,
+          32.454
+        ],
+        "fontPx": 20,
+        "floorPx": 28,
+        "seconds": 21.336,
+        "elements": [
+          {
+            "selector": "#s2-figcap",
+            "text": "ILLUSTRATIVE FIGURE",
+            "fontPx": 20,
+            "time": 16.528,
+            "seconds": 21.336
+          },
+          {
+            "selector": "#s2-c1 > div:nth-of-type(1)",
+            "text": "01 · Late recognition",
+            "fontPx": 22,
+            "time": 16.227,
+            "seconds": 13.523
+          },
+          {
+            "selector": "#s2-c2 > div:nth-of-type(1)",
+            "text": "02 · Cost",
+            "fontPx": 22,
+            "time": 20.434,
+            "seconds": 9.316
+          },
+          {
+            "selector": "#s2-c3 > div:nth-of-type(1)",
+            "text": "03 · Access",
+            "fontPx": 22,
+            "time": 23.74,
+            "seconds": 6.01
+          },
+          {
+            "selector": "#s2-tags > span:nth-of-type(1)",
+            "text": "LOW COST",
+            "fontPx": 24,
+            "time": 31.853,
+            "seconds": 6.011
+          },
+          {
+            "selector": "#s2-tags > span:nth-of-type(2)",
+            "text": "PAINLESS",
+            "fontPx": 24,
+            "time": 32.154,
+            "seconds": 5.71
+          },
+          {
+            "selector": "#s2-tags > span:nth-of-type(3)",
+            "text": "IN MOST HOSPITALS",
+            "fontPx": 24,
+            "time": 32.454,
+            "seconds": 5.41
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"19 sensors in a standard 10–20 cap\" at 26 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "19 sensors in a standard 10–20 cap",
+        "selector": "#s3-count-a",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-intro.html",
+        "bbox": {
+          "x": 314.8,
+          "y": 900,
+          "width": 530.4,
+          "height": 34
+        },
+        "time": 39.065,
+        "times": [
+          39.065,
+          42.371,
+          42.371
+        ],
+        "fontPx": 26,
+        "floorPx": 28,
+        "seconds": 2.705,
+        "elements": [
+          {
+            "selector": "#s3-count-a",
+            "text": "19 sensors in a standard 10–20 cap",
+            "fontPx": 26,
+            "time": 39.065,
+            "seconds": 2.705
+          },
+          {
+            "selector": "#s3-count-b",
+            "text": "NeuroDetect uses of 19",
+            "fontPx": 26,
+            "time": 42.371,
+            "seconds": 10.518
+          },
+          {
+            "selector": "#s3-count-b > b:nth-of-type(1)",
+            "text": "5",
+            "fontPx": 26,
+            "time": 42.371,
+            "seconds": 10.518
+          }
+        ]
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.01 s (49.28–52.29 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 49.282,
+        "seconds": 3.005,
+        "floorSeconds": 3,
+        "until": 52.287
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 13 text elements stay under it for 0.5 s or more, the smallest \"01\" at 20 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "01",
+        "selector": "#s4-k0 > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4-pipeline.html",
+        "bbox": {
+          "x": 183,
+          "y": 761,
+          "width": 28.81,
+          "height": 27
+        },
+        "time": 56.494,
+        "times": [
+          53.189,
+          56.494,
+          56.494,
+          60.401,
+          60.401,
+          64.307,
+          64.307,
+          67.913,
+          67.913,
+          71.82,
+          71.82,
+          75.726,
+          75.726
+        ],
+        "fontPx": 20,
+        "floorPx": 28,
+        "seconds": 25.543,
+        "elements": [
+          {
+            "selector": "#s4-k0 > div:nth-of-type(1)",
+            "text": "01",
+            "fontPx": 20,
+            "time": 56.494,
+            "seconds": 25.543
+          },
+          {
+            "selector": "#s4-k1 > div:nth-of-type(1)",
+            "text": "02",
+            "fontPx": 20,
+            "time": 60.401,
+            "seconds": 21.636
+          },
+          {
+            "selector": "#s4-k2 > div:nth-of-type(1)",
+            "text": "03",
+            "fontPx": 20,
+            "time": 64.307,
+            "seconds": 17.73
+          },
+          {
+            "selector": "#s4-k3 > div:nth-of-type(1)",
+            "text": "04",
+            "fontPx": 20,
+            "time": 67.913,
+            "seconds": 14.124
+          },
+          {
+            "selector": "#s4-k4 > div:nth-of-type(1)",
+            "text": "05",
+            "fontPx": 20,
+            "time": 71.82,
+            "seconds": 10.217
+          },
+          {
+            "selector": "#s4-k5 > div:nth-of-type(1)",
+            "text": "06",
+            "fontPx": 20,
+            "time": 75.726,
+            "seconds": 6.311
+          },
+          {
+            "selector": "#s4-k0 > div:nth-of-type(3)",
+            "text": "0.5–45 Hz",
+            "fontPx": 22,
+            "time": 56.494,
+            "seconds": 25.543
+          },
+          {
+            "selector": "#s4-k1 > div:nth-of-type(3)",
+            "text": "250 Hz",
+            "fontPx": 22,
+            "time": 60.401,
+            "seconds": 21.636
+          },
+          {
+            "selector": "#s4-k2 > div:nth-of-type(3)",
+            "text": "10-s epochs",
+            "fontPx": 22,
+            "time": 64.307,
+            "seconds": 17.73
+          },
+          {
+            "selector": "#s4-k3 > div:nth-of-type(3)",
+            "text": "artifacts",
+            "fontPx": 22,
+            "time": 67.913,
+            "seconds": 14.124
+          },
+          {
+            "selector": "#s4-k4 > div:nth-of-type(3)",
+            "text": "features",
+            "fontPx": 22,
+            "time": 71.82,
+            "seconds": 10.217
+          },
+          {
+            "selector": "#s4-k5 > div:nth-of-type(3)",
+            "text": "per slice → vote",
+            "fontPx": 22,
+            "time": 75.726,
+            "seconds": 6.311
+          },
+          {
+            "selector": "span.kicker",
+            "text": "Processing pipeline",
+            "fontPx": 24,
+            "time": 53.189,
+            "seconds": 28.848
+          }
+        ]
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.00 s (64.61–67.61 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 64.608,
+        "seconds": 3.005,
+        "floorSeconds": 3,
+        "until": 67.613
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.31 s (72.12–75.43 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 72.12,
+        "seconds": 3.306,
+        "floorSeconds": 3,
+        "until": 75.426
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 5.11 s (76.03–81.14 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 76.027,
+        "seconds": 5.108,
+        "floorSeconds": 3,
+        "until": 81.135
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 7 text elements stay under it for 0.5 s or more, the smallest \"Module A · Alzheimer's\" at 24 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Module A · Alzheimer's",
+        "selector": "#s5-a > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-modules.html",
+        "bbox": {
+          "x": 151,
+          "y": 152.17,
+          "width": 411.84,
+          "height": 32
+        },
+        "time": 82.638,
+        "times": [
+          82.638,
+          84.441,
+          89.85,
+          93.456,
+          95.259,
+          99.165,
+          100.367
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 22.237,
+        "elements": [
+          {
+            "selector": "#s5-a > div:nth-of-type(1)",
+            "text": "Module A · Alzheimer's",
+            "fontPx": 24,
+            "time": 82.638,
+            "seconds": 22.237
+          },
+          {
+            "selector": "#s5-spec-lab",
+            "text": "log(θ / α) power at O1, O2",
+            "fontPx": 24,
+            "time": 84.441,
+            "seconds": 20.434
+          },
+          {
+            "selector": "div.kicker.c-violet",
+            "text": "Module B · Mood marker",
+            "fontPx": 24,
+            "time": 93.456,
+            "seconds": 11.419
+          },
+          {
+            "selector": "div.mono.c-cyan",
+            "text": "θ COHERENCE",
+            "fontPx": 26,
+            "time": 89.85,
+            "seconds": 15.025
+          },
+          {
+            "selector": "div.mono.c-violet",
+            "text": "FAA",
+            "fontPx": 26,
+            "time": 95.259,
+            "seconds": 9.616
+          },
+          {
+            "selector": "#s5-tag",
+            "text": "PRELIMINARY · INDICATIVE ONLY",
+            "fontPx": 26,
+            "time": 99.165,
+            "seconds": 5.71
+          },
+          {
+            "selector": "#s5-note",
+            "text": "Depression-related marker, studied on a separate dataset (OpenNeuro ds003478, 121 people, BDI scores).",
+            "fontPx": 26,
+            "time": 100.367,
+            "seconds": 4.508
+          }
+        ]
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.31 s (100.97–104.27 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 100.968,
+        "seconds": 3.306,
+        "floorSeconds": 3,
+        "until": 104.274
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 7 text elements stay under it for 0.5 s or more, the smallest \"Nearest-centroid classifier\" at 24 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Nearest-centroid classifier",
+        "selector": "#s6-top-in > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s6-classifier.html",
+        "bbox": {
+          "x": 120,
+          "y": 97.86,
+          "width": 505.45,
+          "height": 32
+        },
+        "time": 105.175,
+        "times": [
+          105.175,
+          112.387,
+          112.387,
+          118.998,
+          119.9,
+          120.801,
+          121.703
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 19.834,
+        "elements": [
+          {
+            "selector": "#s6-top-in > div:nth-of-type(1)",
+            "text": "Nearest-centroid classifier",
+            "fontPx": 24,
+            "time": 105.175,
+            "seconds": 19.834
+          },
+          {
+            "selector": "#s6-tally > div:nth-of-type(1)",
+            "text": "Slice votes",
+            "fontPx": 24,
+            "time": 112.387,
+            "seconds": 6.311
+          },
+          {
+            "selector": "span.c-muted",
+            "text": "(illustrative)",
+            "fontPx": 24,
+            "time": 112.387,
+            "seconds": 6.311
+          },
+          {
+            "selector": "#s6-tiles > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "learned parameters",
+            "fontPx": 26,
+            "time": 118.998,
+            "seconds": 6.011
+          },
+          {
+            "selector": "#s6-tiles > div:nth-of-type(2) > div:nth-of-type(2)",
+            "text": "model size",
+            "fontPx": 26,
+            "time": 119.9,
+            "seconds": 5.109
+          },
+          {
+            "selector": "#s6-tiles > div:nth-of-type(3) > div:nth-of-type(2)",
+            "text": "per recording",
+            "fontPx": 26,
+            "time": 120.801,
+            "seconds": 4.208
+          },
+          {
+            "selector": "#s6-tiles > div:nth-of-type(4) > div:nth-of-type(2)",
+            "text": "no GPU needed",
+            "fontPx": 26,
+            "time": 121.703,
+            "seconds": 3.306
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Majority of slices → recording-level result\" (6 words) is on screen 0.62 s (±0.01 s), under its 1.72 s floor: hold it about 0.5 s + 0.3 s a word (2.30 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Majority of slices → recording-level result",
+        "selector": "#s6-verdict",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s6-classifier.html",
+        "bbox": {
+          "x": 1161,
+          "y": 434,
+          "width": 510.55999999999995,
+          "height": 35
+        },
+        "time": 117.815,
+        "words": 6,
+        "seconds": 0.62,
+        "floorSeconds": 1.725
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 4 text elements stay under it for 0.5 s or more, the smallest \"50% = chance\" at 22 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "50% = chance",
+        "selector": "#s7-chance-t",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s7-results.html",
+        "bbox": {
+          "x": 844,
+          "y": 677,
+          "width": 158.41,
+          "height": 29
+        },
+        "time": 142.437,
+        "times": [
+          125.609,
+          126.511,
+          137.93,
+          142.437
+        ],
+        "fontPx": 22,
+        "floorPx": 28,
+        "seconds": 4.508,
+        "elements": [
+          {
+            "selector": "#s7-chance-t",
+            "text": "50% = chance",
+            "fontPx": 22,
+            "time": 142.437,
+            "seconds": 4.508
+          },
+          {
+            "selector": "#s7-hero > div:nth-of-type(1)",
+            "text": "Alzheimer's module · results",
+            "fontPx": 24,
+            "time": 125.609,
+            "seconds": 12.021
+          },
+          {
+            "selector": "#s7-cmp > div:nth-of-type(1)",
+            "text": "Fewer sensors, better result",
+            "fontPx": 24,
+            "time": 137.93,
+            "seconds": 9.015
+          },
+          {
+            "selector": "#s7-meth",
+            "text": "65 people never seen in training (36 Alzheimer's, 29 healthy · OpenNeuro ds004504) · 10× repeated 5-fold cross-validation · ± 2.7",
+            "fontPx": 27,
+            "time": 126.511,
+            "seconds": 11.119
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 4 text elements stay under it for 0.5 s or more, the smallest \"localhost:5000/upload\" at 17 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "localhost:5000/upload",
+        "selector": "#s8-u1",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s8-product.html",
+        "bbox": {
+          "x": 436.5,
+          "y": 177.67,
+          "width": 211.98,
+          "height": 21.77
+        },
+        "time": 147.245,
+        "times": [
+          147.245,
+          147.546,
+          148.447,
+          152.654
+        ],
+        "fontPx": 16.82,
+        "floorPx": 28,
+        "seconds": 5.41,
+        "elements": [
+          {
+            "selector": "#s8-u1",
+            "text": "localhost:5000/upload",
+            "fontPx": 16.82,
+            "time": 147.245,
+            "seconds": 5.41
+          },
+          {
+            "selector": "#s8-u2",
+            "text": "localhost:5000/report",
+            "fontPx": 17,
+            "time": 152.654,
+            "seconds": 12.321
+          },
+          {
+            "selector": "#s8-note",
+            "text": "Real screens of the NeuroDetect web app · sample recording sub-001 (ds004504)",
+            "fontPx": 20,
+            "time": 148.447,
+            "seconds": 16.528
+          },
+          {
+            "selector": "#s8-head > div:nth-of-type(1)",
+            "text": "Working prototype",
+            "fontPx": 24,
+            "time": 147.546,
+            "seconds": 17.429
+          }
+        ]
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.31 s (161.07–164.37 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 161.068,
+        "seconds": 3.306,
+        "floorSeconds": 3,
+        "until": 164.374
+      },
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 5.11 s (169.18–174.29 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 169.182,
+        "seconds": 5.108,
+        "floorSeconds": 3,
+        "until": 174.29
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"MIT WORLD PEACE UNIVERSITY, PUNE\" renders at 24 px for 2.71 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "MIT WORLD PEACE UNIVERSITY, PUNE",
+        "selector": "#s10-uni",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s10-end.html",
+        "bbox": {
+          "x": 683.52,
+          "y": 688,
+          "width": 552.96,
+          "height": 32
+        },
+        "time": 177.295,
+        "times": [
+          177.295
+        ],
+        "fontPx": 24,
+        "floorPx": 28,
+        "seconds": 2.705,
+        "elements": [
+          {
+            "selector": "#s10-uni",
+            "text": "MIT WORLD PEACE UNIVERSITY, PUNE",
+            "fontPx": 24,
+            "time": 177.295,
+            "seconds": 2.705
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.3009999999999877,
+    "samples": 599
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

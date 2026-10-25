@@ -1,0 +1,76 @@
+[INFO] [Compiler] Fetched 9 font face(s) for "Outfit" from Google Fonts (cached to C:\Users\vedus\.cache\hyperframes\fonts\outfit)
+[INFO] [Compiler] Injected deterministic @font-face rules for 1 requested font families
+[INFO] [Compiler] Inlined CDN script: https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=default, headlessShell=true, platform=win32)
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (NVIDIA)" renderer="ANGLE (NVIDIA, NVIDIA GeForce RTX 3050 6GB Laptop GPU (0x000025AC) Direct3D11 vs_5_0 ps_5_0, D3D11)")
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[initSession:screenshot] page.goto start (0ms)
+[initSession:screenshot] page.goto complete (642ms)
+[initSession:screenshot] GSAP proxy flush complete (703ms)
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[initSession:screenshot] pollHfReady complete (1689ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (1722ms)
+[initSession:screenshot] applyVideoMetadataHints complete (1723ms)
+[initSession:screenshot] media + fonts + tailwind ready (1784ms)
+[initSession:screenshot] timeline at-risk predictor: 0/5475 frames (0%) (1914ms)
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (1932ms)
+[initSession:screenshot] drawElement self-verify armed: 4 ground-truth frame(s) @ [1369, 2738, 4106, 5201] of 5475 (3171ms)
+[initSession:drawelement] drawElement canvas injected (3181ms)
+[initSession:drawelement] screenshot fallback: 561 clip-boundary frame(s) (3188ms)
+[initSession:drawelement] drawElement worker encode initialized (3214ms)
+[WARN] [Render] drawElement self-verification failed; re-rendering via screenshot {"renderJobId":"8e013839-eb19-42bf-968b-c6e2a298c03f","error":"drawElement self-verify failed at frame 4106: 24.8dB < 32dB vs pre-injection screenshot (pair: C:\\Users\\vedus\\AppData\\Local\\Temp\\hf-de-verify-fail-sytyeB)"}
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[initSession:screenshot] page.goto start (1ms)
+[initSession:screenshot] page.goto start (0ms)
+[initSession:screenshot] page.goto start (0ms)
+[initSession:screenshot] page.goto start (1ms)
+[initSession:screenshot] page.goto start (0ms)
+[initSession:screenshot] page.goto complete (1592ms)
+[initSession:screenshot] page.goto complete (1621ms)
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[initSession:screenshot] page.goto complete (1592ms)
+[initSession:screenshot] page.goto complete (1691ms)
+[initSession:screenshot] page.goto complete (1657ms)
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[initSession:screenshot] GSAP proxy flush complete (1918ms)
+[initSession:screenshot] GSAP proxy flush complete (2560ms)
+[initSession:screenshot] GSAP proxy flush complete (2748ms)
+[initSession:screenshot] GSAP proxy flush complete (2821ms)
+[initSession:screenshot] pollHfReady complete (2754ms)
+[initSession:screenshot] GSAP proxy flush complete (2887ms)
+[initSession:screenshot] pollHfReady complete (3253ms)
+[initSession:screenshot] pollHfReady complete (3260ms)
+[initSession:screenshot] pollHfReady complete (3255ms)
+[initSession:screenshot] pollHfReady complete (3237ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (3179ms)
+[initSession:screenshot] applyVideoMetadataHints complete (3179ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (3282ms)
+[initSession:screenshot] applyVideoMetadataHints complete (3282ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (3286ms)
+[initSession:screenshot] applyVideoMetadataHints complete (3286ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (3257ms)
+[initSession:screenshot] applyVideoMetadataHints complete (3257ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (3289ms)
+[initSession:screenshot] applyVideoMetadataHints complete (3289ms)
+[initSession:screenshot] media + fonts + tailwind ready (3315ms)
+[initSession:screenshot] media + fonts + tailwind ready (3423ms)
+[engine] fast capture falls back to screenshot: render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[engine] fast capture falls back to screenshot: render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[initSession:screenshot] media + fonts + tailwind ready (3430ms)
+[initSession:screenshot] media + fonts + tailwind ready (3426ms)
+[initSession:screenshot] media + fonts + tailwind ready (3409ms)
+[engine] fast capture falls back to screenshot: render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[engine] fast capture falls back to screenshot: render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (3355ms)
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (3454ms)
+[engine] fast capture falls back to screenshot: render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (3464ms)
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (3462ms)
+[initSession:screenshot] static-frame dedup: disabled (canvas/webgl) (3447ms)

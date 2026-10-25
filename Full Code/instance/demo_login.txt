@@ -1,0 +1,3 @@
+Local demo account (test only)
+username: demo
+password: demo-pass-2025

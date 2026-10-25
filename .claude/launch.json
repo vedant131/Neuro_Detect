@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "neurodetect",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["Full Code/app.py"],
+      "port": 5000
+    }
+  ]
+}
